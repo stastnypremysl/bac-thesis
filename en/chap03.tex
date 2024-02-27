@@ -1,0 +1,87 @@
+\chapter{Analysis}
+Why the language have been made the way it is? Why it is so inspired by SQL and isn't just next implementation of SQL?
+Why it is implemented the way it is?
+Further chapter is about design decision of the language.
+
+
+\section{Why SQL at first place?}
+Why we talk so much about SQL at first place? Since it was introduces at 1970s \cite{enwiki-sql}, it has
+become de facto standard for many major databases. Just for illustration name a few of them.
+Oracle DB uses it since 1979 as a first commercially available implementation
+\cite{oracle-db-sql}. MySQL since 1994, since its original development started \cite{enwiki-mysql} and PostgreSQL used it since 1996, since it was created, \cite{postgres-birthday}. SQL is so much known, that there is widely used term NoSQL databases as databases opposed to SQL databases.
+
+The main point of making language inspired by SQL is that it brings the advantage of getting large user base which only needs to understand the difference between SQL and the new language to start using the new language. This is the starting point, from which we further argument about design decisions made.
+
+
+\section{Why not implement just another SQL for CSV files?}
+As mentioned in the introduction, standard SQL is a typed language \cite{ISO9075-1987}, 
+which brought many design choices. Furthermore, SQL itself require large amount of text to be written,
+before it can be executed. 
+
+One of the ambition of lsql-csv is to allow a user to write shorter queries to get the result. For the example,
+consider
+
+\begin{verbatim}
+select A.dataX from data A where A.dataX > 1000
+\end{verbatim}
+
+This simple SQL query shows $dataX > 1000$ from table \textit{data}. 
+Now, if we have a CSV file $data.txt$, where we know, that dataX is a second column, the same query can 
+be written with lsql-csv as
+
+\begin{verbatim}
+data.txt, &1.2, if &1.2 > 1000
+\end{verbatim}
+
+The difference of about $35\%$ off the original query is simply said the another reason, 
+why we won't just implement another SQL implementation.
+
+\section{Why number references?}
+Where the $35\%$ difference happened. One and the main reason, why is, that we allowed referencing $dataX$ as $.2$.
+This is also possible due to nature of CSV file, where columns have their index
+\footnote{Do not confuse with SQL database index for performance}. 
+Normally, in SQL database, indexes of columns are not considered as something, which should decide about query meaning.
+This is because the SQL database itself may changes, new columns may be added or removed and just because somebody removed a column, it is not wanted the developers needed to change some of the queries so they comply with the new database layout.
+
+On the other hand, CSV files usually aren't altered as much as databases are. 
+If developer (or an user) isn't sure about the columns of the CSV file, it's one of the first signs, that
+he or she should use rather SQL database than simple CSV file.
+
+Also lsql-csv is rather a tool for daily life and simple scripts rather than tool for development of medium sized or
+large sized project, like SQL is. This adds much more flexibility in what can language do (like number references).
+
+\section{Why renaming standard keywords?}
+Why have we renamed \textit{where} for \text{if}, \textit{group by} for \textit{by} and \textit{sort by} for \textit{sort}? Simply said, because the renamed variants are shorter and still don't block user in understanding, what the query does.
+
+\section{Why some features like descending sort are missing?}
+Lsql-csv is a shell utility and as such, it tries to comply with UNIX philosophy. 
+The summarized version from Doug McIlroy is: `This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.' \cite{unix-philosophy}.
+
+The tool for reverting the order of sorted output already exist: \textit{tac}. Piped together it creates the wanted output.
+
+Similar case, the function for second filtering of grouped by (in SQL named \textit{having}) 
+output have been not added, because the wanted output
+may be received by piping the output with another instance of lsql-csv.
+
+And why there is no support for creating output with first line names of columns? Because the wanted output
+may be simply made with usage of \textit{echo} called before lsql-csv if needed.
+
+\section{Why blocks are delimited by comma?}
+The author thinks, it is more readable like this. Developers in SQL usually use upper case and new line writing to delimiter the blocks and comma is just more easy to write than switching on and off caps lock, holding shift key or making multiline input.
+
+\section{Why there are two types of expression?}
+Why there are arithmetic and select expression with different grammars?
+We think, that addition of special select expression further allows the user to write shorter queries.
+It allows us to introduce wildcard and curly brackets expansion for the user, which won't be possible otherwise.
+
+\section{Why there is support only for cross join and not other types of join?}
+The tool is supposed to be simple. We recommend user to import CSV data to SQL database and use standard SQL if he needs more complicated joins.
+
+The other reason is, that CSV have no standardized NULL value, which is needed for left or right outer joins.
+
+\section{Why there is no package used for CSV parsing and generating?}
+Very simply said, to limit number of dependencies. The more dependencies is used, the harder is to compile it, maintain it and add to any Linux distribution.
+
+As CSV parsing isn't hard job, it was decided so.
+
+\section{Why String is used as primary text representation?}

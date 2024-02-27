@@ -1,18 +1,25 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{enwiki-database}
 {Wikipedia contributors}.
-\newblock Database --- {Wikipedia}{,} the free encyclopedia, 2024.
+\newblock Database --- {Wikipedia}{,} the free encyclopedia.
+\newblock
+  \url{https://en.wikipedia.org/w/index.php?title=Database&oldid=1200665358},
+  2024.
 \newblock [Online; accessed 16-February-2024].
 
 \bibitem{rfc4180}
 Yakov Shafranovich.
 \newblock {Common Format and MIME Type for Comma-Separated Values (CSV) Files}.
 \newblock RFC 4180, October 2005.
+\newblock Available at \url{https://www.rfc-editor.org/info/rfc4180} [Online;
+  accessed 16-February-2024].
 
 \bibitem{enwiki-sql}
 {Wikipedia contributors}.
-\newblock Sql --- {Wikipedia}{,} the free encyclopedia, 2024.
+\newblock Sql --- {Wikipedia}{,} the free encyclopedia.
+\newblock
+  \url{https://en.wikipedia.org/w/index.php?title=SQL&oldid=1205226098}, 2024.
 \newblock [Online; accessed 16-February-2024].
 
 \bibitem{ISO9075-1987}
@@ -28,7 +35,8 @@ Iso 9075-1:2023: Information technology – database languages sql – part 1:
   June 2023.
 
 \bibitem{q}
-q - text as data, 2024.
+q - text as data.
+\newblock \url{https://github.com/harelba/q}, 2024.
 \newblock [Online; accessed 18-February-2024].
 
 \bibitem{practical-haskell}
@@ -36,9 +44,31 @@ Alejandro~Serrano Mena.
 \newblock {\em Practical Haskell - A real world guide to programming}.
 \newblock {S}econd {E}dition. Apress, New York, 2019.
 
-\bibitem{Andel07}
-J.~Anděl.
-\newblock {\em Základy matematické statistiky}.
-\newblock Druhé opravené vydání. Matfyzpress, Praha, 2007.
+\bibitem{oracle-db-sql}
+et~al. Usha~Krishnamurthy.
+\newblock {\em Oracle Database SQL Language Reference, 19c}.
+\newblock Oracle, 2023.
+\newblock Available at
+  \url{https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/sql-language-reference.pdf}
+  [Online; accessed 23-February-2024].
+
+\bibitem{enwiki-mysql}
+{Wikipedia contributors}.
+\newblock Mysql --- {Wikipedia}{,} the free encyclopedia.
+\newblock
+  \url{https://en.wikipedia.org/w/index.php?title=MySQL&oldid=1205045759},
+  2024.
+\newblock [Online; accessed 23-February-2024].
+
+\bibitem{postgres-birthday}
+\url{https://www.postgresql.org/about/news/happy-birthday-postgresql-978/},
+  July 2008.
+\newblock [Online; accessed 23-February-2024].
+
+\bibitem{unix-philosophy}
+Eric~S. Raymond.
+\newblock \url{http://www.catb.org/~esr/writings/taoup/html/ch01s06.html},
+  September 2003.
+\newblock [Online; accessed 24-February-2024].
 
 \end{thebibliography}

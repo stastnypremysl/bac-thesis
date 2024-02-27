@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  1 JAN 2013 01:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  26 FEB 2024 10:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -505,8 +505,8 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count287
 \l__pdf_internal_box=\box52
 ) (./thesis.aux
-(./title.aux) (./preface.aux) (./chap01.aux) (./chap02.aux) (./epilog.aux)
-(./bibliography.aux))
+(./title.aux) (./preface.aux) (./chap01.aux) (./chap02.aux) (./chap03.aux)
+(./epilog.aux) (./bibliography.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
@@ -575,7 +575,7 @@ LaTeX Info: Redefining \nameref on input line 109.
 
  (./title.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
-<../img/logo-en.pdf, id=63, 506.4591pt x 156.49065pt>
+<../img/logo-en.pdf, id=119, 506.4591pt x 156.49065pt>
 File: ../img/logo-en.pdf Graphic file (type pdf)
 <use ../img/logo-en.pdf>
 Package pdftex.def Info: ../img/logo-en.pdf  used on input line 9.
@@ -666,15 +666,35 @@ Chapter 1.
 
  (./chap02.tex
 Chapter 2.
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+7.
+(/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+5.
+
+(/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [4
 
 
 
 
-]
+] [5]) [6]
+\openout2 = `chap03.aux'.
+
+ (./chap03.tex
+Chapter 3.
+[7
+
+
+
+
+] [8]) [9]
 \openout2 = `epilog.aux'.
 
- (./epilog.tex) [5
+ (./epilog.tex) [10
 
 
 
@@ -682,7 +702,25 @@ Chapter 2.
 ]
 \openout2 = `bibliography.aux'.
 
- (./bibliography.tex (./thesis.bbl)) [6
+ (./bibliography.tex (./thesis.bbl
+Underfull \hbox (badness 1668) in paragraph at lines 12--17
+\OT1/lmr/m/n/12 Separated Val-ues (CSV) Files.  RFC 4180, Oc-to-ber 2005.  Avai
+l-
+ []
+
+
+Underfull \hbox (badness 4967) in paragraph at lines 56--62
+[]\OT1/lmr/m/n/12 Wikipedia con-trib-u-tors.  Mysql --- Wikipedia, the free en-
+cy-clo-
+ []
+
+
+Overfull \hbox (36.24513pt too wide) in paragraph at lines 64--67
+[][]$\OT1/lmtt/m/n/12 https : / / www . postgresql . org / about / news / happy
+-[]birthday-[]postgresql-[]978/$[]\OT1/lmr/m/n/12 ,|
+ []
+
+)) [11
 
 
 
@@ -691,7 +729,7 @@ Chapter 2.
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
-[7
+ [12
 
 
 
@@ -699,37 +737,42 @@ Chapter 2.
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [8
+ [13
 
-] [9
+] [14
 
 ]
 Appendix A.
-[10
+[15
 
 ] (./thesis.aux (./title.aux) (./preface.aux) (./chap01.aux) (./chap02.aux)
-(./epilog.aux) (./bibliography.aux))
+(./chap03.aux) (./epilog.aux) (./bibliography.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F926D30495A07CFBBFEDFE215791BBA4;2651.
+(rerunfilecheck)             Checksum: 97B85943D022983EF28A9EC048C71FD7;5342.
  ) 
 Here is how much of TeX's memory you used:
- 14116 strings out of 480954
- 198616 string characters out of 5905051
- 483874 words of memory out of 5000000
- 30978 multiletter control sequences out of 15000+600000
- 471555 words of font info for 84 fonts, out of 8000000 for 9000
+ 14242 strings out of 480954
+ 200824 string characters out of 5905051
+ 490335 words of memory out of 5000000
+ 31066 multiletter control sequences out of 15000+600000
+ 472240 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  88i,8n,90p,503b,2364s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf-dist/fo
-nts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr
-10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
--dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public
-/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/
-texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on thesis.pdf (14 pages, 485295 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/f
+onts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit
+.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-
+dist/fonts/enc/dvips/lm/lm-rmtt.enc}</usr/share/texmf-dist/fonts/type1/public/l
+m/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1
+/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></u
+sr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts
+/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.p
+fb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-di
+st/fonts/type1/public/lm/lmtt12.pfb>
+Output written on thesis.pdf (19 pages, 547667 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 130 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 310 compressed objects within 4 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 242 words of extra memory for PDF output out of 10000 (max. 10000000)
 

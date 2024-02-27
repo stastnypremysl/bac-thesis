@@ -1,5 +1,89 @@
-\chapter{Title of the second chapter}
+\chapter{Developer documentation}
+This chapter is for potential developers of the project.
 
-\section{Title of the first subchapter of the second chapter}
+\section{Project building and testing}
+The project have two ways of building. One way is through Makefile and second through cabal. 
+By running 
+\begin{verbatim}
+make
+\end{verbatim}
+it is generated build folder and lsql-csv binary under it. 
+It is necessary to have all dependencies (Parsec ($\geq 3.1$ $<3.2$), Glob ($\geq 0.10$ $<0.11$), base ($\geq 4.9$ $<4.17$), text ($\geq 1.2$ $<2.1$) and containers ($\geq 0.5$ $<0.7$)) installed.
 
-\section{Title of the second subchapter of the second chapter}
+Second way of building is through cabal, which handles all dependencies for you.
+
+\begin{verbatim}
+cabal build
+\end{verbatim}
+
+
+The project unit tests require building through Makefile and is called by
+\begin{verbatim}
+make test
+\end{verbatim}
+It should always succeed before any commit is made.
+
+It is possible to generate Haddock developer documentation by calling
+
+\begin{verbatim}
+cabal haddock
+\end{verbatim}
+
+The documentation contains comments on all exported functions. The documentation can be alternatively generated
+by running
+
+\begin{verbatim}
+make docs
+\end{verbatim}
+which generates html documentation under build folder.
+
+\section{String vs Data.Text}
+As there is a long term discussion in Haskell community whether String or Data.Text should be used as the 
+primary representation for text, I would like to emphasize that in this project, String is used as a primary
+representation for text.
+
+\section{Project layout}
+
+The project is split to library, which contains almost all the logic and is placed under
+\textit{src} folder of the project, and \textit{main}, which contains one source file
+with Main, which is the entry point for lsql-csv binary. 
+It parses the arguments, checks, whether help optional argument was called or no argument at all was given, 
+and either shows help or further call run from \textit{Lsql.Csv.Main} from library.
+
+Library is split into 5 different namespaces. Its usage isn't strictly defined, but this can be said
+\begin{itemize}
+    \item \textit{Lsql.Csv} - contains the entry point
+    \item \textit{Lsql.Csv.Core} - contains the logic of evaluation
+    \item \textit{Lsql.Csv.Lang} - contains parsers
+    \item \textit{Lsql.Csv.Lang.From} - cointains parsers for from block
+    \item \textit{Lsql.Csv.Utils} - contains helper functions
+\end{itemize}
+
+\section{Modules}
+The following section is summary of all modules of a library.
+\begin{itemize}
+   \item \textit{Lsql.Csv.Core.BlockOps} - This module contains Block definition and functions for getting specific types of blocks from list of Block.
+   \item \textit{Lsql.Csv.Core.Evaluator} - This module contains the evaluator of lsql-csv program.
+   \item \textit{Lsql.Csv.Core.Functions} - This module contains syntactic tree definition and helper functions for its evaluation.
+   \item \textit{Lsql.Csv.Core.Symbols} - This module contains definition of Symbol, SymbolMap and helper functions.
+   \item \textit{Lsql.Csv.Core.Tables} - This module contains definition of Lsql datatypes, their classes and types Table and Column and functions over them for manipulation of them.
+   \item \textit{Lsql.Csv.Lang.Args} - A module for command line argument parsing.
+   \item \textit{Lsql.Csv.Lang.BlockChain} - This module contains a main parser of blocks other then from block.
+   \item \textit{Lsql.Csv.Lang.BlockSeparator} - This module contain a preprocessor parser, which splits command into list of strings - one string per one block.
+   \item \textit{Lsql.Csv.Lang.Options} - This module implements a common Option type and it's parsers for from blocks and command line optional arguments.
+   \item \textit{Lsql.Csv.Lang.Selector} - This module implements selector expression and arithmetic expression parsers.
+   \item \textit{Lsql.Csv.Lang.From.Block} - This module contains from block parser. It loads initial SymbolMap.
+   \item \textit{Lsql.Csv.Lang.From.CsvParser} - This module contains CsvParser called by parseFile, which loads input CSV files.
+   \item \textit{Lsql.Csv.Main} - This module contains the starting point for lsql-csv evaluation.
+   \item \textit{Lsql.Csv.Utils.BracketExpansion} - A module implementing bracket (braces) expansion.
+   \item \textit{Lsql.Csv.Utils.CsvGenerator} - Module containing CSV generator for the output.
+\end{itemize}
+
+\section{Entry point}
+The entry point is in module \textit{Lsql.Csv.Main} in function \textit{run}. 
+The function first calls preprocesor in \textit{Lsql.Csv.Lang.BlockSeparator}, which splits command into list of strings. Then SymbolMap with input is loaded using \textit{Lsql.Csv.Lang.From.Block} and after that
+rest of blocks are parsed using \textit{Lsql.Csv.Lang.BlockChain}. Program is then evaluated using
+\textit{Lsql.Csv.Core.Evaluator} and finally output generated by \textit{Lsql.Csv.Utils.CsvGenerator}.
+
+
+
