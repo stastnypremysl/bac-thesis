@@ -1,0 +1,2 @@
+Cílem práce je navrhnout nový jednoduchý nástroj, který by měl umožnit psaní
+krátkých dotazů nad CSV soubory z shellu.
