@@ -36,8 +36,23 @@ Iso 9075-1:2023: Information technology – database languages sql – part 1:
 
 \bibitem{q}
 q - text as data.
-\newblock \url{https://github.com/harelba/q}, 2024.
+\newblock \url{https://github.com/harelba/q}, 2022.
 \newblock [Online; accessed 18-February-2024].
+
+\bibitem{csv-sql}
+Csv sql.
+\newblock \url{https://github.com/alex/csv-sql}, 2021.
+\newblock [Online; accessed 29-February-2024].
+
+\bibitem{trdsql}
+trdsql.
+\newblock \url{https://github.com/noborus/trdsql}, 2024.
+\newblock [Online; accessed 29-February-2024].
+
+\bibitem{csvq}
+csvq.
+\newblock \url{https://github.com/mithrandie/csvq}, 2023.
+\newblock [Online; accessed 29-February-2024].
 
 \bibitem{practical-haskell}
 Alejandro~Serrano Mena.
@@ -64,6 +79,14 @@ et~al. Usha~Krishnamurthy.
 \url{https://www.postgresql.org/about/news/happy-birthday-postgresql-978/},
   July 2008.
 \newblock [Online; accessed 23-February-2024].
+
+\bibitem{enwiki-mssql}
+{Wikipedia contributors}.
+\newblock Microsoft sql server --- {Wikipedia}{,} the free encyclopedia.
+\newblock
+  \url{"https://en.wikipedia.org/w/index.php?title=Microsoft_SQL_Server&oldid=1210428592"},
+  2024.
+\newblock [Online; accessed 29-February-2024].
 
 \bibitem{unix-philosophy}
 Eric~S. Raymond.

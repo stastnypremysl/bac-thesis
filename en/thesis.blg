@@ -6,51 +6,52 @@ A level-1 auxiliary file: preface.aux
 A level-1 auxiliary file: chap01.aux
 A level-1 auxiliary file: chap02.aux
 A level-1 auxiliary file: chap03.aux
+A level-1 auxiliary file: chap04.aux
 A level-1 auxiliary file: epilog.aux
 A level-1 auxiliary file: bibliography.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
 Warning--empty author in ISO9075-1987
 Warning--empty author in ISO9075-2023
-You've used 11 entries,
+You've used 15 entries,
             1791 wiz_defined-function locations,
-            509 strings with 5323 characters,
-and the built_in function-call counts, 1433 in all, are:
-= -- 135
-> -- 32
+            523 strings with 5677 characters,
+and the built_in function-call counts, 1910 in all, are:
+= -- 181
+> -- 39
 < -- 0
-+ -- 18
-- -- 7
-* -- 39
-:= -- 222
-add.period$ -- 36
-call.type$ -- 11
-change.case$ -- 9
++ -- 23
+- -- 8
+* -- 43
+:= -- 280
+add.period$ -- 49
+call.type$ -- 15
+change.case$ -- 13
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 64
-empty$ -- 185
-format.name$ -- 7
-if$ -- 340
+cite$ -- 17
+duplicate$ -- 84
+empty$ -- 257
+format.name$ -- 8
+if$ -- 463
 int.to.chr$ -- 0
-int.to.str$ -- 11
+int.to.str$ -- 15
 missing$ -- 2
-newline$ -- 60
-num.names$ -- 7
-pop$ -- 55
+newline$ -- 81
+num.names$ -- 8
+pop$ -- 82
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 25
+skip$ -- 36
 stack$ -- 0
 substring$ -- 0
-swap$ -- 10
+swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 7
-width$ -- 13
-write$ -- 122
+while$ -- 8
+width$ -- 17
+write$ -- 164
 (There were 2 warnings)

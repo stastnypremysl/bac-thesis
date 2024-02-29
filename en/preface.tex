@@ -12,12 +12,12 @@ Despite being standardized at 1987 by International Organization for Standardiza
 there are virtually no implementations adhere to it fully \cite{enwiki-sql}.
 Standard SQL is a typed language (Every data value belongs to some data type) \cite{ISO9075-2023} and the language
 design is therefore not much suitable for type-less databases like a collection of CSV files.
-Despite that, there are some implementations of SQL (eg. q \cite{q}), which tries to implement SQL on CSV files.
+Despite that, there are some implementations of SQL (eg. \textit{q} \cite{q}, \textit{CSV SQL} \cite{csv-sql}, \textit{trdsql} \cite{trdsql} or \textit{csvq} \cite{csvq}), which tries to implement SQL on CSV files.
 
 SQL itself requires large amount of text to be written for running even a simple queries and Unix ecosystem misses a tool\footnote{Or author don't know about it}, 
-which would allowed running a short enough queries over CSV files with similar semantics like SQL has. And this is the reason, why lsql-csv was created.
+which would allowed running a short enough queries over CSV files with similar semantics like SQL has. And this is the reason, why \textit{lsql-csv} was created.
+
+\textit{lsql-csv} is a tool for CSV files data querying from shell with short queries. It makes possible to work with small CSV files like with read-only relational database.
+The tool implements a new language LSQL similar to SQL, which is type-less, specifically designed for working with CSV files in shell.
 
 Haskell is a language with great features for working with text \cite{practical-haskell} and therefore it was selected for the task of implementation of lsql-csv.
-
-lsql-csv is a tool for CSV files data querying from shell with short queries. It makes possible to work with small CSV files like with read-only relational database.
-The tool implements a new language LSQL similar to SQL, which is type-less, specifically designed for working with CSV files in shell.
