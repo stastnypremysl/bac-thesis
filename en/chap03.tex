@@ -61,7 +61,7 @@ large sized project, like SQL is. This adds much more flexibility in what can la
 Why have we renamed \textit{where} for \textit{if}, \textit{group by} for \textit{by} and \textit{sort by} for \textit{sort}? Simply said, because the renamed variants are shorter and still do not block user in understanding, what the query does.
 
 \section{Why some features like descending sort are missing?}
-Lsql-csv is a shell utility and as such, it tries to comply with UNIX philosophy. 
+\textit{lsql-csv} is a shell utility and as such, it tries to comply with UNIX philosophy. 
 The summarized version from Doug McIlroy is: `This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.' \cite{unix-philosophy}.
 
 The tool for reverting the order of sorted output already exist: \textit{tac}. Piped together it creates the wanted output.
@@ -94,4 +94,10 @@ As CSV parsing is not hard job, it was decided so.
 \section{Why \textit{String} is used as primary text representation?}
 As the performance gain from using \textit{Data.Text} would not be significant and \textit{String} does not add any more complexity to the code like \textit{Data.Text} does, 
 it was decided that \textit{String} will be primary text representation.
+
+\section{Why joins have $\mathcal{O}(nm)$ complexity?}
+\textit{lsql-csv} is a tool for small dataset data querying. As such, it implements only simple algorithm for joining the tables -- cross join.
+
+For larger dataset users are encouraged to use standard SQL database.
+
 

@@ -8,9 +8,9 @@ The first obvious solution is importing the dataset to some of standard SQL data
 This approach requires definition of schema to which the data will be imported. This is an overhead, which isn't
 always advantageous to pay as we might need only a simple query to be run over it.
 
-But it might be vary favorable solution, if we need complex query or a large amount of simple queries run over it.
+But it might be vary favorable solution, if we have large dataset, need complex query or a large amount of simple queries run over it.
 
-By using a standard SQL database you gain the advantage of typed dataset, indexes and large amount of build-in functions
+By using a standard SQL database you gain the advantage of better performance, typed dataset, indexes and large amount of build-in functions
 
 \section{Using standard Unix tools}
 It is possible to do large amount of work just by using \textit{awk}, \textit{join}, \textit{sort},...
@@ -39,6 +39,9 @@ join -t: -14 -23 /tmp/passwd.sort /tmp/group.sort | cut -d: -f2,8
 
 As demonstrated, the \textit{lsql-csv} variant is more readable and shorter. 
 \footnote{It is possible, it can be written in shorter and more readable form, but not more than the \textit{lsql-csv} variant.}
+
+It should be also noted, that \textit{lsql-csv} join have $\mathcal{O}(nm)$ time complexity, while standard Unix tools have for join written above
+$\mathcal{O}(n\log n + m\log m)$ time complexity, so for larger dataset, it might be more beneficial to use them.
 
 \section{By using SQL implementation for CSV files}
 There are many projects implementing SQL on CSV files. For example:

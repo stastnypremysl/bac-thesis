@@ -19,6 +19,7 @@
 \contentsline {section}{\numberline {3.8}Why there is support only for cross join and not other types of join?}{9}{section.3.8}%
 \contentsline {section}{\numberline {3.9}Why there is no package used for CSV parsing and generating?}{9}{section.3.9}%
 \contentsline {section}{\numberline {3.10}Why \textit {String} is used as primary text representation?}{9}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Why joins have $\mathcal {O}(nm)$ complexity?}{9}{section.3.11}%
 \contentsline {chapter}{\numberline {4}Alternative solutions}{10}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Using SQL database}{10}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Using standard Unix tools}{10}{section.4.2}%
