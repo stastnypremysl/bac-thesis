@@ -1,2 +1,2 @@
-Cílem práce je navrhnout nový jednoduchý nástroj, který by měl umožnit psaní
+Cílem práce je navrhnout nový nástroj, který by měl umožnit psaní
 krátkých dotazů nad malými CSV soubory z shellu.

@@ -15,34 +15,34 @@ Warning--empty author in ISO9075-1987
 Warning--empty author in ISO9075-2023
 You've used 15 entries,
             1791 wiz_defined-function locations,
-            523 strings with 5677 characters,
-and the built_in function-call counts, 1910 in all, are:
-= -- 181
+            525 strings with 5786 characters,
+and the built_in function-call counts, 1930 in all, are:
+= -- 185
 > -- 39
 < -- 0
 + -- 23
 - -- 8
 * -- 43
-:= -- 280
-add.period$ -- 49
+:= -- 285
+add.period$ -- 51
 call.type$ -- 15
-change.case$ -- 13
+change.case$ -- 15
 chr.to.int$ -- 0
 cite$ -- 17
 duplicate$ -- 84
 empty$ -- 257
 format.name$ -- 8
-if$ -- 463
+if$ -- 467
 int.to.chr$ -- 0
 int.to.str$ -- 15
 missing$ -- 2
-newline$ -- 81
+newline$ -- 83
 num.names$ -- 8
 pop$ -- 82
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 36
+skip$ -- 33
 stack$ -- 0
 substring$ -- 0
 swap$ -- 14
@@ -53,5 +53,5 @@ type$ -- 0
 warning$ -- 2
 while$ -- 8
 width$ -- 17
-write$ -- 164
+write$ -- 168
 (There were 2 warnings)

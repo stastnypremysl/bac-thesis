@@ -17,20 +17,20 @@ Yakov Shafranovich.
 
 \bibitem{enwiki-sql}
 {Wikipedia contributors}.
-\newblock Sql --- {Wikipedia}{,} the free encyclopedia.
+\newblock {SQL} --- {Wikipedia}{,} the free encyclopedia.
 \newblock
   \url{https://en.wikipedia.org/w/index.php?title=SQL&oldid=1205226098}, 2024.
 \newblock [Online; accessed 16-February-2024].
 
 \bibitem{ISO9075-1987}
-Iso 9075:1987: Information technology – database languages sql – part 1:
-  Framework (sql/framework).
+{ISO} 9075:1987: Information technology – {D}atabase languages {SQL} – part
+  1: Framework ({SQL}/{F}ramework).
 \newblock Standard, International Organization for Standardization, Geneva, CH,
   June 1987.
 
 \bibitem{ISO9075-2023}
-Iso 9075-1:2023: Information technology – database languages sql – part 1:
-  Framework (sql/framework).
+{ISO} 9075-1:2023: Information technology – {D}atabase languages {SQL} –
+  part 1: Framework ({SQL}/{F}ramework).
 \newblock Standard, International Organization for Standardization, Geneva, CH,
   June 2023.
 
@@ -40,7 +40,7 @@ q - text as data.
 \newblock [Online; accessed 18-February-2024].
 
 \bibitem{csv-sql}
-Csv sql.
+{C}{S}{V} {S}{Q}{L}.
 \newblock \url{https://github.com/alex/csv-sql}, 2021.
 \newblock [Online; accessed 29-February-2024].
 
@@ -56,11 +56,11 @@ csvq.
 
 \bibitem{practical-haskell}
 Alejandro~Serrano Mena.
-\newblock {\em Practical Haskell - A real world guide to programming}.
+\newblock {\em Practical Haskell --- A real world guide to programming}.
 \newblock {S}econd {E}dition. Apress, New York, 2019.
 
 \bibitem{oracle-db-sql}
-et~al. Usha~Krishnamurthy.
+Usha~Krishnamurthy et~al.
 \newblock {\em Oracle Database SQL Language Reference, 19c}.
 \newblock Oracle, 2023.
 \newblock Available at
@@ -69,20 +69,22 @@ et~al. Usha~Krishnamurthy.
 
 \bibitem{enwiki-mysql}
 {Wikipedia contributors}.
-\newblock Mysql --- {Wikipedia}{,} the free encyclopedia.
+\newblock {MySQL} --- {Wikipedia}{,} the free encyclopedia.
 \newblock
   \url{https://en.wikipedia.org/w/index.php?title=MySQL&oldid=1205045759},
   2024.
 \newblock [Online; accessed 23-February-2024].
 
 \bibitem{postgres-birthday}
-\url{https://www.postgresql.org/about/news/happy-birthday-postgresql-978/},
+{Happy} {Birthday}, {Postgre{S}{Q}{L}!}
+\newblock
+  \url{https://www.postgresql.org/about/news/happy-birthday-postgresql-978/},
   July 2008.
 \newblock [Online; accessed 23-February-2024].
 
 \bibitem{enwiki-mssql}
 {Wikipedia contributors}.
-\newblock Microsoft sql server --- {Wikipedia}{,} the free encyclopedia.
+\newblock {Microsoft SQL Server} --- {Wikipedia}{,} the free encyclopedia.
 \newblock
   \url{"https://en.wikipedia.org/w/index.php?title=Microsoft_SQL_Server&oldid=1210428592"},
   2024.
@@ -90,6 +92,7 @@ et~al. Usha~Krishnamurthy.
 
 \bibitem{unix-philosophy}
 Eric~S. Raymond.
+\newblock {Basics of the Unix Philosophy}.
 \newblock \url{http://www.catb.org/~esr/writings/taoup/html/ch01s06.html},
   September 2003.
 \newblock [Online; accessed 24-February-2024].
