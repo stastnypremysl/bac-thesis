@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  8 MAR 2024 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  25 MAR 2024 23:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,7 +575,7 @@ LaTeX Info: Redefining \nameref on input line 109.
 
  (./title.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
-<../img/logo-en.pdf, id=143, 506.4591pt x 156.49065pt>
+<../img/logo-en.pdf, id=171, 506.4591pt x 156.49065pt>
 File: ../img/logo-en.pdf Graphic file (type pdf)
 <use ../img/logo-en.pdf>
 Package pdftex.def Info: ../img/logo-en.pdf  used on input line 9.
@@ -628,16 +628,16 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) [1
+
+
+
+
+])
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [1
-
-
-
-
-]
+ [2]
 \openout2 = `preface.aux'.
 
  (./preface.tex
@@ -648,7 +648,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 17.
 )
-[2
+[3
 
 
 ]
@@ -656,18 +656,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  (./chap01.tex
 Chapter 1.
-) [3
-
-
-
-
-]
-\openout2 = `chap02.aux'.
-
- (./chap02.tex
-Chapter 2.
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-7.
+11.
 (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [4
@@ -675,23 +665,52 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
-3.
+] [5]
+LaTeX Font Info:    Trying to load font information for OML+lmr on input line 1
+01.
+
+(/usr/share/texmf-dist/tex/latex/lm/omllmr.fd
+File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OML/lmr/m/it' in size <12> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 101.
+ [6] [7]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+55.
 
 (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [5]) [6]
+) [8] [9] [10] [11] [12] [13]
+[14] [15]
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <12> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 602.
+ [16]
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
+[]\OT1/lmr/m/n/12 You can also add cus-tom at-tributes to files in the for-mat 
+
+ []
+
+[17]) [18]
+\openout2 = `chap02.aux'.
+
+ (./chap02.tex
+Chapter 2.
+[19
+
+
+
+
+] [20]) [21]
 \openout2 = `chap03.aux'.
 
  (./chap03.tex
 Chapter 3.
-[7
+[22
 
 
 
 
-] [8]
+] [23]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <17.28> on input line 98.
 
@@ -703,20 +722,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 98.
 
-) [9]
+) [24]
 \openout2 = `chap04.aux'.
 
  (./chap04.tex
 Chapter 4.
-[10
+[25
 
 
 
 
-]) [11]
+]) [26]
 \openout2 = `epilog.aux'.
 
- (./epilog.tex) [12
+ (./epilog.tex) [27
 
 
 
@@ -731,27 +750,51 @@ l-
  []
 
 
-Underfull \hbox (badness 3229) in paragraph at lines 71--77
+Underfull \hbox (badness 4217) in paragraph at lines 63--68
+[]\OT1/lmr/m/n/12 passwd(5) | linux man-ual page.  []$\OT1/lmtt/m/n/12 https : 
+/ / www . man7 . org / linux /
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 87--93
+[]\OT1/lmr/m/n/12 Usha Kr-ish-na-murthy et al.  \OT1/lmr/m/it/12 Or-a-cle Datab
+ase SQL Lan-guage Ref-
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 87--93
+\OT1/lmr/m/it/12 er-ence, 19c\OT1/lmr/m/n/12 .  Or-a-cle, Novem-ber 2023.  Avai
+l-able at []$\OT1/lmtt/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--93
+\OT1/lmtt/m/n/12 / / docs . oracle . com / en / database / oracle / oracle-[]da
+tabase / 19 / sqlrf /
+ []
+
+[28
+
+
+
+
+]
+Underfull \hbox (badness 3229) in paragraph at lines 95--101
 []\OT1/lmr/m/n/12 Wikipedia con-trib-u-tors.  MySQL --- Wikipedia, the free en-
 cy-clo-
  []
 
 
-Underfull \hbox (badness 1533) in paragraph at lines 79--84
+Underfull \hbox (badness 1533) in paragraph at lines 103--108
 []\OT1/lmr/m/n/12 Happy Birth-day, Post-greSQL!  []$\OT1/lmtt/m/n/12 https : / 
 / www . postgresql . org / about /
  []
 
-[13
-
-
-
-
-])) [14] (./thesis.lof)
+)) [29] (./thesis.lof)
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [15
+ [30
 
 
 
@@ -759,25 +802,25 @@ Underfull \hbox (badness 1533) in paragraph at lines 79--84
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [16
+ [31
 
-] [17
+] [32
 
 ]
 Appendix A.
-[18
+[33
 
 ] (./thesis.aux (./title.aux) (./preface.aux) (./chap01.aux) (./chap02.aux)
 (./chap03.aux) (./chap04.aux) (./epilog.aux) (./bibliography.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 98FF9C43EBD7B9D37D8EC03088147FBF;6641.
+(rerunfilecheck)             Checksum: 5D9D1727E35694EF81AA4D5F39C2A1E9;7371.
  ) 
 Here is how much of TeX's memory you used:
- 14298 strings out of 480954
- 201524 string characters out of 5905051
- 492849 words of memory out of 5000000
- 31097 multiletter control sequences out of 15000+600000
- 482412 words of font info for 94 fonts, out of 8000000 for 9000
+ 14406 strings out of 480954
+ 202917 string characters out of 5905051
+ 494931 words of memory out of 5000000
+ 31137 multiletter control sequences out of 15000+600000
+ 488721 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  88i,8n,90p,503b,2364s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fo
@@ -792,10 +835,10 @@ nts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.
 pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-d
 ist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (22 pages, 589833 bytes).
+Output written on thesis.pdf (37 pages, 626531 bytes).
 PDF statistics:
- 441 PDF objects out of 1000 (max. 8388607)
- 380 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
- 290 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 614 PDF objects out of 1000 (max. 8388607)
+ 535 compressed objects within 6 object streams
+ 141 named destinations out of 1000 (max. 500000)
+ 346 words of extra memory for PDF output out of 10000 (max. 10000000)
 

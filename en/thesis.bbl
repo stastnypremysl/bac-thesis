@@ -36,22 +36,22 @@ Yakov Shafranovich.
 
 \bibitem{q}
 q - text as data.
-\newblock \url{https://github.com/harelba/q}, 2022.
+\newblock \url{https://github.com/harelba/q}, January 2022.
 \newblock [Online; accessed 18-February-2024].
 
 \bibitem{csv-sql}
 {C}{S}{V} {S}{Q}{L}.
-\newblock \url{https://github.com/alex/csv-sql}, 2021.
+\newblock \url{https://github.com/alex/csv-sql}, May 2021.
 \newblock [Online; accessed 29-February-2024].
 
 \bibitem{trdsql}
 trdsql.
-\newblock \url{https://github.com/noborus/trdsql}, 2024.
+\newblock \url{https://github.com/noborus/trdsql}, December 2023.
 \newblock [Online; accessed 29-February-2024].
 
 \bibitem{csvq}
 csvq.
-\newblock \url{https://github.com/mithrandie/csvq}, 2023.
+\newblock \url{https://github.com/mithrandie/csvq}, February 2023.
 \newblock [Online; accessed 29-February-2024].
 
 \bibitem{practical-haskell}
@@ -59,10 +59,34 @@ Alejandro~Serrano Mena.
 \newblock {\em Practical Haskell --- A real world guide to programming}.
 \newblock {S}econd {E}dition. Apress, New York, 2019.
 
+\bibitem{passwd}
+passwd(5) — linux manual page.
+\newblock
+  \url{https://www.man7.org/linux/man-pages/man5/passwd.5@@shadow-utils.html},
+  December 2021.
+\newblock [Online; accessed 21-March-2024].
+
+\bibitem{group}
+group(5) — linux manual page.
+\newblock \url{https://www.man7.org/linux/man-pages/man5/group.5.html}, October
+  2023.
+\newblock [Online; accessed 21-March-2024].
+
+\bibitem{bash-reference-manual}
+{Bash Reference Manual}.
+\newblock \url{https://www.gnu.org/software/bash/manual/bash.html}, September
+  2022.
+\newblock [Online; accessed 25-March-2024].
+
+\bibitem{awk-reference-manual}
+{GAWK: Effective AWK Programming: A User’s Guide for GNU Awk}.
+\newblock \url{https://www.gnu.org/software/gawk/manual/gawk.html}, 2023.
+\newblock [Online; accessed 25-March-2024].
+
 \bibitem{oracle-db-sql}
 Usha~Krishnamurthy et~al.
 \newblock {\em Oracle Database SQL Language Reference, 19c}.
-\newblock Oracle, 2023.
+\newblock Oracle, November 2023.
 \newblock Available at
   \url{https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/sql-language-reference.pdf}
   [Online; accessed 23-February-2024].
