@@ -176,7 +176,7 @@ Lets say, I am interested in the default group names of users. We need to join t
 \begin{verbatim}
 lsql-csv -d: '/etc/{passwd,group}, &1.1 &2.1, if &1.4 == &2.3'
 \end{verbatim}
-What does \textit{/etc/{passwd,group}} mean? Basically, there are three types of expressions. Select, from and arithmetic expression. In all select and from expressions, you can use expansion and wildcards just like in bash.
+What does \textit{/etc/{passwd,group}} mean? Basically, there are three types of expressions. Select, from and arithmetic expression. In all select and from expressions, you can use expansion and wildcards just like in bash\cite{bash-reference-manual}.
 
 Finally, the output can be something like this:
 \begin{verbatim}
