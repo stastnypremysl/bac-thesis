@@ -17,7 +17,7 @@ It is possible to do large amount of work just by using \textit{awk}, \textit{jo
 For example:
 
 \begin{verbatim}
-lsql-csv -d: '-, &1.*, if &1.3>=1000' < /etc/passwd
+lsql-csv -d: '-, &1.*, if &1.3 >= 1000' </etc/passwd
 \end{verbatim}
 
 This query might be rewritten using \textit{awk} to
