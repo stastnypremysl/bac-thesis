@@ -2,7 +2,7 @@
 \contentsline {chapter}{\numberline {1}User documentation}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Installation}{4}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Running the unit tests}{4}{subsection.1.1.1}%
-\contentsline {section}{\numberline {1.2}lsql-csv -- quick introduction}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.2}lsql-csv---quick introduction}{4}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Examples}{5}{subsection.1.2.1}%
 \contentsline {subsubsection}{Hello World}{5}{section*.3}%
 \contentsline {subsubsection}{Simple filtering}{6}{section*.4}%

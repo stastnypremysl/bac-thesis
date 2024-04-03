@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  3 APR 2024 00:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  3 APR 2024 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -822,7 +822,7 @@ Appendix A.
 ] (./thesis.aux (./title.aux) (./preface.aux) (./chap01.aux) (./chap02.aux)
 (./chap03.aux) (./chap04.aux) (./epilog.aux) (./bibliography.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5D9D1727E35694EF81AA4D5F39C2A1E9;7371.
+(rerunfilecheck)             Checksum: BDE8F5D6EB922C2C61CB9D179280D94E;7355.
  ) 
 Here is how much of TeX's memory you used:
  14425 strings out of 480954
@@ -844,7 +844,7 @@ nts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.
 pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-d
 ist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (37 pages, 627081 bytes).
+Output written on thesis.pdf (37 pages, 626961 bytes).
 PDF statistics:
  615 PDF objects out of 1000 (max. 8388607)
  536 compressed objects within 6 object streams

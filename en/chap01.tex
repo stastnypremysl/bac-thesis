@@ -32,34 +32,34 @@ make test
 \end{verbatim}
 This will run all unit tests for you.
 
-\section{lsql-csv -- quick introduction}
-LSQL, the language of \textit{lsql-csv}, aims to be a more lapidary language than SQL. Its design purpose is to enable its user to quickly write simple queries directly to the terminal - its design purpose is therefore different from SQL, where the readability of queries is more taken into account than in LSQL.
+\section{lsql-csv---quick introduction}
+LSQL, the language of \textit{lsql-csv}, aims to be a more lapidary language than SQL. Its design purpose is to enable its user to quickly write simple queries directly to the terminal---its design purpose is therefore different from SQL, where the readability of queries is more taken into account than in LSQL.
 
 \subsection{Examples}
 One way to learn a new programming language is by understanding concrete examples of its usage. The following examples are written explicitly for the purpose of teaching a reader, how to use the tool \textit{lsql-csv} by showing him many examples of its usage.
 
-The following examples might not be enough for readers, who don't know Unix/Linux scripting enough. If this is the case, please consider learning Unix/\-Linux scripting first before LSQL.
+The following examples might not be enough for readers, who don't know Unix/Linux scripting enough. If this is the case, please consider learning Unix/\allowbreak Linux scripting first before LSQL.
 
 It is also advantageous to know SQL.
 
 The following examples will be mainly about parsing of \textit{/etc/passwd} and parsing of \textit{/etc/group}. To make example reading more comfortable, we have added \textit{/etc/passwd} and \textit{/etc/group} column descriptions from man pages to the text.
 
-\textit{/etc/passwd} has the following columns\cite{passwd}:
+File \textit{/etc/passwd} has the following columns\cite{passwd}:
 \begin{enumerate}
-    \item login name
-    \item optional encrypted password
-    \item numerical user ID    
-    \item numerical group ID    
-    \item user name or comment field
-    \item user home directory
-    \item optional user command interpreter
+    \item login name;
+    \item optional encrypted password;
+    \item numerical user ID;
+    \item numerical group ID;    
+    \item user name or comment field;
+    \item user home directory;
+    \item optional user command interpreter.
 \end{enumerate}
-\textit{/etc/group} has the following columns\cite{group}:
+File \textit{/etc/group} has the following columns\cite{group}:
 \begin{enumerate}
-    \item group name
-    \item password
-    \item numerical group ID
-    \item user list
+    \item group name;
+    \item password;
+    \item numerical group ID;
+    \item user list.
 \end{enumerate}
 
 
