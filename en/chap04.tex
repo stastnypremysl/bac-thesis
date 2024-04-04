@@ -37,8 +37,8 @@ sort -t: -k4,4 /etc/passwd > /tmp/passwd.sort
 join -t: -14 -23 /tmp/passwd.sort /tmp/group.sort | cut -d: -f2,8 
 \end{verbatim}
 
-As demonstrated, the \textit{lsql-csv} variant is more readable and shorter. 
-\footnote{It is possible, it can be written in shorter and more readable form, but not more than the \textit{lsql-csv} variant.}
+As demonstrated, the \textit{lsql-csv} variant is more readable and shorter 
+\footnote{It is possible, it can be written in shorter and more readable form, but not more than the \textit{lsql-csv} variant}.
 
 It should be also noted, that \textit{lsql-csv} join have $\mathcal{O}(nm)$ time complexity, while standard Unix tools have for join written above
 $\mathcal{O}(n\log n + m\log m)$ time complexity, so for larger dataset, it might be more beneficial to use them.

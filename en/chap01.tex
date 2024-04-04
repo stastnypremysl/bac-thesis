@@ -138,7 +138,7 @@ Karel
 \end{verbatim}
 
 As you can see, we can reference named columns by a name. Named switch \textit{-n} enables first-line headers.
-If named columns are enabled, each column has two names under \textit{\&X} - the number name \textit{\&X.Y} and the actual name \textit{\&X.NAME}.
+If named columns are enabled, each column has two names under \textit{\&X}---the number name \textit{\&X.Y} and the actual name \textit{\&X.NAME}.
 
 Now, we can select all columns with wildcard \textit{\&1.*}:
 \begin{verbatim}
@@ -229,7 +229,7 @@ lsql-csv -d: '/etc/passwd, &1.*, if &1.3 >= 1000, sort &1.3' | tac
 \subsubsection{About nice outputs}
 There is a trick, how to concatenate two values in a select expression: Write them without space.
 
-But how does the interpreter know the ends of the value name or value expression? You must use quotes for it - quotes themselves can't be part of the value name.
+But how does the interpreter know the ends of the value name or value expression? You must use quotes for it---quotes themselves can't be part of the value name.
 As an example, let's try to format our basic grouping example.
 
 Let's try it!
@@ -293,7 +293,7 @@ lsql-csv -d: 'p=/etc/passwd g=/etc/group, p.1 g.1, if p.1 in g.4'
 \end{verbatim}
 This will print all pairs of user and its group excluding the default group. If you know SQL, you can read it as \textit{from /etc/passwd P, /etc/group G select P.1, G.1 where P.1 in G.4}.
 
-How does \textit{in} work? It's one of the basic string level "consist". If A is a substring of B, then \textit{A in B} is true. Otherwise, it is false.
+How does \textit{in} work? It's one of the basic string level ''consist''. If A is a substring of B, then \textit{A in B} is true. Otherwise, it is false.
 
 And the output?
 \begin{verbatim}
@@ -321,7 +321,7 @@ lp:lp,
 mythtv:audio,cdrom,tty,video,
 news:news,
 \end{verbatim}
-It groups all non-default groups of a user to one line and concatenates it delimited by ",".
+It groups all non-default groups of a user to one line and concatenates it delimited by '',''.
 
 How can we add default groups too?
 \begin{verbatim}
@@ -381,10 +381,10 @@ There are 4 datatypes considered: \textit{Bool}, \textit{Int}, \textit{Double}, 
 
 During CSV data parsing, the following logic of datatype selection is used:
 \begin{itemize}
-    \item \textit{Bool}, if \textit{true} or \textit{false}
-    \item \textit{Int}, if \textit{[0-9]+} matches
-    \item \textit{Double}, if \textit{[0-9]+.[0-9]+(e[0-9]+)?} matches
-    \item \textit{String}, if none of the above matches
+    \item \textit{Bool}, if \textit{true} or \textit{false};
+    \item \textit{Int}, if \textit{[0-9]+} matches;
+    \item \textit{Double}, if \textit{[0-9]+.[0-9]+(e[0-9]+)?} matches;
+    \item \textit{String}, if none of the above matches.
 \end{itemize}
 
 \subsection{Joins}
@@ -572,7 +572,7 @@ There are some chars that cannot be in symbol names (column names). For simplici
 Also first char of a symbol name must be non-numerical to not be considered as an exotic char.
 Referencing names containing exotic chars without quotes is unsupported.
 
-It is possible to reference columns with names with exotic chars using \textit{`} quote - like \textit{`EXOTIC NAME`}. The source file name is always part of the column name from the syntax perspective of language - it must be inside the quotes.
+It is possible to reference columns with names with exotic chars using \textit{`} quote---like \textit{`EXOTIC NAME`}. The source file name is always part of the column name from the syntax perspective of language---it must be inside the quotes.
 
 \subsubsection{Quote chars}
 There are 3 quotes (\textit{`}, \textit{"} and \textit{'}) used in Lsql. \textit{"} and \textit{'} are always quoting a string. The \textit{`} quote is used for quoting symbol names.
@@ -596,10 +596,10 @@ The following list outlines the precedence and associativity of lsql-csv infix o
 \subsubsection{Select expression}
 They are similar to bash expressions\cite{bash-reference-manual}. They are made by atom selector expressions separated by whitespaces. These expressions are expanded, evaluated, and matched to column names, constants, aggregate functions, or arithmetic expressions.
 
-Every atom selector expression can consist
+Every atom selector expression can consist:
 \begin{itemize}
     \item Wildcard (Each wildcard will be expanded to multiple statements during processing)
-    \item Bash brace expansion (e.g. {22..25} -\textgreater 22 23 24 25) \cite{bash-reference-manual}
+    \item Bash brace expansion (e.g. {22..25} $\rightarrow$ 22 23 24 25) \cite{bash-reference-manual}
     \item Arithmetic expression in \textit{\$(expr)} format
     \item Quotes \textit{`anything`} to prevent wildcards and expansions
     \item Quotes \textit{"} or \textit{'} to insert string
@@ -614,7 +614,7 @@ If you want to concatenate strings without \textit{++} operator, you can write: 
 Please, keep in mind, that operators must be put inside arithmetic expressions, or they will be matched to a column name or aggregate function.
 
 \subsubsection{Arithmetic expression}
-The statement uses mainly classical awk logic.\cite{awk-reference-manual} You can use keywords \textgreater, \textless, \textless=, \textgreater=, ==, $\vert\vert$, \&\&, +, -, *, /,...
+The statement uses mainly classical awk logic.\cite{awk-reference-manual} You can use keywords \textgreater, \textless, \textless=, \textgreater=, ==, $\vert\vert$, \&\&, +, -, *, /,\ldots
 
 \subsubsection{Select blocks}
 These blocks determine output. They accept select expressions and are evaluated and printed in a delimitered format.
@@ -635,7 +635,7 @@ This will print the 6th, 5th, and 4th of all files whose name begins with ax.
 \subsubsection{From blocks}
 There must be exactly one from block at the beginning of the command. 
 The block can contain any files (and \textit{-} specifies standard input). 
-You can use any syntax you would otherwise use in bash to select these files (wildcards, expansion,...)\break\cite{bash-reference-manual}. 
+You can use any syntax you would otherwise use in bash to select these files (wildcards, expansion,\ldots)\break\cite{bash-reference-manual}. 
 You can also overname the file using \textit{NAME=stmt}. If there is more than 1 matching of stmt, the files will be named \textit{(NAME, NAME1, NAME2,...)}.
 
 Example:
@@ -704,7 +704,7 @@ If there is an aggregate function present without by block present, aggregation 
 \subsubsection{Sort block}
 This block can be at the end of the command. It begins with the \textit{sort} keyword and the rest is a select expression.
 
-The sort block determines the order of the final output - given atoms are sorted in ascending order.
+The sort block determines the order of the final output---given atoms are sorted in ascending order.
 
 You can imagine a sort block as the order by clause in SQL.
 
