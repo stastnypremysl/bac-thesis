@@ -8,9 +8,9 @@ By running the following command it generates the build folder and lsql-csv bina
 make
 \end{verbatim}
  
-It is necessary to have all Haskell dependencies (\textit{Parsec} ($\geq 3.1$ $<3.2$), \textit{Glob} ($\geq 0.10$ $<0.11$), 
-\textit{base} ($\geq 4.9$ $<4.17$), \textit{text} ($\geq 1.2$ $<1.3$) and \textit{containers} ($\geq 0.5$ $<0.7$)) installed.
-The package boundaries given are identical to cabal boundaries. Also, it is necessary, that you have \textit{GHC} ($\geq 8 <9.29$) installed.
+It is necessary to have all Haskell dependencies (\icode{Parsec} ($\geq 3.1$ $<3.2$), \icode{Glob} ($\geq 0.10$ $<0.11$), 
+\icode{base} ($\geq 4.9$ $<4.17$), \icode{text} ($\geq 1.2$ $<1.3$) and \icode{containers} ($\geq 0.5$ $<0.7$)) installed.
+The package boundaries given are identical to cabal boundaries. Also, it is necessary, that you have \icode{GHC} ($\geq 8 <9.29$) installed.
 
 The second way of building is through cabal, which handles all dependencies for you.
 
@@ -19,7 +19,7 @@ cabal build
 \end{verbatim}
 
 
-The project unit tests require building through \textit{Makefile} and is called by:
+The project unit tests require building through \icode{Makefile} and is called by:
 \begin{verbatim}
 make test
 \end{verbatim}
@@ -38,8 +38,8 @@ make docs
 \end{verbatim}
 It generates html documentation under the build folder.
 
-\section{\textit{String} vs \textit{Data.Text}}
-As there is a long-term discussion in the Haskell community about whether \textit{String} or \textit{Data.Text} should be used as the 
+\section{\icode{String} vs \icode{Data.Text}}
+As there is a long-term discussion in the Haskell community about whether \icode{String} or \icode{Data.Text} should be used as the 
 primary representation of text, I would like to emphasize that in this project, String is used as a primary
 representation for text.
 
@@ -48,49 +48,49 @@ representation for text.
 The project is split into:
 \begin{enumerate}
   \item a library, which contains almost all the logic and is placed under
-       \textit{src} folder of the project
+       \icode{src} folder of the project
 
-  \item the \textit{main}, which contains one source file
-      with \textit{Main}, which is the entry point for \textit{lsql-csv} binary. 
+  \item the \icode{main}, which contains one source file
+      with \icode{Main}, which is the entry point for \icode{lsql-csv} binary. 
       It parses the arguments, checks, whether help optional argument was called or no argument at all was given, 
-      and either shows help or further call run from \textit{Lsql.Csv.Main} from library.
+      and either shows help or further call run from \icode{Lsql.Csv.Main} from library.
 \end{enumerate}
 
 Library is split into 5 different namespaces. Its usage is not strictly defined, but this can be said
 \begin{itemize}
-    \item \textit{Lsql.Csv} -- This namespace contains the entry point
-    \item \textit{Lsql.Csv.Core} -- This namespace contains the logic of evaluation
-    \item \textit{Lsql.Csv.Lang} -- This namespace contains parsers
-    \item \textit{Lsql.Csv.Lang.From} -- This namespace cointains parsers for from block
-    \item \textit{Lsql.Csv.Utils} -- This namespace contains helper functions
+    \item \icode{Lsql.Csv} -- This namespace contains the entry point
+    \item \icode{Lsql.Csv.Core} -- This namespace contains the logic of evaluation
+    \item \icode{Lsql.Csv.Lang} -- This namespace contains parsers
+    \item \icode{Lsql.Csv.Lang.From} -- This namespace cointains parsers for from block
+    \item \icode{Lsql.Csv.Utils} -- This namespace contains helper functions
 \end{itemize}
 
 \section{Modules}
 The following section is a summary of all modules of the library.
 \begin{itemize}
-    \item \textit{Lsql.Csv.Core.BlockOps} -- This module contains the \textit{Block} definition and functions for getting specific types of blocks from list of \textit{Block}.
-    \item \textit{Lsql.Csv.Core.Evaluator} -- This module contains the evaluator of \textit{lsql-csv} program.
-    \item \textit{Lsql.Csv.Core.Functions} -- This module contains the syntactic tree definition and helper functions for its evaluation.
-    \item \textit{Lsql.Csv.Core.Symbols} -- This module contains the definition of \textit{Symbol}, \textit{SymbolMap} and helper functions.
-    \item \textit{Lsql.Csv.Core.Tables} -- This module contains the definition of \textit{lsql-csv} 
-        data types, classes over them and types \textit{Table} and \textit{Column} and functions over them for manipulation of them.
-    \item \textit{Lsql.Csv.Lang.Args} -- A module for command line argument parsing.
-    \item \textit{Lsql.Csv.Lang.BlockChain} -- This module contains a main parser of blocks other than from block.
-    \item \textit{Lsql.Csv.Lang.BlockSeparator} -- This module contain a preprocessor parser, which splits command into list of strings - one string per one block.
-    \item \textit{Lsql.Csv.Lang.Options} -- This module implements a common \textit{Option} type and it is parsers for from blocks and command line optional arguments.
-    \item \textit{Lsql.Csv.Lang.Selector} -- This module implements the selector expression and arithmetic expression parsers.
-    \item \textit{Lsql.Csv.Lang.From.Block} -- This module contains the from block parser. It loads initial \textit{SymbolMap}.
-    \item \textit{Lsql.Csv.Lang.From.CsvParser} -- This module contains \textit{CsvParser} called by \textit{parseFile}, which loads input CSV files.
-    \item \textit{Lsql.Csv.Main} -- This module contains the starting point for \textit{lsql-csv} evaluation.
-    \item \textit{Lsql.Csv.Utils.BracketExpansion} -- This module contains the curly bracket (braces) expansion implementation.
-    \item \textit{Lsql.Csv.Utils.CsvGenerator} -- This module contains the CSV generator for the output.
+    \item \icode{Lsql.Csv.Core.BlockOps} -- This module contains the \icode{Block} definition and functions for getting specific types of blocks from list of \icode{Block}.
+    \item \icode{Lsql.Csv.Core.Evaluator} -- This module contains the evaluator of \icode{lsql-csv} program.
+    \item \icode{Lsql.Csv.Core.Functions} -- This module contains the syntactic tree definition and helper functions for its evaluation.
+    \item \icode{Lsql.Csv.Core.Symbols} -- This module contains the definition of \icode{Symbol}, \icode{SymbolMap} and helper functions.
+    \item \icode{Lsql.Csv.Core.Tables} -- This module contains the definition of \icode{lsql-csv} 
+        data types, classes over them and types \icode{Table} and \icode{Column} and functions over them for manipulation of them.
+    \item \icode{Lsql.Csv.Lang.Args} -- A module for command line argument parsing.
+    \item \icode{Lsql.Csv.Lang.BlockChain} -- This module contains a main parser of blocks other than from block.
+    \item \icode{Lsql.Csv.Lang.BlockSeparator} -- This module contain a preprocessor parser, which splits command into list of strings - one string per one block.
+    \item \icode{Lsql.Csv.Lang.Options} -- This module implements a common \icode{Option} type and it is parsers for from blocks and command line optional arguments.
+    \item \icode{Lsql.Csv.Lang.Selector} -- This module implements the selector expression and arithmetic expression parsers.
+    \item \icode{Lsql.Csv.Lang.From.Block} -- This module contains the from block parser. It loads initial \icode{SymbolMap}.
+    \item \icode{Lsql.Csv.Lang.From.CsvParser} -- This module contains \icode{CsvParser} called by \icode{parseFile}, which loads input CSV files.
+    \item \icode{Lsql.Csv.Main} -- This module contains the starting point for \icode{lsql-csv} evaluation.
+    \item \icode{Lsql.Csv.Utils.BracketExpansion} -- This module contains the curly bracket (braces) expansion implementation.
+    \item \icode{Lsql.Csv.Utils.CsvGenerator} -- This module contains the CSV generator for the output.
 \end{itemize}
 
 \section{Entry point}
-The entry point is in module \textit{Lsql.Csv.Main} in function \textit{run}. 
-The function first calls preprocesor in \textit{Lsql.Csv.Lang.BlockSeparator}, which splits command into list of strings. Then \textit{SymbolMap} with input is loaded using \textit{Lsql.Csv.Lang.From.Block} and after that
-rest of blocks are parsed using \textit{Lsql.Csv.Lang.BlockChain}. Program is then evaluated using
-\textit{Lsql.Csv.Core.Evaluator} and finally output generated by \textit{Lsql.Csv.Utils.CsvGenerator}.
+The entry point is in module \icode{Lsql.Csv.Main} in function \icode{run}. 
+The function first calls preprocesor in \icode{Lsql.Csv.Lang.BlockSeparator}, which splits command into list of strings. Then \icode{SymbolMap} with input is loaded using \icode{Lsql.Csv.Lang.From.Block} and after that
+rest of blocks are parsed using \icode{Lsql.Csv.Lang.BlockChain}. Program is then evaluated using
+\icode{Lsql.Csv.Core.Evaluator} and finally output generated by \icode{Lsql.Csv.Utils.CsvGenerator}.
 
 
 

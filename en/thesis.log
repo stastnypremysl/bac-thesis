@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  4 APR 2024 16:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  4 APR 2024 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -628,6 +628,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+36.
+
+(/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [1
 
 
@@ -656,70 +662,110 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  (./chap01.tex
 Chapter 1.
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-11.
-(/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4
+[4
 
 
 
 
 ] [5]
-LaTeX Font Info:    Trying to load font information for OML+lmr on input line 1
-01.
+LaTeX Font Info:    Trying to load font information for OML+lmtt on input line 
+101.
+LaTeX Font Info:    No file OMLlmtt.fd. on input line 101.
 
-(/usr/share/texmf-dist/tex/latex/lm/omllmr.fd
-File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OML/lmr/m/it' in size <12> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 101.
- [6]
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 1
-79.
 
-(/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 179.
- [7]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-55.
+LaTeX Font Warning: Font shape `OML/lmtt/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textgreater' on input line 101.
+
+[6]
+LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
+179.
+LaTeX Font Info:    No file OMSlmtt.fd. on input line 179.
+
+
+LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 179.
+
+[7] [8]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+255.
+ (/usr/share/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [9] [10]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+84.
 
 (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8] [9] [10] [11] [12] [13]
-[14] [15]
+) [11] [12] [13] [14] [15]
+Overfull \hbox (17.7113pt too wide) in paragraph at lines 612--613
+[]\OT1/lmr/m/n/12 If you want to con-cate-nate strings with-out \OT1/lmtt/m/n/1
+2 ++ \OT1/lmr/m/n/12 op-er-a-tor, you can write: \OT1/lmtt/m/n/12 a.1","a.2\OT1
+/lmr/m/n/12 . |
+ []
+
+[16]
+LaTeX Font Info:    Trying to load font information for OML+lmr on input line 6
+17.
+ (/usr/share/texmf-dist/tex/latex/lm/omllmr.fd
+File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <12> not available
 (Font)              Font shape `OML/lmm/m/it' tried instead on input line 617.
- [16]
+
 Underfull \hbox (badness 10000) in paragraph at lines 650--651
 []\OT1/lmr/m/n/12 You can also add cus-tom at-tributes to files in the for-mat 
 
  []
 
-[17]) [18]
+[17]) [18] [19]
 \openout2 = `chap02.aux'.
 
  (./chap02.tex
 Chapter 2.
-[19
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 41.
+[20
 
 
 
 
-] [20]) [21]
+]
+Overfull \hbox (11.57373pt too wide) in paragraph at lines 72--73
+[]\OT1/lmtt/m/n/12 Lsql.Csv.Core.Evaluator \OT1/lmr/m/n/12 -- This mod-ule con-
+tains the eval-u-a-tor of \OT1/lmtt/m/n/12 lsql-csv|
+ []
+
+
+Overfull \hbox (0.92448pt too wide) in paragraph at lines 78--79
+[]\OT1/lmtt/m/n/12 Lsql.Csv.Lang.BlockChain \OT1/lmr/m/n/12 -- This mod-ule con
+-tains a main parser of blocks|
+ []
+
+[21]
+Overfull \hbox (14.6432pt too wide) in paragraph at lines 85--86
+[]\OT1/lmtt/m/n/12 Lsql.Csv.Utils.BracketExpansion \OT1/lmr/m/n/12 -- This mod-
+ule con-tains the curly bracket|
+ []
+
+
+Overfull \hbox (27.29733pt too wide) in paragraph at lines 90--94
+\OT1/lmr/m/n/12 list of strings. Then \OT1/lmtt/m/n/12 SymbolMap \OT1/lmr/m/n/1
+2 with in-put is loaded us-ing \OT1/lmtt/m/n/12 Lsql.Csv.Lang.From.Block|
+ []
+
+) [22]
 \openout2 = `chap03.aux'.
 
  (./chap03.tex
 Chapter 3.
-[22
+[23
 
 
 
 
-] [23]
+] [24]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <17.28> on input line 98.
 
@@ -731,20 +777,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 98.
 
-) [24]
+) [25]
 \openout2 = `chap04.aux'.
 
  (./chap04.tex
 Chapter 4.
-[25
+[26
 
 
 
 
-]) [26]
+]) [27]
 \openout2 = `epilog.aux'.
 
- (./epilog.tex) [27
+ (./epilog.tex) [28
 
 
 
@@ -782,7 +828,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--93
 tabase / 19 / sqlrf /
  []
 
-[28
+[29
 
 
 
@@ -799,11 +845,11 @@ Underfull \hbox (badness 1533) in paragraph at lines 103--108
 / www . postgresql . org / about /
  []
 
-)) [29] (./thesis.lof)
+)) [30] (./thesis.lof)
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [30
+ [31
 
 
 
@@ -811,43 +857,48 @@ Underfull \hbox (badness 1533) in paragraph at lines 103--108
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [31
+ [32
 
-] [32
+] [33
 
 ]
 Appendix A.
-[33
+[34
 
 ] (./thesis.aux (./title.aux) (./preface.aux) (./chap01.aux) (./chap02.aux)
 (./chap03.aux) (./chap04.aux) (./epilog.aux) (./bibliography.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: BDE8F5D6EB922C2C61CB9D179280D94E;7355.
  ) 
 Here is how much of TeX's memory you used:
- 14427 strings out of 480954
- 203241 string characters out of 5905051
+ 14463 strings out of 480954
+ 203729 string characters out of 5905051
  494982 words of memory out of 5000000
- 31155 multiletter control sequences out of 15000+600000
- 488721 words of font info for 97 fonts, out of 8000000 for 9000
+ 31185 multiletter control sequences out of 15000+600000
+ 481404 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  88i,8n,90p,503b,2364s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fo
-nts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.e
+nts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.e
 nc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-di
-st/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-dist/fonts/type1/public/l
-m/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb><
-/usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fo
-nts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.
-pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-d
-ist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/
-lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (37 pages, 627329 bytes).
+st/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/tex
+mf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></
+usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fo
+nts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
+k10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on thesis.pdf (38 pages, 651866 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 536 compressed objects within 6 object streams
- 141 named destinations out of 1000 (max. 500000)
+ 629 PDF objects out of 1000 (max. 8388607)
+ 545 compressed objects within 6 object streams
+ 142 named destinations out of 1000 (max. 500000)
  346 words of extra memory for PDF output out of 10000 (max. 10000000)
 

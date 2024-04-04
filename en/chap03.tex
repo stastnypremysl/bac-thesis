@@ -24,16 +24,16 @@ As mentioned in the introduction, standard SQL is a typed language (Every data c
 which implied many design choices. Furthermore, SQL itself require large amount of text to be written,
 before it can be executed. 
 
-One of the ambition of \textit{lsql-csv} is to allow a user to write shorter queries to get the result. For the example,
+One of the ambition of \icode{lsql-csv} is to allow a user to write shorter queries to get the result. For the example,
 consider
 
 \begin{verbatim}
 select A.dataX from data A where A.dataX > 1000
 \end{verbatim}
 
-This simple SQL query shows $dataX > 1000$ from table \textit{data}. 
-Now, if we have a CSV file $data.txt$, where we know, that \textit{dataX} is a second column, the same query can 
-be written with \textit{lsql-csv} as
+This simple SQL query shows $dataX > 1000$ from table \icode{data}. 
+Now, if we have a CSV file $data.txt$, where we know, that \icode{dataX} is a second column, the same query can 
+be written with \icode{lsql-csv} as
 
 \begin{verbatim}
 data.txt, &1.2, if &1.2 > 1000
@@ -43,7 +43,7 @@ The length difference is about $35\%$ off the original query. It is simply said 
 why we will not just implement another SQL implementation.
 
 \section{Why number references?}
-Where the $35\%$ difference happened. One and the main reason, why is, that we allowed referencing $dataX$ as \textit{.2}.
+Where the $35\%$ difference happened. One and the main reason, why is, that we allowed referencing $dataX$ as \icode{.2}.
 This is also possible due to nature of CSV file, where columns have their index
 \footnote{Do not confuse with SQL database index for performance}. 
 Normally, in SQL database, indexes of columns are not considered as something, which should decide about query meaning.
@@ -54,24 +54,24 @@ On the other hand, CSV files usually are not altered as much as databases are.
 If developer (or an user) is not sure about the columns of the CSV file, it is one of the first signs, that
 he or she should use rather SQL database than simple CSV file.
 
-Also \textit{lsql-csv} is rather a tool for daily life and simple scripts rather than tool for development of medium sized or
+Also \icode{lsql-csv} is rather a tool for daily life and simple scripts rather than tool for development of medium sized or
 large sized project, like SQL is. This adds much more flexibility in what can language do (like number references).
 
 \section{Why renaming standard keywords?}
-Why have we renamed \textit{where} for \textit{if}, \textit{group by} for \textit{by} and \textit{sort by} for \textit{sort}? Simply said, because the renamed variants are shorter and still do not block user in understanding, what the query does.
+Why have we renamed \icode{where} for \icode{if}, \icode{group by} for \icode{by} and \icode{sort by} for \icode{sort}? Simply said, because the renamed variants are shorter and still do not block user in understanding, what the query does.
 
 \section{Why some features like descending sort are missing?}
-\textit{lsql-csv} is a shell utility and as such, it tries to comply with UNIX philosophy. 
+\icode{lsql-csv} is a shell utility and as such, it tries to comply with UNIX philosophy. 
 The summarized version from Doug McIlroy is: `This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.' \cite{unix-philosophy}
 
-The tool for reverting the order of sorted output already exist: \textit{tac}. Piped together it creates the wanted output.
+The tool for reverting the order of sorted output already exist: \icode{tac}. Piped together it creates the wanted output.
 
-Similar case, the function for second filtering of grouped by (in SQL named \textit{having}) 
+Similar case, the function for second filtering of grouped by (in SQL named \icode{having}) 
 output have been not added, because the wanted output
-may be received by piping the output with another instance of \textit{lsql-csv}.
+may be received by piping the output with another instance of \icode{lsql-csv}.
 
 And why there is no support for creating output with first line names of columns? Because the wanted output
-may be simply made with usage of \textit{echo} called before \textit{lsql-csv} if needed.
+may be simply made with usage of \icode{echo} called before \icode{lsql-csv} if needed.
 
 \section{Why blocks are delimited by comma?}
 The author thinks, it is more readable like this. Developers in SQL usually use upper case and new line writing to delimiter the blocks and comma is just more easy to write than switching on and off caps lock, holding shift key or making multiline input.
@@ -91,12 +91,12 @@ Very simply said, to limit number of dependencies. The more dependencies is used
 
 As CSV parsing is not hard job, it was decided so.
 
-\section{Why \textit{String} is used as primary text representation?}
-As the performance gain from using \textit{Data.Text} would not be significant and \textit{String} does not add any more complexity to the code like \textit{Data.Text} does, 
-it was decided that \textit{String} will be primary text representation.
+\section{Why \icode{String} is used as primary text representation?}
+As the performance gain from using \icode{Data.Text} would not be significant and \icode{String} does not add any more complexity to the code like \icode{Data.Text} does, 
+it was decided that \icode{String} will be primary text representation.
 
 \section{Why joins have $\mathcal{O}(nm)$ complexity?}
-\textit{lsql-csv} is a tool for small dataset data querying. As such, it implements only simple algorithm for joining the tables -- cross join.
+\icode{lsql-csv} is a tool for small dataset data querying. As such, it implements only simple algorithm for joining the tables -- cross join.
 
 For larger dataset users are encouraged to use standard SQL database.
 
