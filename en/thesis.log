@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  10 APR 2024 09:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  10 APR 2024 11:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,7 +892,7 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  14461 strings out of 480954
  203868 string characters out of 5905051
- 495545 words of memory out of 5000000
+ 495550 words of memory out of 5000000
  31185 multiletter control sequences out of 15000+600000
  481404 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -911,7 +911,7 @@ usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fo
 nts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
 k10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/tex
 mf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (39 pages, 654626 bytes).
+Output written on thesis.pdf (39 pages, 654631 bytes).
 PDF statistics:
  648 PDF objects out of 1000 (max. 8388607)
  563 compressed objects within 6 object streams
