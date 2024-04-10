@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  10 APR 2024 11:18
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  10 APR 2024 11:42
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **thesis.tex
 (./thesis.tex
@@ -11,22 +11,22 @@ Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count179
-\c@chapter=\count180
-\c@section=\count181
-\c@subsection=\count182
-\c@subsubsection=\count183
-\c@paragraph=\count184
-\c@subparagraph=\count185
-\c@figure=\count186
-\c@table=\count187
+\c@part=\count175
+\c@chapter=\count176
+\c@section=\count177
+\c@subsection=\count178
+\c@subsubsection=\count179
+\c@paragraph=\count180
+\c@subparagraph=\count181
+\c@figure=\count182
+\c@table=\count183
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
 (/usr/share/texmf-dist/tex/latex/pdfx/pdfx.sty
 Package: pdfx 2019/02/27 v1.6.3 PDF/X and PDF/A support (CVR/HTH/RRM/PS)
-\pdfx@minorversion=\count188
+\pdfx@minorversion=\count184
 
 (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
@@ -44,18 +44,13 @@ with kernel methods
 )
 (/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-){/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} (/usr/share/texmf-dist/tex
-/latex/base/inputenc.sty
-Package: inputenc 2020/08/01 v1.3d Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
 )
 (/usr/share/texmf-dist/tex/latex/pdfx/l8u-penc.def
 File: l8u-penc.def 2017/06/23 v0.8 Custom LaTeX file, for UTF8 encoded letters 
 and symbols
 LaTeX Info: Composite with undeclared \b in encoding L8U on input line 278.
 )
-\pdfxsafeforxmp@toks=\toks17
+\pdfxsafeforxmp@toks=\toks15
 
 (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -63,13 +58,12 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: xetex.def on input line 225.
 
-(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+(/usr/share/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
@@ -78,7 +72,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-\pdfx@tmptoks=\toks18
+\pdfx@tmptoks=\toks16
 
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
@@ -95,11 +89,11 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode not found.
 )
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks19
+\KV@toks@=\toks17
 )
 (/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
@@ -123,8 +117,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen139
-\Hy@linkcounter=\count189
-\Hy@pagecounter=\count190
+\Hy@linkcounter=\count185
+\Hy@pagecounter=\count186
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
@@ -139,11 +133,12 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count191
+\Hy@SavedSpaceFactor=\count187
 
 (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 )
+\pdfmajorversion=\count188
 Package hyperref Info: Option `pdfa' set `true' on input line 4073.
 Package hyperref Info: Hyper figures OFF on input line 4192.
 Package hyperref Info: Link nesting OFF on input line 4197.
@@ -152,7 +147,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count192
+\c@Hy@tempcnt=\count189
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
@@ -168,7 +163,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count193
+\Fld@menulength=\count190
 \Field@Width=\dimen141
 \Fld@charsize=\dimen142
 Package hyperref Info: Hyper figures OFF on input line 6075.
@@ -186,26 +181,33 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count194
-\c@Item=\count195
-\c@Hfootnote=\count196
+\Hy@abspage=\count191
+\c@Item=\count192
+\c@Hfootnote=\count193
 )
-Package hyperref Info: Driver: hpdftex.
+Package hyperref Info: Driver: hxetex.
 
-(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
+(/usr/share/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
+
+(/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box47
+\c@Hy@AnnotLevel=\count194
+\HyField@AnnotCount=\count195
+\Fld@listcount=\count196
+\c@bookmark@seq@number=\count197
+
+(/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
 (/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count197
-\c@bookmark@seq@number=\count198
-
-(/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
 (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
@@ -213,12 +215,6 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip49
-)
-Package hyperref Info: Option `unicode' set `true' on input line 1463.
-
-(/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
-)
 )
 Package hyperref Info: Option `psdextra' set `true' on input line 1465.
 
@@ -234,53 +230,32 @@ Package: colorprofiles 2018/11/01 v1.0.1 color profiles for PDF/X and PDF/A sup
 port
 
 (/usr/share/texmf-dist/tex/generic/colorprofiles/colorprofiles.tex))
-(/usr/share/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+(/usr/share/texmf-dist/tex/generic/stringenc/se-ascii-print.def
+File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
+
 )
 (/usr/share/texmf-dist/tex/latex/pdfx/AdobeColorProfiles.tex)
-(/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
-File: 8bit.def 2008/03/30 v1.1d Input encoding file
-)
 ** pdfx: Metadata file thesis.xmpdata read successfully.
-(./thesis.xmpdata)<<sRGB.icc>> (/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
-File: 8bit.def 2008/03/30 v1.1d Input encoding file
-)
-(/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
-File: 8bit.def 2008/03/30 v1.1d Input encoding file
-)
-(/usr/share/texmf-dist/tex/generic/stringenc/se-utf8.def
-File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-)
-(/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
-File: 8bit.def 2008/03/30 v1.1d Input encoding file
-)
-Package hyperref Info: Option `unicode' set `true' on input line 2411.
-Package hyperref Info: Option `unicode' set `true' on input line 2412.
-
-(/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
-File: 8bit.def 2008/03/30 v1.1d Input encoding file
-)
-(/usr/share/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
-(/usr/share/texmf-dist/tex/latex/pdfx/glyphtounicode-cmr.tex)
-(/usr/share/texmf-dist/tex/latex/pdfx/glyphtounicode-ntx.tex)
-(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+(./thesis.xmpdata) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texmf-dist/tex/latex/xmpincl/xmpincl.sty
 Package: xmpincl 2008/05/10 v2.2 Include XMP data in pdflatex
-)
-(/usr/share/texmf-dist/tex/latex/pdfx/8bit.def
-File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
 Using XMP template file: pdfa.xmp
 \xmpinclWrite=\write3
 \xmpinclRead=\read2
 \openout3 = `pdfa.xmpi'.
 
-<<pdfa.xmpi>>) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
-)
-(/usr/share/texmf-dist/tex/latex/lm/lmodern.sty
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (/usr/share/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -335,30 +310,30 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count199
+\inf@bad=\count198
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count266
-\leftroot@=\count267
+\uproot@=\count199
+\leftroot@=\count266
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count268
-\DOTSCASE@=\count269
+\classnum@=\count267
+\DOTSCASE@=\count268
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
+\Mathstrutbox@=\box48
+\strutbox@=\box49
 \big@size=\dimen145
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count270
-\c@MaxMatrixCols=\count271
+\macc@depth=\count269
+\c@MaxMatrixCols=\count270
 \dotsspace@=\muskip17
-\c@parentequation=\count272
-\dspbrk@lvl=\count273
+\c@parentequation=\count271
+\dspbrk@lvl=\count272
 \tag@help=\toks21
-\row@=\count274
-\column@=\count275
-\maxfields@=\count276
+\row@=\count273
+\column@=\count274
+\maxfields@=\count275
 \andhelp@=\toks22
 \eqnshift@=\dimen146
 \alignsep@=\dimen147
@@ -416,18 +391,18 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: xetex.def on input line 105.
 )
 \Gin@req@height=\dimen152
 \Gin@req@width=\dimen153
 )
 (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count277
+\FV@CodeLineNo=\count276
 \FV@InFile=\read3
-\FV@TabBox=\box49
-\c@FancyVerbLine=\count278
-\FV@StepNumber=\count279
+\FV@TabBox=\box50
+\c@FancyVerbLine=\count277
+\FV@StepNumber=\count278
 \FV@OutFile=\write4
 )
 (/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
@@ -435,7 +410,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip56
 \bibsep=\skip57
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count280
+\c@NAT@ctr=\count279
 )
 (/usr/share/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -450,12 +425,12 @@ Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \col@sep=\dimen154
-\ar@mcellbox=\box50
+\ar@mcellbox=\box51
 \extrarowheight=\dimen155
 \NC@list=\toks31
 \extratabsurround=\skip58
 \backup@length=\skip59
-\ar@cellbox=\box51
+\ar@cellbox=\box52
 ))
 (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
@@ -469,12 +444,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen163
 \cmidrulekern=\dimen164
 \defaultaddspace=\dimen165
-\@cmidla=\count281
-\@cmidlb=\count282
+\@cmidla=\count280
+\@cmidlb=\count281
 \@aboverulesep=\dimen166
 \@belowrulesep=\dimen167
-\@thisruleclass=\count283
-\@lastruleclass=\count284
+\@thisruleclass=\count282
+\@lastruleclass=\count283
 \@thisrulewidth=\dimen168
 )
 (/usr/share/texmf-dist/tex/latex/paralist/paralist.sty
@@ -485,72 +460,58 @@ Package: paralist 2017/01/22 v2.7 Extended list environments
 \plparsep=\skip63
 \pl@lab=\toks32
 )
-Package hyperref Info: Option `unicode' set `true' on input line 108.
-Package hyperref Info: Option `breaklinks' set `true' on input line 109.
+Package hyperref Info: Option `unicode' set `true' on input line 109.
+Package hyperref Info: Option `breaklinks' set `true' on input line 110.
 
 \@input{macros.aux}
 \openout2 = `macros.aux'.
 
 (./macros.tex
-\c@thm=\count285
-\c@defn=\count286
-)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-15.
- (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\c@thm=\count284
+\c@defn=\count285
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
+
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count286
 \l__color_backend_stack_int=\count287
-\l__pdf_internal_box=\box52
-) (./thesis.aux
-(./title.aux) (./preface.aux) (./chap01.aux) (./chap02.aux) (./chap03.aux)
-(./chap04.aux) (./epilog.aux) (./bibliography.aux))
+\g__color_backend_stack_int=\count288
+\g__graphics_track_int=\count289
+\l__pdf_internal_box=\box53
+\g__pdf_backend_object_int=\count290
+\g__pdf_backend_annotation_int=\count291
+\g__pdf_backend_link_int=\count292
+) (./thesis.aux (./title.aux) (./preface.aux)
+(./chap01.aux) (./chap02.aux) (./chap03.aux) (./chap04.aux) (./epilog.aux)
+(./bibliography.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count288
-\scratchdimen=\dimen169
-\scratchbox=\box53
-\nofMPsegments=\count289
-\nofMParguments=\count290
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count291
-\MPscratchDim=\dimen170
-\MPnumerator=\count292
-\makeMPintoPDFobject=\count293
-\everyMPtoPDFconversion=\toks34
-) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-Package hyperref Info: Link coloring OFF on input line 115.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
+16.
+ (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+Package hyperref Info: Link coloring OFF on input line 116.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -561,11 +522,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count294
+\c@section@level=\count293
 )
-LaTeX Info: Redefining \ref on input line 115.
-LaTeX Info: Redefining \pageref on input line 115.
-LaTeX Info: Redefining \nameref on input line 115.
+LaTeX Info: Redefining \ref on input line 116.
+LaTeX Info: Redefining \pageref on input line 116.
+LaTeX Info: Redefining \nameref on input line 116.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write5
@@ -575,30 +536,33 @@ LaTeX Info: Redefining \nameref on input line 115.
 
  (./title.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
-<../img/logo-en.pdf, id=155, 506.4591pt x 156.49065pt>
 File: ../img/logo-en.pdf Graphic file (type pdf)
 <use ../img/logo-en.pdf>
-Package pdftex.def Info: ../img/logo-en.pdf  used on input line 9.
-(pdftex.def)             Requested size: 472.31573pt x 145.9455pt.
  [1
 
 
 
 
 
- <../img/logo-en.pdf>]
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 55.
  [1
 
-]
-[2
+] [2
 
 ] [3
 
 ]) (./thesis.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+.
+
+(/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
 .
- (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
+
+(/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
@@ -628,12 +592,6 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-36.
-
-(/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
@@ -653,56 +611,23 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 17.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 17.
-) [2
+)
+[2
 
 
 ]
 \openout2 = `chap01.aux'.
 
-
-(./chap01.tex
+ (./chap01.tex
 Chapter 1.
 [3
 
 
 
 
-] [4]
-LaTeX Font Info:    Trying to load font information for OML+lmtt on input line 
-101.
-LaTeX Font Info:    No file OMLlmtt.fd. on input line 101.
-
-
-LaTeX Font Warning: Font shape `OML/lmtt/m/n' undefined
-(Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textgreater' on input line 101.
-
-[5]
-LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
-179.
-LaTeX Font Info:    No file OMSlmtt.fd. on input line 179.
-
-
-LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 179.
-
-[6] [7]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-255.
- (/usr/share/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8] [9]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-84.
-
-(/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [10] [11] [12] [13] [14]
-[15]
+] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 663--664
-[]\OT1/lmr/m/n/12 You can also add cus-tom at-tributes to files in the for-mat 
-
+[]\TU/lmr/m/n/12 You can also add custom attributes to files in the format 
  []
 
 [16]) [17] [18]
@@ -710,35 +635,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  (./chap02.tex
 Chapter 2.
-LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <17.28> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 41.
 [19
 
 
 
 
 ]
-Overfull \hbox (11.57373pt too wide) in paragraph at lines 72--73
-[]\OT1/lmtt/m/n/12 Lsql.Csv.Core.Evaluator \OT1/lmr/m/n/12 -- This mod-ule con-
-tains the eval-u-a-tor of \OT1/lmtt/m/n/12 lsql-csv|
+Overfull \hbox (12.0391pt too wide) in paragraph at lines 72--73
+[]\TU/lmtt/m/n/12 Lsql.Csv.Core.Evaluator \TU/lmr/m/n/12 – This module contains
+ the evaluator of \TU/lmtt/m/n/12 lsql-csv|
  []
 
 
-Overfull \hbox (0.92448pt too wide) in paragraph at lines 78--79
-[]\OT1/lmtt/m/n/12 Lsql.Csv.Lang.BlockChain \OT1/lmr/m/n/12 -- This mod-ule con
--tains a main parser of blocks|
+Overfull \hbox (1.6751pt too wide) in paragraph at lines 78--79
+[]\TU/lmtt/m/n/12 Lsql.Csv.Lang.BlockChain \TU/lmr/m/n/12 – This module contain
+s a main parser of blocks|
  []
 
 [20]
-Overfull \hbox (14.6432pt too wide) in paragraph at lines 85--86
-[]\OT1/lmtt/m/n/12 Lsql.Csv.Utils.BracketExpansion \OT1/lmr/m/n/12 -- This mod-
-ule con-tains the curly bracket|
+Overfull \hbox (15.43108pt too wide) in paragraph at lines 85--86
+[]\TU/lmtt/m/n/12 Lsql.Csv.Utils.BracketExpansion \TU/lmr/m/n/12 – This module 
+contains the curly bracket|
  []
 
 
-Overfull \hbox (27.29733pt too wide) in paragraph at lines 90--94
-\OT1/lmr/m/n/12 list of strings. Then \OT1/lmtt/m/n/12 SymbolMap \OT1/lmr/m/n/1
-2 with in-put is loaded us-ing \OT1/lmtt/m/n/12 Lsql.Csv.Lang.From.Block|
+Overfull \hbox (27.22841pt too wide) in paragraph at lines 90--94
+\TU/lmr/m/n/12 list of strings. Then \TU/lmtt/m/n/12 SymbolMap \TU/lmr/m/n/12 w
+ith input is loaded using \TU/lmtt/m/n/12 Lsql.Csv.Lang.From.Block|
  []
 
 ) [21]
@@ -785,33 +710,38 @@ Chapter 4.
 \openout2 = `bibliography.aux'.
 
  (./bibliography.tex (./thesis.bbl
-Underfull \hbox (badness 1668) in paragraph at lines 12--17
-\OT1/lmr/m/n/12 Separated Val-ues (CSV) Files.  RFC 4180, Oc-to-ber 2005.  Avai
-l-
+Underfull \hbox (badness 1622) in paragraph at lines 12--17
+\TU/lmr/m/n/12 Separated Values (CSV) Files.  RFC 4180, October 2005.  Avail-
  []
 
 
-Underfull \hbox (badness 4217) in paragraph at lines 63--68
-[]\OT1/lmr/m/n/12 passwd(5) | linux man-ual page.  []$\OT1/lmtt/m/n/12 https : 
-/ / www . man7 . org / linux /
+Underfull \hbox (badness 4072) in paragraph at lines 63--68
+[]\TU/lmr/m/n/12 passwd(5) — linux manual page.  []$[][][][][] [] [] [] [][][] 
+[] [][][][] [] [][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 87--93
-[]\OT1/lmr/m/n/12 Usha Kr-ish-na-murthy et al.  \OT1/lmr/m/it/12 Or-a-cle Datab
-ase SQL Lan-guage Ref-
+Underfull \hbox (badness 6268) in paragraph at lines 70--74
+[]\TU/lmr/m/n/12 group(5) — linux manual page.  []$[][][][][] [] [] [] [][][] [
+] [][][][] [] [][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 7344) in paragraph at lines 87--93
-\OT1/lmr/m/it/12 er-ence, 19c\OT1/lmr/m/n/12 .  Or-a-cle, Novem-ber 2023.  Avai
-l-able at []$\OT1/lmtt/m/n/12 https :
+Underfull \hbox (badness 2310) in paragraph at lines 87--93
+[]\TU/lmr/m/n/12 Usha Krishnamurthy et al.  \TU/lmr/m/it/12 Oracle Database SQL
+ Language Ref-
+ []
+
+
+Underfull \hbox (badness 6792) in paragraph at lines 87--93
+\TU/lmr/m/it/12 erence, 19c\TU/lmr/m/n/12 .  Oracle, November 2023.  Available 
+at []$[][][][][] []
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 87--93
-\OT1/lmtt/m/n/12 / / docs . oracle . com / en / database / oracle / oracle-[]da
-tabase / 19 / sqlrf /
+[] [] [][][][] [] [][][][][][] [] [][][] [] [][] [] [][][][][][][][] [] [][][][
+][][] [] [][][][][][][][][][][][][][][][] [] [][] [] [][][][][] []
  []
 
 [29
@@ -820,82 +750,59 @@ tabase / 19 / sqlrf /
 
 
 ]
-Underfull \hbox (badness 5331) in paragraph at lines 95--101
-[]\OT1/lmr/m/n/12 Wikipedia con-trib-u-tors.  MySQL---Wikipedia, the free en-cy
--clo-pe-
+Underfull \hbox (badness 5203) in paragraph at lines 95--101
+[]\TU/lmr/m/n/12 Wikipedia contributors.  MySQL—Wikipedia, the free encyclope-
  []
 
 
-Underfull \hbox (badness 7522) in paragraph at lines 95--101
-\OT1/lmr/m/n/12 dia.  []$\OT1/lmtt/m/n/12 https : / / en . wikipedia . org / w 
-/ index . php ? title = MySQL & oldid =
+Underfull \hbox (badness 6842) in paragraph at lines 95--101
+\TU/lmr/m/n/12 dia.  []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][
+] [] [] [] [][][][][] [] [][][] [] [][][][][] [] [][][][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 1533) in paragraph at lines 103--108
-[]\OT1/lmr/m/n/12 Happy Birth-day, Post-greSQL!  []$\OT1/lmtt/m/n/12 https : / 
-/ www . postgresql . org / about /
+Underfull \hbox (badness 1442) in paragraph at lines 103--108
+[]\TU/lmr/m/n/12 Happy Birthday, PostgreSQL!  []$[][][][][] [] [] [] [][][] [] 
+[][][][][][][][][][] [] [][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 3449) in paragraph at lines 125--129
-[]\OT1/lmr/m/n/12 C++ Op-er-a-tor Prece-dence.  []$\OT1/lmtt/m/n/12 https : / /
- en . cppreference . com / w / cpp /
+Underfull \hbox (badness 3260) in paragraph at lines 125--129
+[]\TU/lmr/m/n/12 C++ Operator Precedence.  []$[][][][][] [] [] [] [][] [] [][][
+][][][][][][][][][] [] [][][] [] [] [] [][][] []
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 131--135
-[]\OT1/lmr/m/n/12 The Rust Reference---Expressions.  []$\OT1/lmtt/m/n/12 https 
-: / / doc . rust-[]lang . org /
+[]\TU/lmr/m/n/12 The Rust Reference—Expressions.  []$[][][][][] [] [] [] [][][]
+ [] [][][][][][][][][][] [] [][][] []
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 137--142
-[]\OT1/lmr/m/n/12 C# specifications---Expressions.  []$\OT1/lmtt/m/n/12 https :
- / / learn . microsoft . com /
+[]\TU/lmr/m/n/12 C# specifications—Expressions.  []$[][][][][] [] [] [] [][][][
+][] [] [][][][][][][][][] [] [][][] []
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 137--142
-\OT1/lmtt/m/n/12 en-[]US / dotnet / csharp / language-[]reference / language-[]
-specification /
+[][][][][][] [] [][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][
+][][][] [] [][][][][][][][][][][][][][][][][][][][][][][] []
  []
 
 )) [30] (./thesis.aux (./title.aux) (./preface.aux) (./chap01.aux)
 (./chap02.aux) (./chap03.aux) (./chap04.aux) (./epilog.aux) (./bibliography.aux
 ))
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3C7512BDFE761C86616A5CDBE589A94D;7021.
+(rerunfilecheck)             Checksum: 75B838ACCD31D342E9E107CAF5827B82;3081.
  ) 
 Here is how much of TeX's memory you used:
- 14436 strings out of 480954
- 203631 string characters out of 5905051
- 495558 words of memory out of 5000000
- 31176 multiletter control sequences out of 15000+600000
- 481404 words of font info for 99 fonts, out of 8000000 for 9000
+ 13714 strings out of 478918
+ 193919 string characters out of 5867538
+ 505386 words of memory out of 5000000
+ 33258 multiletter control sequences out of 15000+600000
+ 457445 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 88i,8n,90p,503b,2364s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fo
-nts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.e
-nc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-di
-st/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/tex
-mf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></
-usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fo
-nts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
-k10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/tex
-mf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (34 pages, 652662 bytes).
-PDF statistics:
- 599 PDF objects out of 1000 (max. 8388607)
- 519 compressed objects within 6 object streams
- 133 named destinations out of 1000 (max. 500000)
- 314 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88i,8n,93p,503b,1982s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+Output written on thesis.pdf (34 pages).
