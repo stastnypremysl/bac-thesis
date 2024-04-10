@@ -93,7 +93,7 @@ Usha~Krishnamurthy et~al.
 
 \bibitem{enwiki-mysql}
 {Wikipedia contributors}.
-\newblock {MySQL} --- {Wikipedia}{,} the free encyclopedia.
+\newblock {MySQL}---{Wikipedia}{,} the free encyclopedia.
 \newblock
   \url{https://en.wikipedia.org/w/index.php?title=MySQL&oldid=1205045759},
   2024.
@@ -108,7 +108,7 @@ Usha~Krishnamurthy et~al.
 
 \bibitem{enwiki-mssql}
 {Wikipedia contributors}.
-\newblock {Microsoft SQL Server} --- {Wikipedia}{,} the free encyclopedia.
+\newblock {Microsoft SQL Server}---{Wikipedia}{,} the free encyclopedia.
 \newblock
   \url{"https://en.wikipedia.org/w/index.php?title=Microsoft_SQL_Server&oldid=1210428592"},
   2024.
@@ -120,5 +120,29 @@ Eric~S. Raymond.
 \newblock \url{http://www.catb.org/~esr/writings/taoup/html/ch01s06.html},
   September 2003.
 \newblock [Online; accessed 24-February-2024].
+
+\bibitem{cpp-associativity-manual}
+{C++ Operator Precedence}.
+\newblock \url{https://en.cppreference.com/w/cpp/language/operator_precedence},
+  September 2023.
+\newblock [Online; accessed 08-Apr-2024].
+
+\bibitem{rust-expressions}
+{The Rust Reference---Expressions}.
+\newblock \url{https://doc.rust-lang.org/reference/expressions.html}, July
+  2023.
+\newblock [Online; accessed 08-Apr-2024].
+
+\bibitem{csharp-expressions}
+{C\# specifications---Expressions}.
+\newblock
+  \url{https://learn.microsoft.com/en-US/dotnet/csharp/language-reference/language-specification/expressions},
+  July 2024.
+\newblock [Online; accessed 08-Apr-2024].
+
+\bibitem{enwiki-kiss}
+{Wikipedia contributors}.
+\newblock Kiss principle---{Wikipedia}{,} the free encyclopedia, 2024.
+\newblock [Online; accessed 08-April-2024].
 
 \end{thebibliography}

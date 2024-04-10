@@ -52,34 +52,34 @@ The project is split into:
 
   \item the \icode{main}, which contains one source file
       with \icode{Main}, which is the entry point for \icode{lsql-csv} binary. 
-      It parses the arguments, checks, whether help optional argument was called or no argument at all was given, 
-      and either shows help or further call run from \icode{Lsql.Csv.Main} from library.
+      It parses the arguments, and checks, whether the help optional argument was called or no argument at all was given, 
+      and either shows help or further call run from \icode{Lsql.Csv.Main} from the library.
 \end{enumerate}
 
-Library is split into 5 different namespaces. Its usage is not strictly defined, but this can be said
+The library is split into 5 different namespaces. Its usage is not strictly defined, but this can be said
 \begin{itemize}
     \item \icode{Lsql.Csv} -- This namespace contains the entry point
     \item \icode{Lsql.Csv.Core} -- This namespace contains the logic of evaluation
     \item \icode{Lsql.Csv.Lang} -- This namespace contains parsers
-    \item \icode{Lsql.Csv.Lang.From} -- This namespace cointains parsers for from block
+    \item \icode{Lsql.Csv.Lang.From} -- This namespace cointains parsers for the from block
     \item \icode{Lsql.Csv.Utils} -- This namespace contains helper functions
 \end{itemize}
 
 \section{Modules}
 The following section is a summary of all modules of the library.
 \begin{itemize}
-    \item \icode{Lsql.Csv.Core.BlockOps} -- This module contains the \icode{Block} definition and functions for getting specific types of blocks from list of \icode{Block}.
+    \item \icode{Lsql.Csv.Core.BlockOps} -- This module contains the \icode{Block} definition and functions for getting specific types of blocks from the list of \icode{Block}.
     \item \icode{Lsql.Csv.Core.Evaluator} -- This module contains the evaluator of \icode{lsql-csv} program.
     \item \icode{Lsql.Csv.Core.Functions} -- This module contains the syntactic tree definition and helper functions for its evaluation.
     \item \icode{Lsql.Csv.Core.Symbols} -- This module contains the definition of \icode{Symbol}, \icode{SymbolMap} and helper functions.
     \item \icode{Lsql.Csv.Core.Tables} -- This module contains the definition of \icode{lsql-csv} 
-        data types, classes over them and types \icode{Table} and \icode{Column} and functions over them for manipulation of them.
+        data types, classes over them, and types \icode{Table} and \icode{Column} and functions over them for manipulation of them.
     \item \icode{Lsql.Csv.Lang.Args} -- A module for command line argument parsing.
-    \item \icode{Lsql.Csv.Lang.BlockChain} -- This module contains a main parser of blocks other than from block.
-    \item \icode{Lsql.Csv.Lang.BlockSeparator} -- This module contain a preprocessor parser, which splits command into list of strings - one string per one block.
-    \item \icode{Lsql.Csv.Lang.Options} -- This module implements a common \icode{Option} type and it is parsers for from blocks and command line optional arguments.
+    \item \icode{Lsql.Csv.Lang.BlockChain} -- This module contains a main parser of blocks other than the from block.
+    \item \icode{Lsql.Csv.Lang.BlockSeparator} -- This module contains a preprocessor parser, which splits the command into a list of strings - one string per one block.
+    \item \icode{Lsql.Csv.Lang.Options} -- This module implements a common \icode{Option} type and its parsers for from blocks and command line optional arguments.
     \item \icode{Lsql.Csv.Lang.Selector} -- This module implements the selector expression and arithmetic expression parsers.
-    \item \icode{Lsql.Csv.Lang.From.Block} -- This module contains the from block parser. It loads initial \icode{SymbolMap}.
+    \item \icode{Lsql.Csv.Lang.From.Block} -- This module contains the from block parser. It loads the initial \icode{SymbolMap}.
     \item \icode{Lsql.Csv.Lang.From.CsvParser} -- This module contains \icode{CsvParser} called by \icode{parseFile}, which loads input CSV files.
     \item \icode{Lsql.Csv.Main} -- This module contains the starting point for \icode{lsql-csv} evaluation.
     \item \icode{Lsql.Csv.Utils.BracketExpansion} -- This module contains the curly bracket (braces) expansion implementation.
