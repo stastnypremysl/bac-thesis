@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  10 APR 2024 11:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2024.2.9)  10 APR 2024 11:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,7 +575,7 @@ LaTeX Info: Redefining \nameref on input line 115.
 
  (./title.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
-<../img/logo-en.pdf, id=175, 506.4591pt x 156.49065pt>
+<../img/logo-en.pdf, id=155, 506.4591pt x 156.49065pt>
 File: ../img/logo-en.pdf Graphic file (type pdf)
 <use ../img/logo-en.pdf>
 Package pdftex.def Info: ../img/logo-en.pdf  used on input line 9.
@@ -634,16 +634,16 @@ LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line
 
 (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [1
-
-
-
-
-])
+))
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [2]
+ [1
+
+
+
+
+]
 \openout2 = `preface.aux'.
 
  (./preface.tex
@@ -653,21 +653,21 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 17.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 17.
-)
-[3
+) [2
 
 
 ]
 \openout2 = `chap01.aux'.
 
- (./chap01.tex
+
+(./chap01.tex
 Chapter 1.
-[4
+[3
 
 
 
 
-] [5]
+] [4]
 LaTeX Font Info:    Trying to load font information for OML+lmtt on input line 
 101.
 LaTeX Font Info:    No file OMLlmtt.fd. on input line 101.
@@ -677,7 +677,7 @@ LaTeX Font Warning: Font shape `OML/lmtt/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
 (Font)              for symbol `textgreater' on input line 101.
 
-[6]
+[5]
 LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
 179.
 LaTeX Font Info:    No file OMSlmtt.fd. on input line 179.
@@ -687,32 +687,32 @@ LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 179.
 
-[7] [8]
+[6] [7]
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
 255.
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [9] [10]
+) [8] [9]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 84.
 
 (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [11] [12] [13] [14] [15]
-[16]
+) [10] [11] [12] [13] [14]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 663--664
 []\OT1/lmr/m/n/12 You can also add cus-tom at-tributes to files in the for-mat 
 
  []
 
-[17]) [18] [19]
+[16]) [17] [18]
 \openout2 = `chap02.aux'.
 
  (./chap02.tex
 Chapter 2.
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 41.
-[20
+[19
 
 
 
@@ -729,7 +729,7 @@ Overfull \hbox (0.92448pt too wide) in paragraph at lines 78--79
 -tains a main parser of blocks|
  []
 
-[21]
+[20]
 Overfull \hbox (14.6432pt too wide) in paragraph at lines 85--86
 []\OT1/lmtt/m/n/12 Lsql.Csv.Utils.BracketExpansion \OT1/lmr/m/n/12 -- This mod-
 ule con-tains the curly bracket|
@@ -741,17 +741,17 @@ Overfull \hbox (27.29733pt too wide) in paragraph at lines 90--94
 2 with in-put is loaded us-ing \OT1/lmtt/m/n/12 Lsql.Csv.Lang.From.Block|
  []
 
-) [22]
+) [21]
 \openout2 = `chap03.aux'.
 
  (./chap03.tex
 Chapter 3.
-[23
+[22
 
 
 
 
-] [24]
+] [23]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <17.28> on input line 98.
 
@@ -763,20 +763,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 98.
 
-[25]) [26]
+[24]) [25]
 \openout2 = `chap04.aux'.
 
  (./chap04.tex
 Chapter 4.
-[27
+[26
 
 
 
 
-]) [28]
+]) [27]
 \openout2 = `epilog.aux'.
 
- (./epilog.tex) [29
+ (./epilog.tex) [28
 
 
 
@@ -814,7 +814,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--93
 tabase / 19 / sqlrf /
  []
 
-[30
+[29
 
 
 
@@ -861,39 +861,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--142
 specification /
  []
 
-)) [31] (./thesis.lof)
-\tf@lof=\write7
-\openout7 = `thesis.lof'.
-
- [32
-
-
-
-] (./thesis.lot)
-\tf@lot=\write8
-\openout8 = `thesis.lot'.
-
- [33
-
-] [34
-
-]
-Appendix A.
-[35
-
-] (./thesis.aux (./title.aux) (./preface.aux) (./chap01.aux) (./chap02.aux)
-(./chap03.aux) (./chap04.aux) (./epilog.aux) (./bibliography.aux))
+)) [30] (./thesis.aux (./title.aux) (./preface.aux) (./chap01.aux)
+(./chap02.aux) (./chap03.aux) (./chap04.aux) (./epilog.aux) (./bibliography.aux
+))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 469130DD5EA85C0FB0427FCBDB4B001B;7666.
+(rerunfilecheck)             Checksum: 3C7512BDFE761C86616A5CDBE589A94D;7021.
  ) 
 Here is how much of TeX's memory you used:
- 14461 strings out of 480954
- 203868 string characters out of 5905051
- 495562 words of memory out of 5000000
- 31185 multiletter control sequences out of 15000+600000
+ 14436 strings out of 480954
+ 203631 string characters out of 5905051
+ 495558 words of memory out of 5000000
+ 31176 multiletter control sequences out of 15000+600000
  481404 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  88i,8n,90p,503b,2364s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -911,10 +892,10 @@ usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fo
 nts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmt
 k10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/tex
 mf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (39 pages, 654634 bytes).
+Output written on thesis.pdf (34 pages, 652662 bytes).
 PDF statistics:
- 648 PDF objects out of 1000 (max. 8388607)
- 563 compressed objects within 6 object streams
- 143 named destinations out of 1000 (max. 500000)
- 354 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 599 PDF objects out of 1000 (max. 8388607)
+ 519 compressed objects within 6 object streams
+ 133 named destinations out of 1000 (max. 500000)
+ 314 words of extra memory for PDF output out of 10000 (max. 10000000)
 
