@@ -9,7 +9,7 @@ make
 \end{verbatim}
  
 It is necessary to have all Haskell dependencies (\icode{Parsec} ($\geq 3.1$ $<3.2$), \icode{Glob} ($\geq 0.10$ $<0.11$), 
-\icode{base} ($\geq 4.9$ $<4.17$), \icode{text} ($\geq 1.2$ $<1.3$) and \icode{containers} ($\geq 0.5$ $<0.7$)) installed.
+\icode{base} ($\geq 4.9$ $<4.20$), \icode{text} ($\geq 1.2$ $<1.3$) and \icode{containers} ($\geq 0.5$ $<0.7$)) installed.
 The package boundaries given are identical to cabal boundaries. Also, it is necessary, that you have \icode{GHC} ($\geq 8 <9.29$) installed.
 
 The second way of building is through cabal, which handles all dependencies for you.
@@ -37,6 +37,9 @@ by running:
 make docs
 \end{verbatim}
 It generates html documentation under the build folder.
+
+The package is also published at \url{https://hackage.haskell.org/package/lsql-csv} in Hackage public repository. 
+The generated documentation is fully browseable there.
 
 \section{\icode{String} vs \icode{Data.Text}}
 As there is a long-term discussion in the Haskell community about whether \icode{String} or \icode{Data.Text} should be used as the 
