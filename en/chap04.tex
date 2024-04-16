@@ -32,8 +32,8 @@ lsql-csv -d: '/etc/{passwd,group}, &1.1 &2.1, if &1.4 == &2.3'
 
 This is the simple join query. When written using standard Unix tools, it is:
 \begin{verbatim}
-sort -t: -k3,3 /etc/group > /tmp/group.sort
-sort -t: -k4,4 /etc/passwd > /tmp/passwd.sort
+sort -t: -k3,3 /etc/group >/tmp/group.sort
+sort -t: -k4,4 /etc/passwd >/tmp/passwd.sort
 join -t: -14 -23 /tmp/passwd.sort /tmp/group.sort | cut -d: -f2,8 
 \end{verbatim}
 

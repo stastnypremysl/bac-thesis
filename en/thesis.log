@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  16 APR 2024 21:45
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  16 APR 2024 23:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -642,28 +642,22 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <17.28> not available
 
 
 
-]
-Overfull \hbox (12.0391pt too wide) in paragraph at lines 75--76
-[]\TU/lmtt/m/n/12 Lsql.Csv.Core.Evaluator \TU/lmr/m/n/12 – This module contains
- the evaluator of \TU/lmtt/m/n/12 lsql-csv|
- []
-
-
-Overfull \hbox (1.6751pt too wide) in paragraph at lines 81--82
-[]\TU/lmtt/m/n/12 Lsql.Csv.Lang.BlockChain \TU/lmr/m/n/12 – This module contain
-s a main parser of blocks|
- []
-
-[20]
-Overfull \hbox (15.43108pt too wide) in paragraph at lines 88--89
-[]\TU/lmtt/m/n/12 Lsql.Csv.Utils.BracketExpansion \TU/lmr/m/n/12 – This module 
-contains the curly bracket|
- []
-
-
-Overfull \hbox (27.22841pt too wide) in paragraph at lines 93--97
+] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
 \TU/lmr/m/n/12 list of strings. Then \TU/lmtt/m/n/12 SymbolMap \TU/lmr/m/n/12 w
-ith input is loaded using \TU/lmtt/m/n/12 Lsql.Csv.Lang.From.Block|
+ith input is loaded using 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
+\TU/lmtt/m/n/12 Lsql.Csv.Lang.BlockChain\TU/lmr/m/n/12 . Program is then evalua
+ted using 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
+\TU/lmtt/m/n/12 Lsql.Csv.Core.Evaluator \TU/lmr/m/n/12 and finally output gener
+ated by 
  []
 
 ) [21]
@@ -799,7 +793,7 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  13714 strings out of 478918
  193919 string characters out of 5867538
- 505384 words of memory out of 5000000
+ 504664 words of memory out of 5000000
  33258 multiletter control sequences out of 15000+600000
  457445 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
