@@ -44,8 +44,7 @@ why we will not just implement another SQL implementation.
 
 \section{Why number references?}
 Where the $35\%$ difference happened. One and the main reason, why is, that we allowed referencing $dataX$ as \icode{.2}.
-This is also possible due to nature of CSV file, where columns have their index
-\footnote{Do not confuse with SQL database index for performance}. 
+This is also possible due to nature of CSV file, where columns have their index\footnote{Do not confuse with SQL database index for performance.}. 
 Normally, in SQL database, indexes of columns are not considered as something, which should decide about query meaning.
 This is because the SQL database itself may change, new columns may be added or removed. Just because somebody removed a column, 
 it is not wanted, that developers needed to change some of the queries so they comply with the new database layout.
@@ -101,9 +100,9 @@ it was decided that \icode{String} will be primary text representation.
 For larger dataset users are encouraged to use standard SQL database.
 
 \section{Why are all operators right-to-left associative?}
-Many modern languages like C++\cite{cpp-associativity-manual}, Rust\cite{rust-expressions}, and C\#\cite{csharp-expressions} use combined left-to-right and right-to-left associativity for operators.
+Many modern languages like C++ \cite{cpp-associativity-manual}, Rust \cite{rust-expressions}, and C\# \cite{csharp-expressions} use combined left-to-right and right-to-left associativity for operators.
 Given the fact that it might be hard to remember which operators are left-to-right and which operators are right-to-left associative, some expressions in these languages might be hard to interpret.
 
-To comply with Unix philosophy, concretely with the KISS principal---Keep it simple, stupid\cite{enwiki-kiss}, and to solve the problem mentioned above, it was decided all operators will have the same associativity.
+To comply with Unix philosophy, concretely with the KISS principle---Keep it simple, stupid\cite{enwiki-kiss}, and to solve the problem mentioned above, it was decided all operators will have the same associativity.
 The choose of the right-to-left instead of left-to-right is just arbitrary decision as there are arguments for both right-to-left or left-to-right associativity of operators.
 By this decision, the problem of hard expression interpretation might be solved.

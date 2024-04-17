@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  16 APR 2024 23:04
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  17 APR 2024 11:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -642,25 +642,7 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <17.28> not available
 
 
 
-] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 93--97
-\TU/lmr/m/n/12 list of strings. Then \TU/lmtt/m/n/12 SymbolMap \TU/lmr/m/n/12 w
-ith input is loaded using 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--97
-\TU/lmtt/m/n/12 Lsql.Csv.Lang.BlockChain\TU/lmr/m/n/12 . Program is then evalua
-ted using 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--97
-\TU/lmtt/m/n/12 Lsql.Csv.Core.Evaluator \TU/lmr/m/n/12 and finally output gener
-ated by 
- []
-
-) [21]
+] [20]) [21]
 \openout2 = `chap03.aux'.
 
  (./chap03.tex
@@ -672,15 +654,15 @@ Chapter 3.
 
 ] [23]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 98.
+(Font)              <17.28> on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 98.
+(hyperref)                removing `math shift' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 98.
+(hyperref)                removing `math shift' on input line 97.
 
 [24]) [25]
 \openout2 = `chap04.aux'.
@@ -793,7 +775,7 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  13714 strings out of 478918
  193919 string characters out of 5867538
- 504664 words of memory out of 5000000
+ 505664 words of memory out of 5000000
  33258 multiletter control sequences out of 15000+600000
  457445 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
