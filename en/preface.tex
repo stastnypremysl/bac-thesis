@@ -12,7 +12,7 @@ Despite being standardized in 1987 by the International Organization for Standar
 there are virtually no implementations that adhere to it fully \cite{enwiki-sql}.
 Standard SQL is a typed language (Every data column and data value belongs to some data type) \cite{ISO9075-2023} and the language
 design is therefore not very suitable for type-less databases like a collection of CSV files.
-Despite that, there are some implementations of SQL (eg. \icode{q} \cite{q}, \icode{CSV SQL} \cite{csv-sql}, \icode{trdsql} \cite{trdsql} or \icode{csvq} \cite{csvq}), which tries to implement SQL on CSV files.
+Despite that, there are some implementations of SQL (e.g. \icode{q} \cite{q}, \icode{CSV SQL} \cite{csv-sql}, \icode{trdsql} \cite{trdsql} or \icode{csvq} \cite{csvq}), which tries to implement SQL on CSV files.
 
 SQL itself requires a large amount of text to be written for running even simple queries and the Unix ecosystem misses a tool\footnote{Or author does not know about it.}, 
 that would allow running short enough queries over CSV files with similar semantics to SQL. And this is the reason, why \icode{lsql-csv} was created.
@@ -20,4 +20,4 @@ that would allow running short enough queries over CSV files with similar semant
 \icode{lsql-csv} is a tool for small CSV file data querying from a shell with short queries. It makes it possible to work with small CSV files like with a read-only relational databases.
 The tool implements a new language LSQL similar to SQL, specifically designed for working with CSV files in shell.
 
-Haskell is a language with great features for working with the text \cite{practical-haskell} and therefore it was selected for the task of implementation of lsql-csv.
+Haskell is a language with great features for working with the text \cite{practical-haskell} and therefore it was selected for the task of implementation of \icode{lsql-csv}.
