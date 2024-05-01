@@ -1,19 +1,19 @@
 
-\chapter{Alternative solutions}
+\chapter{Alternative Solutions}
 What other solutions are there for the given problem? What other approaches can we use, when we are dealing with queries over CSV files? 
 The following chapter is about alternative approaches to the problem.
 
 \section{Using SQL database}
-The first obvious solution is importing the dataset to some of standard SQL database and do the queries over it. 
-This approach requires definition of schema to which the data will be imported. This is an overhead, which isn't
+The first obvious solution is importing the dataset to some of the standard SQL database and doing the queries over it. 
+This approach requires the definition of the schema into which the data will be imported. This is an overhead, which isn't
 always advantageous to pay as we might need only a simple query to be run over it.
 
-But it might be vary favorable solution, if we have large dataset, need complex query or a large amount of simple queries run over it.
+But it might be a very favorable solution, if we have a large dataset, need complex query or a large amount of simple queries run over it.
 
-By using a standard SQL database you gain the advantage of better performance, typed dataset, indexes and large amount of build-in functions
+By using a standard SQL database you gain the advantage of better performance, typed dataset, indexes, and a large number of built-in functions
 
 \section{Using standard Unix tools}
-It is possible to do large amount of work just by using \icode{awk}, \icode{join}, \icode{sort}\ldots{}
+It is possible to do a large amount of work just by using \icode{awk}, \icode{join}, \icode{sort}\ldots{}
 For example:
 
 \begin{verbatim}
@@ -37,11 +37,11 @@ sort -t: -k4,4 /etc/passwd >/tmp/passwd.sort
 join -t: -14 -23 /tmp/passwd.sort /tmp/group.sort | cut -d: -f2,8 
 \end{verbatim}
 
-As demonstrated, the \icode{lsql-csv} variant is more readable and shorter 
-\footnote{It is possible, it can be written in shorter and more readable form, but not more than the \icode{lsql-csv} variant}.
+As demonstrated, the \icode{lsql-csv} variant is 
+more readable and shorter\footnote{It is possible, it can be written in shorter and more readable form, but not more than the \icode{lsql-csv} variant.}.
 
-It should be also noted, that \icode{lsql-csv} join have $\mathcal{O}(nm)$ time complexity, while standard Unix tools have for join written above
-$\mathcal{O}(n\log n + m\log m)$ time complexity, so for larger dataset, it might be more beneficial to use them.
+It should be also noted, that \icode{lsql-csv} join has $\mathcal{O}(nm)$ time complexity, while standard Unix tools have for join written above
+$\mathcal{O}(n\log n + m\log m)$ time complexity, so for a larger dataset, it might be more beneficial to use them.
 
 \section{By using SQL implementation for CSV files}
 There are many projects implementing SQL on CSV files. For example:
@@ -54,12 +54,12 @@ There are many projects implementing SQL on CSV files. For example:
 
 It is possible to use them to do the job directly with SQL. 
 
-The advantage of it is you do not have to learn new language if you already know standard SQL. 
+The advantage of it is you do not have to learn a new language if you already know standard SQL. 
 The disadvantage is that the queries will be probably longer than would be with \icode{lsql-csv}.
 
-\section{By using general purpose programming language}
-It is not hard to parse and process CSV files by general purpose programming language (for example Python).
+\section{By using general-purpose programming language}
+It is not hard to parse and process CSV files by general-purpose programming language (for example Python).
 
 The advantage of this solution is a much greater flexibility of what you can do with the CSV files.
-The large disadvantage is, it will take to much code to be written for any query.
+The large disadvantage is, that it will take too much code to be written for any query.
 

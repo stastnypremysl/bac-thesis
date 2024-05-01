@@ -7,12 +7,12 @@ Through this definition, we can see even a simple collection of CSV files access
 
 
 SQL (Structured Query Language) is a language used to manage data, especially in a relational database management system \cite{enwiki-sql}.
-It was first introduced at 1970s \cite{enwiki-sql} and is one of the most used query languages. 
+It was first introduced in the 1970s \cite{enwiki-sql} and is one of the most used query languages. 
 Despite being standardized in 1987 by the International Organization for Standardization \cite{ISO9075-1987}, 
 there are virtually no implementations that adhere to it fully \cite{enwiki-sql}.
 Standard SQL is a typed language (Every data column and data value belongs to some data type) \cite{ISO9075-2023} and the language
 design is therefore not very suitable for type-less databases like a collection of CSV files.
-Despite that, there are some implementations of SQL (e.g. \icode{q} \cite{q}, \icode{CSV SQL} \cite{csv-sql}, \icode{trdsql} \cite{trdsql} or \icode{csvq} \cite{csvq}), which tries to implement SQL on CSV files.
+Despite that, there are some implementations of SQL (e.g. \icode{q} \cite{q}, \icode{CSV SQL} \cite{csv-sql}, \icode{trdsql} \cite{trdsql}, or \icode{csvq} \cite{csvq}), which tries to implement SQL on CSV files.
 
 SQL itself requires a large amount of text to be written for running even simple queries and the Unix ecosystem misses a tool\footnote{Or author does not know about it.}, 
 that would allow running short enough queries over CSV files with similar semantics to SQL. And this is the reason, why \icode{lsql-csv} was created.

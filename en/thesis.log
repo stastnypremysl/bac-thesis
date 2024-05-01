@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  22 APR 2024 19:37
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  30 APR 2024 17:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -656,15 +656,15 @@ Chapter 3.
 
 ] [23]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 97.
+(Font)              <17.28> on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
+(hyperref)                removing `math shift' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
+(hyperref)                removing `math shift' on input line 98.
 
 [24]) [25]
 \openout2 = `chap04.aux'.
@@ -693,14 +693,14 @@ Underfull \hbox (badness 1622) in paragraph at lines 12--17
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 63--68
-[]\TU/lmr/m/n/12 passwd(5) — linux manual page.  []$[][][][][] [] [] [] [][][] 
+Underfull \hbox (badness 3108) in paragraph at lines 63--68
+[]\TU/lmr/m/n/12 passwd(5) — Linux manual page.  []$[][][][][] [] [] [] [][][] 
 [] [][][][] [] [][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 6268) in paragraph at lines 70--74
-[]\TU/lmr/m/n/12 group(5) — linux manual page.  []$[][][][][] [] [] [] [][][] [
+Underfull \hbox (badness 4954) in paragraph at lines 70--74
+[]\TU/lmr/m/n/12 group(5) — Linux manual page.  []$[][][][][] [] [] [] [][][] [
 ] [][][][] [] [][][] [] [][][][][] []
  []
 
@@ -772,12 +772,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--142
 (./chap02.aux) (./chap03.aux) (./chap04.aux) (./epilog.aux) (./bibliography.aux
 ))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 75B838ACCD31D342E9E107CAF5827B82;3081.
+(rerunfilecheck)             Checksum: 678ACC742348F5FC2D4FACDBE0268D66;3084.
  ) 
 Here is how much of TeX's memory you used:
  13715 strings out of 478918
  193925 string characters out of 5867538
- 505709 words of memory out of 5000000
+ 505711 words of memory out of 5000000
  33259 multiletter control sequences out of 15000+600000
  457445 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

@@ -1,38 +1,38 @@
 \chapter{Analysis}
-Why the language have been made the way it is? Why it is so inspired by SQL and is not just next implementation of SQL?
+Why the language have been made the way it is? Why it is so inspired by SQL and is it not just the next implementation of SQL?
 Why it is implemented the way it is?
-Further chapter is about design decision of the language.
+A further chapter is about the design decision of the language.
 
 
-\section{Why SQL at first place?}
-Why we talk so much about SQL at first place? Since it was introduced in 1970s \cite{enwiki-sql}, it has
-become de facto standard for many major databases. Just for illustration we name a few of them.
+\section{Why SQL in the first place?}
+Why do we talk so much about SQL in the first place? Since it was introduced in the 1970s \cite{enwiki-sql}, it has
+become the de facto standard for many major databases. Just for illustration, we name a few of them.
 \begin{itemize}
-    \item Oracle DB have used it since 1979 as a first commercially available implementation \cite{oracle-db-sql}. 
-    \item MySQL have used it since 1994, since its original development started \cite{enwiki-mysql}.
-    \item PostgreSQL have used it since 1996, since it was created \cite{postgres-birthday}. 
-    \item MSSQL have used it since 1989, since its initial release \cite{enwiki-mssql}. 
+    \item Oracle DB has used it since 1979 as the first commercially available implementation \cite{oracle-db-sql}. 
+    \item MySQL has used it since 1994, since its original development started \cite{enwiki-mysql}.
+    \item PostgreSQL has used it since 1996, since it was created \cite{postgres-birthday}. 
+    \item MSSQL has used it since 1989, since its initial release \cite{enwiki-mssql}. 
 \end{itemize}
 
 SQL is so much known, that there is a widely used term NoSQL databases as databases opposed to SQL databases.
 
-The main point of making language inspired by SQL is that it brings the advantage of getting large user base which only needs to understand the difference between SQL and the new language to start using the new language. This is the starting point, from which we further argument about design decisions made.
+The main point of making language inspired by SQL is that it brings the advantage of getting a large user base which only needs to understand the difference between SQL and the new language to start using the new language. This is the starting point, from which we further argue about design decisions made.
 
 
 \section{Why not implement just another SQL for CSV files?}
 As mentioned in the introduction, standard SQL is a typed language (Every data column and data value belongs to some data type) \cite{ISO9075-2023}, 
-which implied many design choices. Furthermore, SQL itself require large amount of text to be written,
+which implies many design choices. Furthermore, SQL itself requires a large amount of text to be written,
 before it can be executed. 
 
-One of the ambition of \icode{lsql-csv} is to allow a user to write shorter queries to get the result. For the example,
+One of the ambitions of \icode{lsql-csv} is to allow a user to write shorter queries to get the result. For the example,
 consider
 
 \begin{verbatim}
 select A.dataX from data A where A.dataX > 1000
 \end{verbatim}
 
-This simple SQL query shows $dataX > 1000$ from table \icode{data}. 
-Now, if we have a CSV file $data.txt$, where we know, that \icode{dataX} is a second column, the same query can 
+This simple SQL query shows \icode{dataX \textgreater{} 1000} from table \icode{data}. 
+Now, if we have a CSV file \icode{data.txt}, where we know, that \icode{dataX} is a second column, the same query can 
 be written with \icode{lsql-csv} as
 
 \begin{verbatim}
@@ -44,65 +44,66 @@ why we will not just implement another SQL implementation.
 
 \section{Why number references?}
 Where the $35\%$ difference happened. One and the main reason, why is, that we allowed referencing $dataX$ as \icode{.2}.
-This is also possible due to nature of CSV file, where columns have their index\footnote{Do not confuse with SQL database index for performance.}. 
-Normally, in SQL database, indexes of columns are not considered as something, which should decide about query meaning.
-This is because the SQL database itself may change, new columns may be added or removed. Just because somebody removed a column, 
+This is also possible due to the nature of the CSV file, where columns have their index\footnote{Do not confuse with SQL database index for performance.}. 
+Normally, in an SQL database, indexes of columns are not considered as something, which should decide about query meaning.
+This is because the SQL database itself may change, and new columns may be added or removed. Just because somebody removed a column, 
 it is not wanted, that developers needed to change some of the queries so they comply with the new database layout.
 
 On the other hand, CSV files usually are not altered as much as databases are. 
-If developer (or an user) is not sure about the columns of the CSV file, it is one of the first signs, that
-he or she should use rather SQL database than simple CSV file.
+If the developer (or a user) is not sure about the columns of the CSV file, it is one of the first signs, that
+he or she should use rather than SQL database than a simple CSV file.
 
-Also \icode{lsql-csv} is rather a tool for daily life and simple scripts rather than tool for development of medium sized or
-large sized project, like SQL is. This adds much more flexibility in what can language do (like number references).
+Also, \icode{lsql-csv} is a tool for daily life and simple scripts rather than a tool for the development of medium-sized or
+large-sized projects, like SQL is. This adds much more flexibility in what can language do (like number references).
 
-\section{Why renaming standard keywords?}
-Why have we renamed \icode{where} for \icode{if}, \icode{group by} for \icode{by} and \icode{sort by} for \icode{sort}? Simply said, because the renamed variants are shorter and still do not block user in understanding, what the query does.
+\section{Why rename standard keywords?}
+Why have we renamed \icode{where} for \icode{if}, \icode{group by} for \icode{by}, and \icode{sort by} for \icode{sort}? Simply said, because the renamed variants are shorter and still do not block the user in understanding, what the query does.
 
 \section{Why some features like descending sort are missing?}
 \icode{lsql-csv} is a shell utility and as such, it tries to comply with UNIX philosophy. 
 The summarized version from Doug McIlroy is: `This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.' \cite{unix-philosophy}
 
-The tool for reverting the order of sorted output already exist: \icode{tac}. Piped together it creates the wanted output.
+The tool for reverting the order of sorted output already exists: \icode{tac}. Piped together it creates the wanted output.
 
-Similar case, the function for second filtering of grouped by (in SQL named \icode{having}) 
-output have been not added, because the wanted output
+In a similar case, the function for the second filtering of grouped by (in SQL named \icode{having}) 
+output has been not added, because the wanted output
 may be received by piping the output with another instance of \icode{lsql-csv}.
 
-And why there is no support for creating output with first line names of columns? Because the wanted output
-may be simply made with usage of \icode{echo} called before \icode{lsql-csv} if needed.
+And why there is no support for creating output with first-line names of columns? Because the wanted output
+may be simply made with the usage of \icode{echo} called before \icode{lsql-csv} if needed.
 
-\section{Why blocks are delimited by comma?}
-The author thinks, it is more readable like this. Developers in SQL usually use upper case and new line writing to delimiter the blocks and comma is just more easy to write than switching on and off caps lock, holding shift key or making multiline input.
+\section{Why blocks are delimited by commas?}
+The author thinks it is more readable like this. Developers in SQL usually use upper case and new line writing to delimiter the blocks and comma is just more easy to write than switching on and off caps lock, 
+holding the shift key, or making multiline input.
 
 \section{Why there are two types of expression?}
-Why there are arithmetic and select expression with different grammars?
-We think, that addition of special select expression further allows the user to write shorter queries.
-It allows us to introduce wildcard and curly brackets expansion for the user, which will not be possible otherwise.
+Why there are arithmetic and select expressions with different grammars?
+We think, that the addition of a special select expression further allows the user to write shorter queries.
+It allows us to introduce wildcard and curly brackets expansion for the user, which would not be possible otherwise.
 
 \section{Why there is support only for cross join and not other types of join?}
-The tool is supposed to be simple. We recommend user to import CSV data to SQL database and use standard SQL if he needs more complicated joins.
+The tool is supposed to be simple. We recommend a user to import CSV data to SQL database and use standard SQL if he needs more complicated joins.
 
-The other reason is, that CSV have no standardized NULL value, which is needed for left or right outer joins.
+The other reason is, that CSV has no standardized NULL value, which is needed for left or right outer joins.
 
 \section{Why there is no package used for CSV parsing and generating?}
-Very simply said, to limit number of dependencies. The more dependencies is used, the harder is to compile it, maintain it and add to any Linux distribution.
+Very simply said, to limit the number of dependencies. The more dependencies are used, the harder is to compile it, maintain it, and add to any Linux distribution.
 
-As CSV parsing is not hard job, it was decided so.
+As CSV parsing is not a hard job, it was decided so.
 
 \section{Why \icode{String} is used as primary text representation?}
 As the performance gain from using \icode{Data.Text} would not be significant and \icode{String} does not add any more complexity to the code like \icode{Data.Text} does, 
-it was decided that \icode{String} will be primary text representation.
+it was decided that \icode{String} would be the primary text representation.
 
 \section{Why joins have $\mathcal{O}(nm)$ complexity?}
-\icode{lsql-csv} is a tool for small dataset data querying. As such, it implements only simple algorithm for joining the tables---cross join.
+\icode{lsql-csv} is a tool for small dataset data querying. As such, it implements only a simple algorithm for joining the tables---cross join.
 
-For larger dataset users are encouraged to use standard SQL database.
+For larger datasets users are encouraged to use standard SQL databases.
 
 \section{Why are all operators right-to-left associative?}
 Many modern languages like C++ \cite{cpp-associativity-manual}, Rust \cite{rust-expressions}, and C\# \cite{csharp-expressions} use combined left-to-right and right-to-left associativity for operators.
 Given the fact that it might be hard to remember which operators are left-to-right and which operators are right-to-left associative, some expressions in these languages might be hard to interpret.
 
-To comply with Unix philosophy, concretely with the KISS principle---Keep it simple, stupid\cite{enwiki-kiss}, and to solve the problem mentioned above, it was decided all operators will have the same associativity.
-The choose of the right-to-left instead of left-to-right is just arbitrary decision as there are arguments for both right-to-left or left-to-right associativity of operators.
+To comply with Unix philosophy, concretely with the KISS principle---Keep it simple, stupid \cite{enwiki-kiss}, and to solve the problem mentioned above, it was decided all operators will have the same associativity.
+The choice of right-to-left instead of left-to-right is just an arbitrary decision as there are arguments for both right-to-left or left-to-right associativity of operators.
 By this decision, the problem of hard expression interpretation might be solved.

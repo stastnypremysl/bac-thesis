@@ -2,7 +2,7 @@
 
 \bibitem{enwiki-database}
 {Wikipedia contributors}.
-\newblock Database --- {Wikipedia}{,} the free encyclopedia.
+\newblock {Database --- {Wikipedia}{,} The Free Encyclopedia}.
 \newblock
   \url{https://en.wikipedia.org/w/index.php?title=Database&oldid=1200665358},
   2024.
@@ -35,7 +35,7 @@ Yakov Shafranovich.
   June 2023.
 
 \bibitem{q}
-q - text as data.
+{q - Text as Data}.
 \newblock \url{https://github.com/harelba/q}, January 2022.
 \newblock [Online; accessed 18-February-2024].
 
@@ -45,29 +45,29 @@ q - text as data.
 \newblock [Online; accessed 29-February-2024].
 
 \bibitem{trdsql}
-trdsql.
+{trdsql}.
 \newblock \url{https://github.com/noborus/trdsql}, December 2023.
 \newblock [Online; accessed 29-February-2024].
 
 \bibitem{csvq}
-csvq.
+{csvq}.
 \newblock \url{https://github.com/mithrandie/csvq}, February 2023.
 \newblock [Online; accessed 29-February-2024].
 
 \bibitem{practical-haskell}
 Alejandro~Serrano Mena.
-\newblock {\em Practical Haskell --- A real world guide to programming}.
+\newblock {\em {Practical Haskell---A real world guide to programming}}.
 \newblock {S}econd {E}dition. Apress, New York, 2019.
 
 \bibitem{passwd}
-passwd(5) — linux manual page.
+{passwd(5) — Linux manual page}.
 \newblock
   \url{https://www.man7.org/linux/man-pages/man5/passwd.5@@shadow-utils.html},
   December 2021.
 \newblock [Online; accessed 21-March-2024].
 
 \bibitem{group}
-group(5) — linux manual page.
+{group(5) — Linux manual page}.
 \newblock \url{https://www.man7.org/linux/man-pages/man5/group.5.html}, October
   2023.
 \newblock [Online; accessed 21-March-2024].
@@ -85,7 +85,7 @@ group(5) — linux manual page.
 
 \bibitem{oracle-db-sql}
 Usha~Krishnamurthy et~al.
-\newblock {\em Oracle Database SQL Language Reference, 19c}.
+\newblock {\em {Oracle Database SQL Language Reference, 19c}}.
 \newblock Oracle, November 2023.
 \newblock Available at
   \url{https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/sql-language-reference.pdf}
@@ -142,7 +142,7 @@ Eric~S. Raymond.
 
 \bibitem{enwiki-kiss}
 {Wikipedia contributors}.
-\newblock Kiss principle---{Wikipedia}{,} the free encyclopedia, 2024.
+\newblock {KISS principle---{Wikipedia}{,} The Free Encyclopedia}, 2024.
 \newblock [Online; accessed 08-April-2024].
 
 \end{thebibliography}
