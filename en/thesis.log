@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  2 MAY 2024 23:56
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  3 MAY 2024 13:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -656,15 +656,15 @@ Chapter 3.
 
 ] [23]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 98.
+(Font)              <17.28> on input line 99.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 98.
+(hyperref)                removing `math shift' on input line 99.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 98.
+(hyperref)                removing `math shift' on input line 99.
 
 [24]) [25]
 \openout2 = `chap04.aux'.

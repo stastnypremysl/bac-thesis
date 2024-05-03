@@ -302,7 +302,7 @@ Let's see more complicated examples.
 \begin{verbatim}
 lsql-csv -d: 'p=/etc/passwd g=/etc/group, p.1 g.1, if p.1 in g.4'
 \end{verbatim}
-This will print all pairs of users and its group excluding the default group. If you know SQL, you can read it as \icode{select P.1, G.1 from /etc/passwd P, /etc/group G where P.1 like '%' + G.4 + '%'}.
+This will print all pairs of users and its group excluding the default group. If you know SQL, you can read it as \icode{select P.1, G.1 from /etc/passwd P, /etc/group G where P.1 like '\%' + G.4 + '\%'}.
 
 How does \icode{in} work? It's one of the basic string level ``consist''. If A is a substring of B, then \icode{A in B} is true. Otherwise, it is false.
 
