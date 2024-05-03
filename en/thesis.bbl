@@ -2,7 +2,7 @@
 
 \bibitem{enwiki-database}
 {Wikipedia contributors}.
-\newblock {Database --- {Wikipedia}{,} The Free Encyclopedia}.
+\newblock {Database---{Wikipedia}{,} The Free Encyclopedia}.
 \newblock
   \url{https://en.wikipedia.org/w/index.php?title=Database&oldid=1200665358},
   2024.
@@ -12,15 +12,21 @@
 Yakov Shafranovich.
 \newblock {Common Format and MIME Type for Comma-Separated Values (CSV) Files}.
 \newblock RFC 4180, October 2005.
-\newblock Available at \url{https://www.rfc-editor.org/info/rfc4180} [Online;
-  accessed 16-February-2024].
+\newblock Available at \url{https://www.rfc-editor.org/rfc/rfc4180.txt}
+  [Online; accessed 16-February-2024].
 
 \bibitem{enwiki-sql}
 {Wikipedia contributors}.
-\newblock {SQL} --- {Wikipedia}{,} the free encyclopedia.
+\newblock {SQL}---{Wikipedia}{,} the free encyclopedia.
 \newblock
   \url{https://en.wikipedia.org/w/index.php?title=SQL&oldid=1205226098}, 2024.
 \newblock [Online; accessed 16-February-2024].
+
+\bibitem{ANSI-X3.135-1986}
+{ANSI, ANSI X3.135-1986, American National Standard for Information
+  Systems---Database Language SQL}.
+\newblock Standard, American National Standards Institute, Washington, D.C.,
+  US, October 1986.
 
 \bibitem{ISO9075-1987}
 {ISO} 9075:1987: Information technology – {D}atabase languages {SQL} – part
@@ -35,7 +41,7 @@ Yakov Shafranovich.
   June 2023.
 
 \bibitem{q}
-{q - Text as Data}.
+{q---Text as Data}.
 \newblock \url{https://github.com/harelba/q}, January 2022.
 \newblock [Online; accessed 18-February-2024].
 
@@ -56,18 +62,18 @@ Yakov Shafranovich.
 
 \bibitem{practical-haskell}
 Alejandro~Serrano Mena.
-\newblock {\em {Practical Haskell---A real world guide to programming}}.
+\newblock {\em {Practical Haskell: A real world guide to programming}}.
 \newblock {S}econd {E}dition. Apress, New York, 2019.
 
 \bibitem{passwd}
-{passwd(5) — Linux manual page}.
+{passwd(5)--—Linux manual page}.
 \newblock
   \url{https://www.man7.org/linux/man-pages/man5/passwd.5@@shadow-utils.html},
   December 2021.
 \newblock [Online; accessed 21-March-2024].
 
 \bibitem{group}
-{group(5) — Linux manual page}.
+{group(5)—--Linux manual page}.
 \newblock \url{https://www.man7.org/linux/man-pages/man5/group.5.html}, October
   2023.
 \newblock [Online; accessed 21-March-2024].

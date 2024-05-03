@@ -1,12 +1,13 @@
 \chapter{User documentation}
-\icode{lsql-csv} is a tool for CSV file data querying from the shell with short queries. It makes it possible to work with small CSV files like with a read-only relational database.
+\icode{lsql-csv} is a tool for CSV file data querying from a shell with short queries. It makes it possible to work with small CSV files like with a read-only relational database.
 
-The tool implements a new language LSQL similar to SQL, specifically designed for working with CSV files in a shell. 
+The tool implements a new language LSQL similar to SQL, specifically designed for working with CSV files in a shell. LSQL aims to be a more lapidary language than SQL. Its design purpose is to enable its user to quickly write simple queries directly
+  to the terminal---its design purpose is therefore different from SQL, where the readability of queries is more taken into account than in LSQL.
 
 \section{Installation}
 It is necessary, you had \icode{GHC} ($\geq 8 <9.29$) and Haskell packages \icode{Parsec} ($\geq 3.1$ $<3.2$), \icode{Glob} ($\geq 0.10$ $<0.11$), 
 \icode{base} ($\geq 4.9$ $<4.20$), \icode{text} ($\geq 1.2$ $<2.2$) and \icode{containers} ($\geq 0.5$ $<0.8$)
- installed. (The package boundaries given are identical to cabal boundaries.) Run then:
+ installed. (The package boundaries given are identical to the boundaries in Cabal package file.) For a build and an installation run:
 
 \begin{verbatim}
 make
@@ -23,7 +24,7 @@ If you have installed \icode{cabal}, you can alternatively run:
 \begin{verbatim}
 cabal install
 \end{verbatim}
-It will also install the dependencies for you.
+It will also install the Haskell package dependencies for you.
 
 The package is also published at \url{https://hackage.haskell.org/package/lsql-csv} in the Hackage public repository. You can therefore also install it directly without the repository cloned with:
 \begin{verbatim}
@@ -35,10 +36,9 @@ If you want to verify, that the package has been compiled correctly, it is possi
 \begin{verbatim}
 make test
 \end{verbatim}
-This will run all unit tests for you.
+This will run all tests for you.
 
 \section{lsql-csv---quick introduction}
-LSQL, the language of \icode{lsql-csv}, aims to be a more lapidary language than SQL. Its design purpose is to enable its user to quickly write simple queries directly to the terminal---its design purpose is therefore different from SQL, where the readability of queries is more taken into account than in LSQL.
 
 \subsection{Examples}
 One way to learn a new programming language is by understanding concrete examples of its usage. The following examples are written explicitly for the purpose of teaching a reader, how to use the tool \icode{lsql-csv} by showing him many examples of its usage.
@@ -64,7 +64,7 @@ File \icode{/etc/group} has the following columns \cite{group}:
     \item group name;
     \item password;
     \item numerical group ID;
-    \item user list.
+    \item user list separated by commas.
 \end{enumerate}
 
 
@@ -72,9 +72,9 @@ File \icode{/etc/group} has the following columns \cite{group}:
 \begin{verbatim}
 lsql-csv '-, &1.2 &1.1'
 \end{verbatim}
-This will print the second (\icode{\&1.2}) and the first column (\icode{\&1.1}) of the CSV file on stdin. If you know SQL, you can read it like \icode{from stdio S select S.second, S.first}.
+This will print the second (\icode{\&1.2}) and the first column (\icode{\&1.1}) of a CSV file on the standard input. If you know SQL, you can read it like \icode{select S.second, S.first from stdio S;}.
 
-Commands are split by commas into blocks. The first block is (and always is) the from block. There are file names or \icode{-} (stdin) separated by space. The second block is the select block, also separated by space.
+Commands are split by commas into blocks. The first block is (and always is) the from block. There are file names or \icode{-} (the standard input) separated by whitespaces. The second block in the example is the select block, also separated by whitespaces.
 
 For example:
 \begin{verbatim}
@@ -93,7 +93,7 @@ Hello,World
 \begin{verbatim}
 lsql-csv -d: '-, &1.*, if &1.3>=1000' < /etc/passwd
 \end{verbatim}
-This will print lines of users whose UID $\geq 1000$. It can also be written as:
+This will print lines of users whose \icode{UID} $\geq 1000$. It can also be written as:
 \begin{verbatim}
 lsql-csv -d: 'p=/etc/passwd, p.*, if p.3 >= 1000'
     
@@ -101,9 +101,9 @@ lsql-csv -d: 'p=/etc/passwd, &1.*, if &1.3 >= 1000'
 
 lsql-csv -d: '/etc/passwd, &1.*, if &1.3 >= 1000'
 \end{verbatim}
-The \icode{-d:} optional argument means the primary delimiter is \icode{:}. In previous examples we used overnaming, which allows us to give a data source file \icode{/etc/passwd} a name \icode{p}.
+The \icode{-d:} optional argument means the primary delimiter is \icode{:}. In the few examples we used overnaming, which allows us to give a data source file \icode{/etc/passwd} a name \icode{p}.
 
-If you know SQL, you can read it as \icode{from /etc/passwd P select * where P.UID \textgreater= 1000}. As you can see, the lsql style is more compressed than standard SQL.
+If you know SQL, you can read it as \icode{select * from /etc/passwd P where P.UID \textgreater= 1000}. As you can see, the LSQL style is more compressed than standard SQL.
 
 The output might be:
 \begin{verbatim}
@@ -121,9 +121,12 @@ nobody,x,65534,65534,nobody,/var/empty,/bin/false
 me,x,1000,1000,,/home/me,/bin/bash
 \end{verbatim}
 
+This happens because the default global delimiter, which is used for the output generation, is a comma.
+The global delimiter changes by usage of the command-line optional argument, but remains unchanged by the usage of the attribute inside the from block.
+
 
 \subsubsection{Named columns}
-Let's suppose we have a file people.csv:
+Let's suppose we have a file \icode{people.csv}:
 \begin{verbatim}
 name,age                                                                                                                                                                                                                                   
 Adam,21                                                                                                                                                                                                                                    
@@ -131,7 +134,7 @@ Petra,23
 Karel,25
 \end{verbatim}
 
-Now, let's get all the names of people in people.csv using the \icode{-n} named switch:
+Now, let's get all the names of people in \icode{people.csv} using the \icode{-n} named optional argument:
 \begin{verbatim}
 lsql-csv -n 'people.csv, &1.name'
 \end{verbatim}
@@ -142,21 +145,21 @@ Petra
 Karel
 \end{verbatim}
 
-As you can see, we can reference named columns by a name. Named switch \icode{-n} enables first-line headers.
-If named columns are enabled, each column has two names under \icode{\&X}---the number name \icode{\&X.Y} and the actual name \icode{\&X.NAME}.
+As you can see, we can reference named columns by the name. The named optional argument \icode{-n} enables first-line headers.
+If first-line headers are enabled by the argument, each column has two names under \icode{\&X}---the number name \icode{\&X.Y} and the actual name \icode{\&X.NAME}.
 
-Now, we can select all columns with wildcard \icode{\&1.*}:
+Now, we can select all columns with a wildcard \icode{\&1.*}:
 \begin{verbatim}
 lsql-csv -n 'people.csv, &1.*'
 \end{verbatim}
-As the output, we get
+As the output, we get:
 \begin{verbatim}
 Adam,21,21,Adam
 Petra,23,23,Petra
 Karel,25,25,Karel
 \end{verbatim}
 
-The output contains each column twice because wildcard \icode{\&1.*} was evaluated to \icode{\&1.1, \&1.2, \&1.age, \&1.name}.
+The output contains each column twice because the wildcard \icode{\&1.*} was evaluated to \icode{\&1.1, \&1.2, \&1.age, \&1.name}.
 How to fix it?
 \begin{verbatim}
 lsql-csv -n 'people.csv, &1.[1-9]*'
@@ -172,8 +175,9 @@ The command can also be written as
 \begin{verbatim}
 lsql-csv -n 'people.csv, &1.{1,2}'
 lsql-csv -n 'people.csv, &1.{1..2}'
+lsql-csv 'people.csv -n, &1.{1..2}'
 \end{verbatim}
-The output will be in both cases still the same.
+The output will be in all cases still the same.
 
 
 \subsubsection{Simple join}
@@ -181,7 +185,8 @@ Let's say, I am interested in the default group names of users. We need to join 
 \begin{verbatim}
 lsql-csv -d: '/etc/{passwd,group}, &1.1 &2.1, if &1.4 == &2.3'
 \end{verbatim}
-What does \icode{/etc/\{passwd,group\}} mean? Basically, there are three types of expressions. Select, from, and arithmetic expression. In all select and from expressions, you can use expansion and wildcards just like in bash \cite{bash-reference-manual}.
+What does \icode{/etc/\{passwd,group\}} mean? Basically, there are three types of expressions. Select, from, and arithmetic expression. 
+In all select and from expressions, you can use curly expansion and wildcards just like in bash \cite{bash-reference-manual}.
 
 Finally, the output can be something like this:
 \begin{verbatim}
@@ -209,10 +214,10 @@ And the output?
 /sbin/shutdown:1
 \end{verbatim}
 
-You can see here the first usage of \icode{by} block, which is equivalent to \icode{group by} in SQL.
+You can see here the first usage of the by block, which is equivalent to \icode{group by} in SQL.
 
 \subsubsection{Basic sorting}
-Let's say, you want to sort your users by UID with UID greater than or equal to 1000 ascendingly.
+Let's say, you want to sort your users by \icode{UID} with \icode{UID} greater than or equal to 1000 ascendingly.
 \begin{verbatim}
 lsql-csv -d: '/etc/passwd, &1.*, if &1.3 >= 1000, sort &1.3'
 \end{verbatim}
@@ -232,12 +237,13 @@ lsql-csv -d: '/etc/passwd, &1.*, if &1.3 >= 1000, sort &1.3' | tac
 \end{verbatim}
 
 \subsubsection{About nice outputs}
-There is a trick, how to concatenate two values in a select expression: Write them without space.
+There is a trick, how to concatenate two values in the select expression: Write them without space.
 
-But how does the interpreter know the ends of the value name or value expression? You must use quotes for it---quotes themselves can't be part of the value name.
+But how will the interpreter know the ends of the values in a command? If the interpreter sees a char, that can't be part of the currently parsed value, it tries to parse it as a new value concatenated to the current one.
+You can use quotes for it---quotes themselves can't be part of most value types like the column name or numerical constant.
+
 As an example, let's try to format our basic grouping example.
 
-Let's try it!
 \begin{verbatim}
 lsql-csv -d: 'p=/etc/passwd, 
   "The number of users of "p.7" is "count(p.3)".", by p.7'
@@ -256,8 +262,8 @@ The number of users of /sbin/shutdown is 1.
 As you can see, string formatting is sometimes very simple with LSQL.
 
 \subsubsection{Arithmetic expression}
-So far, we just met all kinds of blocks, and only if block accepts an arithmetic expression and the other accepts a select expression.
-What if we needed to run an arithmetic expression inside a select expression? There is a special syntax \icode{\$(\ldots{})} for it.
+So far, we just met all kinds of blocks, and only the if block accepts the arithmetic expression, and the other accepts the select expression.
+What if we needed to run the arithmetic expression inside the select expression? There is a special syntax \icode{\$(\ldots{})} for it.
 
 For example:
 \begin{verbatim}
@@ -296,7 +302,7 @@ Let's see more complicated examples.
 \begin{verbatim}
 lsql-csv -d: 'p=/etc/passwd g=/etc/group, p.1 g.1, if p.1 in g.4'
 \end{verbatim}
-This will print all pairs of users and its group excluding the default group. If you know SQL, you can read it as \icode{from /etc/passwd P, /etc/group G select P.1, G.1 where P.1 in G.4}.
+This will print all pairs of users and its group excluding the default group. If you know SQL, you can read it as \icode{select P.1, G.1 from /etc/passwd P, /etc/group G where P.1 like '%' + G.4 + '%'}.
 
 How does \icode{in} work? It's one of the basic string level ``consist''. If A is a substring of B, then \icode{A in B} is true. Otherwise, it is false.
 
@@ -401,7 +407,7 @@ Joins always have the time complexity $\mathcal{O}(nm)$. There is no optimizatio
 \begin{verbatim}
 lsql-csv [OPTIONS] COMMAND
       
-Description of the grammar
+Description of the grammar:
   
   COMMAND -> FROM_BLOCK, REST
                             
@@ -411,7 +417,8 @@ Description of the grammar
   REST -> IF_BLOCK, REST   
   REST ->
   
-  FROM_BLOCK -> FROM_SELECTOR FROM_BLOCK
+  FROM_BLOCK -> FROM_EXPR
+  FROM_EXPR -> FROM_SELECTOR FROM_EXPR
   FROM_SELECTOR ~~> FROM ... FROM //Wildcard and brace expansion
   
   FROM -> FROM_NAME=FROM_FILE OPTIONS
@@ -562,7 +569,7 @@ The first block is always from block. If the block after the first block is with
 
 From block accept specific grammar (as specified in the grammar description), select, by, and sort block select expression (\icode{SELECT\_EXPR} in the grammar), and if block arithmetic expression (\icode{ARITHMETIC\_EXPR} in the grammar).
 
-Every source file has a number and may have multiple names - assign name, the name given to the source file by \icode{ASSIGN\_NAME=FILE\_PATH} syntax in from block, and  
+Every source file has a number and may have multiple names---assign name, the name given to the source file by \icode{ASSIGN\_NAME=FILE\_PATH} syntax in from block, and  
 default name, which is given the path to the file or \icode{-} in case of stdin in from block.
 
 Each column of a source file has a number and may have a name (if the named option is enabled for the given source file).
@@ -573,9 +580,8 @@ If the named option is enabled and a column has the name \icode{NAME}, it can al
 If there is a collision in naming (two source files have the same name or two columns under the same source file have the same name), then the behavior is undefined.
 
 \subsubsection{Exotic chars}
-Some chars cannot be in symbol names (column names). For simplicity, we can suppose, they are everything but alphanumerical chars excluding \icode{-}, \icode{.}, \icode{\&}, and \icode{\_}.  
+Some chars cannot be in unquoted symbol names (column names) references---exotic chars. For simplicity, we can suppose, they are all non-alphanumerical chars excluding \icode{-}, \icode{.}, \icode{\&}, and \icode{\_}.  
 Also first char of a symbol name must be non-numerical to not be considered as an exotic char.
-Referencing names containing exotic chars without quotes is unsupported.
 
 It is possible to reference columns with names with exotic chars using \icode{`} quote---like \icode{`EXOTIC NAME`}. The source file name is always part of the column name from the syntax perspective of language---it must be inside the quotes.
 
@@ -615,15 +621,15 @@ They are similar to bash expressions \cite{bash-reference-manual}. They are made
 
 Every atom selector expression can consist:
 \begin{itemize}
-    \item Wildcard (Each wildcard will be expanded to multiple statements during processing)
-    \item Bash brace expansion (e.g. \icode{{22..25} $\rightarrow$ 22 23 24 25)} \cite{bash-reference-manual}
-    \item Arithmetic expression in \icode{\$(expr)} format
+    \item A wildcard (Each wildcard will be expanded to multiple statements during processing)
+    \item A Bash brace expansion (e.g. \icode{{22..25} $\rightarrow$ 22 23 24 25)} \cite{bash-reference-manual}
+    \item An arithmetic expression in \icode{\$(expr)} format
     \item Quotes \icode{`anything`} to prevent wildcards and expansions
     \item Quotes \icode{"} or \icode{'} to insert string
-    \item Call of aggregate function \icode{AGGREGATE\_FUNCTION(next select block)} - there cannot be any space after FUNCTION
-    \item Call of single arg function \icode{ONEARG\_FUNCTION(arithmetic expression)} - there cannot be any space after FUNCTION
+    \item A call of an aggregate function \icode{AGGREGATE\_FUNCTION(next select blo\-ck)}---there cannot be any space after FUNCTION
+    \item A call of a one-argument function \icode{ONEARG\_FUNCTION(arithmetic expr\-ession)}---there cannot be any space after FUNCTION
     \item Constants
-    \item Reference to a column name
+    \item A reference to a column name
 \end{itemize}
 
 If you want to concatenate strings without \icode{++} operator, you can write: \break\icode{a.1","a.2}.
@@ -631,11 +637,11 @@ If you want to concatenate strings without \icode{++} operator, you can write: \
 Please, keep in mind, that operators must be put inside arithmetic expressions, or they will be matched to a column name or aggregate function.
 
 \subsubsection{Arithmetic expression}
-The statement uses mainly classical awk logic. \cite{awk-reference-manual} 
+The statement uses mainly classical awk logic \cite{awk-reference-manual}.  
 You can use keywords \icode{\textgreater}, \icode{\textless}, \icode{\textless=}, \icode{\textgreater=}, \icode{==}, \icode{$\vert\vert$}, \icode{\&\&}, \icode{+}, \icode{-}, \icode{*}, \icode{/}\ldots{}
 
 \subsubsection{Select blocks}
-These blocks determine output. They accept select expressions and are evaluated and printed in a delimitered format.
+These blocks determine output. They accept select expressions delimited by whitespaces.
 
 Every select block must contain at least one reference to the column name, or the behavior is undefined.
 
@@ -666,6 +672,7 @@ This will select \icode{/etc/passwd} and \icode{/etc/group} files. They can be a
 If \icode{filename} is put inside \icode{`} quotes, no wildcard or expansion logic will apply to it.
 
 You can also add custom attributes to files in the format \break \icode{FILE -aX --attribute=X -b}. The attributes will be applied to all files which will be matched using \icode{FILE} bash expression.
+They are referred to as \icode{OPTIONS} in the formal grammar.
 
 \paragraph{Possible attributes}
 
@@ -673,7 +680,7 @@ You can also add custom attributes to files in the format \break \icode{FILE -aX
 -n
 --named
 \end{verbatim}
-It means that the CSV file has the first line with the names of the columns
+It means that the CSV file has the first line with the names of the columns.
 
 \begin{verbatim}
 -N
@@ -698,10 +705,10 @@ Example:
 /etc/passwd -d:
 \end{verbatim}
 
-Currently, commas and CHARs, which are also quotes in Lsql, are not supported as delimiters.
+Currently, commas and CHARs, which are also quotes in LSQL, are not supported as delimiters.
 
 \subsubsection{If block}
-This block always begins with \icode{if}. They accept arithmetic expressions, which should be convertible to Bool - either String \icode{false}/\icode{true}, Int (\icode{0} \icode{false}, anything else \icode{true}), or Bool. 
+This block always begins with \icode{if}. They accept arithmetic expressions, which should be convertible to Bool: either String \icode{false}/\icode{true}, Int (\icode{0} \icode{false}, anything else \icode{true}), or Bool. 
 Rows with true are printed or aggregated, and rows with false are skipped.
 
 Filtering is done before the aggregation.
