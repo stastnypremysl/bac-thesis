@@ -2,28 +2,28 @@
 This chapter is for potential developers of the project.
 
 \section{Project building and testing}
-The project has two ways of building. One way is through Makefile and the second is through Cabal. 
-By running the following command it generates the build folder and \icode{lsql-csv} binary under it.
+The project has two ways of building. The first way is through \icode{Makefile} and the second is through Cabal. 
+By running the following command it generates the \icode{build} folder and the \icode{lsql-csv} binary under it.
 \begin{verbatim}
 make
 \end{verbatim}
  
 It is necessary to have all Haskell dependencies (\icode{Parsec} ($\geq 3.1$ $<3.2$), \icode{Glob} ($\geq 0.10$ $<0.11$), 
 \icode{base} ($\geq 4.9$ $<4.20$), \icode{text} ($\geq 1.2$ $<2.2$) and \icode{containers} ($\geq 0.5$ $<0.8$)) installed.
-The package boundaries given are identical to cabal boundaries. Also, it is necessary, that you have \icode{GHC} ($\geq 8 <9.29$) installed.
+The package boundaries given are identical to the Cabal boundaries. Also, it is necessary, that you have \icode{GHC} ($\geq 8 <9.29$) installed.
 
-The second way of building is through cabal, which handles all dependencies for you.
+The second way of building is through Cabal, which handles all dependencies for you.
 
 \begin{verbatim}
 cabal build
 \end{verbatim}
 
 
-The project unit tests require building through \icode{Makefile} and is called by:
+The project unit tests require building through \icode{Makefile} and are called by:
 \begin{verbatim}
 make test
 \end{verbatim}
-It should always succeed before any commit is made.
+It should always succeed before any commit to the project repository is made.
 
 It is possible to generate Haddock developer documentation by calling:
 \begin{verbatim}
@@ -36,15 +36,15 @@ by running:
 \begin{verbatim}
 make docs
 \end{verbatim}
-It generates html documentation under the build folder.
+It generates HTML documentation under the \icode{build} folder.
 
 The package is also published at \url{https://hackage.haskell.org/package/lsql-csv} in the Hackage public repository. 
 The generated documentation is fully browseable there.
 
 \section{\icode{String} vs \icode{Data.Text}}
 As there is a long-term discussion in the Haskell community about whether \icode{String} or \icode{Data.Text} should be used as the 
-primary representation of text, I would like to emphasize that in this project, \icode{String} is used as a primary
-representation for text.
+primary representation of text, I would like to emphasize that in this project, \icode{String} is used as the primary
+representation of text.
 
 \section{Project layout}
 
@@ -55,44 +55,47 @@ The project is split into:
 
   \item the \icode{main}, which contains one source file
       with \icode{Main}, which is the entry point for \icode{lsql-csv} binary. 
-      It parses the arguments, and checks, whether the help optional argument was called or no argument at all was given, 
-      and either shows help or further call run from \icode{Lsql.Csv.Main} from the library.
+      It parses the arguments, and checks, whether the help optional argument was called and whether no argument at all was given, 
+     and either displays the usage message or further call \icode{run} from \icode{Lsql.Csv.Main} in the library---the evaluation entry point.
 \end{enumerate}
 
-The library is split into 5 different namespaces. Its usage is not strictly defined, but this can be said:
+The library is split into 5 namespaces. Their usage is not strictly defined, but this can be said:
 \begin{itemize}
-    \item \icode{Lsql.Csv} -- This namespace contains the entry point
-    \item \icode{Lsql.Csv.Core} -- This namespace contains the logic of evaluation
-    \item \icode{Lsql.Csv.Lang} -- This namespace contains parsers
-    \item \icode{Lsql.Csv.Lang.From} -- This namespace contains parsers for the from block
-    \item \icode{Lsql.Csv.Utils} -- This namespace contains helper functions
+    \item \icode{Lsql.Csv} -- This namespace contains the starting point for an \icode{lsql-csv} evaluation.
+    \item \icode{Lsql.Csv.Core} -- This namespace contains the logic of the evaluation.
+    \item \icode{Lsql.Csv.Lang} -- This namespace contains parsers for the blocks other than the from block.
+    \item \icode{Lsql.Csv.Lang.From} -- This namespace contains parsers for the from block and for CSV files.
+    \item \icode{Lsql.Csv.Utils} -- This namespace contains helper functions.
 \end{itemize}
 
 \section{Modules}
 The following section is a summary of all modules of the library.
 \begin{itemize}
-    \item \icode{Lsql.Csv.Core.BlockOps} -- This module contains the \icode{Block} definition representing a command block and functions for getting a specific type of blocks from a list of \icode{Block}.
-    \item \icode{Lsql.Csv.Core.Evaluator} -- This module contains the evaluator of a \break\icode{lsql-csv} program.
+    \item \icode{Lsql.Csv.Core.BlockOps} -- This module contains the \icode{Block} definition representing an LSQL command block and functions for getting a specific type of block from a list of \icode{Block}.
+    \item \icode{Lsql.Csv.Core.Evaluator} -- This module contains the evaluator of an \break\icode{lsql-csv} command.
     \item \icode{Lsql.Csv.Core.Functions} -- This module contains the syntactic tree definition and helper functions for its evaluation.
-    \item \icode{Lsql.Csv.Core.Symbols} -- This module contains the definition of \icode{Symbol}, \icode{SymbolMap} and helper functions.
-    \item \icode{Lsql.Csv.Core.Tables} -- This module contains the definition of \icode{Value}, \icode{Table}, and \icode{Column}, classes over them, and functions for manipulation of them.
-    \item \icode{Lsql.Csv.Lang.Args} -- A module for command line argument parsing.
-    \item \icode{Lsql.Csv.Lang.BlockChain} -- This module contains the main parser of blo\-cks other than the from block.
-    \item \icode{Lsql.Csv.Lang.BlockSeparator} -- This module contains the preprocessor parser, which splits a command into a list of strings---one string per one block.
-    \item \icode{Lsql.Csv.Lang.Options} -- This module implements the common \icode{Option} type for from blocks and command-line optional arguments representation, and its parsers.
+    \item \icode{Lsql.Csv.Core.Symbols} -- This module contains the definition of \icode{Symbol}, \icode{SymbolMap}, and helper functions for working with them.
+    \item \icode{Lsql.Csv.Core.Tables} -- This module contains the definition of \icode{Value}, \icode{Table}, and \icode{Column}, class instancies over them, functions for manipulation of them, and \icode{Boolable} class definition.
+    \item \icode{Lsql.Csv.Lang.Args} -- A module for command-line argument parsing.
+    \item \icode{Lsql.Csv.Lang.BlockChain} -- This module contains the main parser of the blo\-cks other than the from block.
+    \item \icode{Lsql.Csv.Lang.BlockSeparator} -- This module contains the preprocessor parser, which splits an LSQL command into a list of \icode{String}---one \icode{String} per block.
+    \item \icode{Lsql.Csv.Lang.Options} -- This module implements the common \icode{Option} type for the from block custom attributes representation and for the co\-mmand-line optional arguments representation, and its parsers.
     \item \icode{Lsql.Csv.Lang.Selector} -- This module implements the selector expression parser and the arithmetic expression parser.
     \item \icode{Lsql.Csv.Lang.From.Block} -- This module contains the from block parser. It loads the initial \icode{SymbolMap}.
     \item \icode{Lsql.Csv.Lang.From.CsvParser} -- This module contains the \icode{CsvParser} called by the \icode{parseFile}, which loads input CSV files.
-    \item \icode{Lsql.Csv.Main} -- This module contains the starting point for a \icode{lsql-csv} evaluation.
+    \item \icode{Lsql.Csv.Main} -- This module contains the starting point for an \icode{lsql-csv} evaluation.
     \item \icode{Lsql.Csv.Utils.BracketExpansion} -- This module contains the curly bra\-cket (braces) expansion implementation.
     \item \icode{Lsql.Csv.Utils.CsvGenerator} -- This module contains the CSV generator for the output.
 \end{itemize}
 
-\section{Entry point}
-The entry point is in module \icode{Lsql.Csv.Main} in function \icode{run}. 
-The function first calls preprocessor in \icode{Lsql.Csv.Lang.BlockSeparator}, which splits command into a list of strings. Then \icode{SymbolMap} with input is loaded using \icode{Lsql.\allowbreak Csv.Lang.From.Block} and after that
-rest of the blocks are parsed using \icode{Lsql.\allowbreak Csv.\allowbreak Lang.\allowbreak BlockChain}. The program is then evaluated using
-\icode{Lsql.\allowbreak Csv.Core.\allowbreak Evaluator} and finally, the output generated by \icode{Lsql.\allowbreak Csv.Utils.CsvGenerator}.
+\section{Evaluation entry point}
+The evaluation entry point is in the module \icode{Lsql.Csv.Main} in the function \icode{run}. 
+The function first calls the preprocessor in \icode{Lsql.Csv.Lang.BlockSeparator}, which splits the input command into a list of \icode{String}---one \icode{String} per block. 
+Then the \icode{SymbolMap} with input data is loaded using \icode{Lsql.\allowbreak Csv.\allowbreak Lang.\allowbreak From.\allowbreak Block} and after that,
+the rest of the blocks are parsed using \icode{Lsql.\allowbreak Csv.\allowbreak Lang.\allowbreak BlockChain}. 
+
+The loaded data are then processed using the evaluator in
+\icode{Lsql.\allowbreak Csv.\allowbreak Core.\allowbreak Evaluator} according to the parsed command and finally, the output is generated by \icode{Lsql.\allowbreak Csv.Utils.\allowbreak CsvGenerator}.
 
 
 
