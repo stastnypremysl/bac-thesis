@@ -29,14 +29,14 @@ Yakov Shafranovich.
   US, October 1986.
 
 \bibitem{ISO9075-1987}
-{ISO} 9075:1987: Information technology – {D}atabase languages {SQL} – part
-  1: Framework ({SQL}/{F}ramework).
+{ISO 9075:1987: Information technology – Database languages SQL – Part~1:
+  Framework (SQL/Framework)}.
 \newblock Standard, International Organization for Standardization, Geneva, CH,
   June 1987.
 
 \bibitem{ISO9075-2023}
-{ISO} 9075-1:2023: Information technology – {D}atabase languages {SQL} –
-  part 1: Framework ({SQL}/{F}ramework).
+{ISO 9075-1:2023: Information technology – Database languages SQL – Part~1:
+  Framework (SQL/Framework)}.
 \newblock Standard, International Organization for Standardization, Geneva, CH,
   June 2023.
 
@@ -91,7 +91,7 @@ Alejandro~Serrano Mena.
 
 \bibitem{oracle-db-sql}
 Usha~Krishnamurthy et~al.
-\newblock {\em {Oracle Database SQL Language Reference, 19c}}.
+\newblock {\em {Oracle Database SQL Language Reference, 19c, E96310-23}}.
 \newblock Oracle, November 2023.
 \newblock Available at
   \url{https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/sql-language-reference.pdf}
@@ -116,7 +116,7 @@ Usha~Krishnamurthy et~al.
 {Wikipedia contributors}.
 \newblock {Microsoft SQL Server}---{Wikipedia}{,} the free encyclopedia.
 \newblock
-  \url{"https://en.wikipedia.org/w/index.php?title=Microsoft_SQL_Server&oldid=1210428592"},
+  \url{https://en.wikipedia.org/w/index.php?title=Microsoft_SQL_Server&oldid=1210428592},
   2024.
 \newblock [Online; accessed 29-February-2024].
 

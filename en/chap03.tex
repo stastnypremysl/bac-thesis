@@ -20,18 +20,20 @@ The main point of making language inspired by SQL is that it brings the advantag
 
 
 \section{Why not implement just another SQL for CSV files?}
-As mentioned in the introduction, standard SQL is a typed language (Every data column and data value belongs to some data type) \cite{ISO9075-2023}, 
-which implies many design choices. Furthermore, SQL itself requires a large amount of text to be written,
+As mentioned in the introduction, standard SQL is a typed language (every data value belongs to some data type) \cite{ISO9075-2023}, 
+which implies many design choices. 
+
+Furthermore, SQL itself requires a large amount of text to be written,
 before it can be executed. 
 
 One of the ambitions of \icode{lsql-csv} is to allow a user to write shorter queries to get the result. For the example,
 consider
 
 \begin{verbatim}
-select A.dataX from data A where A.dataX > 1000
+SELECT dataX FROM data.txt WHERE dataX > 1000;
 \end{verbatim}
 
-This simple SQL query shows \icode{dataX \textgreater{} 1000} from table \icode{data}. 
+This simple SQL query shows \icode{dataX \textgreater{} 1000} from the table \icode{data.txt}. 
 Now, if we have a CSV file \icode{data.txt}, where we know, that \icode{dataX} is a second column, the same query can 
 be written with \icode{lsql-csv} as
 
@@ -39,34 +41,34 @@ be written with \icode{lsql-csv} as
 data.txt, &1.2, if &1.2 > 1000
 \end{verbatim}
 
-The length difference is about $35\%$ off the original query. It is simply said the another reason, 
+The length difference is about $35\%$ off the original SQL query. It is simply said one of the reasons, 
 why we will not just implement another SQL implementation.
 
 \section{Why number references?}
-Where the $35\%$ difference happened. One and the main reason, why is, that we allowed referencing $dataX$ as \icode{.2}.
-This is also possible due to the nature of the CSV file, where columns have their index\footnote{Do not confuse with SQL database index for performance.}. 
-Normally, in an SQL database, indexes of columns are not considered as something, which should decide about query meaning.
+Where the $35\%$ difference happened? One of the main reasons is, that we allowed referencing $dataX$ as \icode{.2}.
+This is also possible due to the nature of the CSV file, where columns have their index\footnote{Do not confuse with the SQL database index for performance.}. 
+Normally, in a SQL database, indexes of columns are not considered as something, which should decide about query meaning.
 This is because the SQL database itself may change, and new columns may be added or removed. Just because somebody removed a column, 
 it is not wanted, that developers needed to change some of the queries so they comply with the new database layout.
 
-On the other hand, CSV files usually are not altered as much as databases are. 
-If the developer (or a user) is not sure about the columns of the CSV file, it is one of the first signs, that
-he or she should use rather than SQL database than a simple CSV file.
+On the other hand, CSV files are not usually altered as much as SQL databases are. 
+If a developer (or a user) is not sure about the columns present in a CSV file, it is one of the first signs, that
+he or she should use rather a SQL database than a simple CSV file.
 
 Also, \icode{lsql-csv} is a tool for daily life and simple scripts rather than a tool for the development of medium-sized or
-large-sized projects, like SQL is. This adds much more flexibility in what can language do (like number references).
+large-sized projects, like SQL is. This adds much more flexibility in what can language do without jeopardizing its design goals---things like number references.
 
-\section{Why rename standard keywords?}
-Why have we renamed \icode{where} for \icode{if}, \icode{group by} for \icode{by}, and \icode{sort by} for \icode{sort}? Simply said, because the renamed variants are shorter and still do not block the user in understanding, what the query does.
+\section{Why rename standard SQL keywords?}
+Why have we renamed \icode{WHERE} for \icode{if}, \icode{GROUP BY} for \icode{by}, and \icode{SORT BY} for \icode{sort}? Simply said, because the renamed variants are shorter and still do not block a user in understanding, what the query does.
 
 \section{Why some features like descending sort are missing?}
 \icode{lsql-csv} is a shell utility and as such, it tries to comply with UNIX philosophy. 
 The summarized version from Doug McIlroy is: ``This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. 
 Write programs to handle text streams, because that is a universal interface.'' \cite{unix-philosophy}
 
-The tool for reverting the order of sorted output already exists: \icode{tac}. Piped together it creates the wanted output.
+The tool for reverting the order of output already exists: \icode{tac}. Piped together it creates the wanted output.
 
-In a similar case, the function for the second filtering of grouped by (in SQL named \icode{having}) 
+In a similar case, the function for the second filtering of the grouped by (in SQL named \icode{HAVING}) 
 output has been not added, because the wanted output
 may be received by piping the output with another instance of \icode{lsql-csv}.
 
@@ -74,21 +76,22 @@ And why there is no support for creating output with first-line names of columns
 may be simply made with the usage of \icode{echo} called before \icode{lsql-csv} if needed.
 
 \section{Why blocks are delimited by commas?}
-The author thinks it is more readable like this. Developers in SQL usually use upper case and new line writing to delimiter the blocks and comma is just more easy to write than switching on and off caps lock, 
+The author thinks it is more readable like this. Developers in SQL usually use upper case chars and new line writing to delimiter ``the blocks''---this is not so much necessary in LSQL as in SQL due to comma delimiting. 
+A comma is also usually easier to write than switching on and off the caps lock, 
 holding the shift key, or making multiline input.
 
 \section{Why there are two types of expression?}
-Why there are arithmetic and select expressions with different grammars?
-We think, that the addition of a special select expression further allows the user to write shorter queries.
-It allows us to introduce wildcard and curly brackets expansion for the user, which would not be possible otherwise.
+Why there are the arithmetic and the select expressions with different grammars?
+We think, that the addition of a specially designed select expression further allows the user to write shorter queries.
+It allows us to introduce wildcards and curly brackets expansion for a user.
 
-\section{Why there is support only for cross join and not other types of join?}
-The tool is supposed to be simple. We recommend a user to import CSV data to SQL database and use standard SQL if he needs more complicated joins.
+\section{Why there is support only for cross-join and not other types of join?}
+The tool is supposed to be simple. We recommend a user to import CSV data to a SQL database and use standard SQL if he needs more complicated joins.
 
-The other reason is, that CSV has no standardized NULL value, which is needed for left or right outer joins.
+The other reason is, that CSV has no standardized \icode{NULL} value, which is needed for the left or the right outer joins.
 
 \section{Why there is no package used for CSV parsing and generating?}
-Very simply said, to limit the number of dependencies. The more dependencies are used, the harder is to compile it, maintain it, and add to any Linux distribution.
+Very simply said, to limit the number of dependencies. The more dependencies are used in a package, the harder is to compile it, maintain it, and add it to any Linux distribution.
 
 As CSV parsing is not a hard job, it was decided so.
 
@@ -96,10 +99,12 @@ As CSV parsing is not a hard job, it was decided so.
 As the performance gain from using \icode{Data.Text} would not be significant and \icode{String} does not add any more complexity to the code like \icode{Data.Text} does, 
 it was decided that \icode{String} would be the primary text representation.
 
-\section{Why joins have $\mathcal{O}(nm)$ complexity?}
-\icode{lsql-csv} is a tool for small dataset data querying. As such, it implements only a simple algorithm for joining the tables---cross join.
+The tool is simpler and more easily maintainable with \icode{String} than it would be with \icode{Data.Text}.
 
-For larger datasets users are encouraged to use standard SQL databases.
+\section{Why joins have $\mathcal{O}(nm)$ complexity?}
+\icode{lsql-csv} is a simple tool for small dataset data querying. As such, it implements only a simple algorithm for joining the tables---cross-join.
+
+For larger dataset joins users are encouraged to use standard SQL databases as the \icode{lsql-csv} is not designed for this use case.
 
 \section{Why are all operators right-to-left associative?}
 Many modern languages like C++ \cite{cpp-associativity-manual}, Rust \cite{rust-expressions}, and C\# \cite{csharp-expressions} use combined left-to-right and right-to-left associativity for operators.
