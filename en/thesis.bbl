@@ -148,7 +148,10 @@ Eric~S. Raymond.
 
 \bibitem{enwiki-kiss}
 {Wikipedia contributors}.
-\newblock {KISS principle---{Wikipedia}{,} The Free Encyclopedia}, 2024.
+\newblock {KISS principle---{Wikipedia}{,} The Free Encyclopedia}.
+\newblock
+  \url{https://en.wikipedia.org/w/index.php?title=KISS_principle&oldid=1198063371},
+  2024.
 \newblock [Online; accessed 08-April-2024].
 
 \end{thebibliography}

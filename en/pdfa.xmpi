@@ -62,16 +62,9 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
-   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Command-line tool lsql-csv for CSV files processing</rdf:li></rdf:Alt></dc:title>
-   <dc:creator><rdf:Seq><rdf:li>Přemysl Šťastný</rdf:li></rdf:Seq></dc:creator>
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Thesis title</rdf:li></rdf:Alt></dc:title>
+   <dc:creator><rdf:Seq><rdf:li>Name Surname</rdf:li></rdf:Seq></dc:creator>
    <dc:publisher><rdf:Bag><rdf:li>Charles University</rdf:li></rdf:Bag></dc:publisher>
-   <dc:description><rdf:Alt><rdf:li xml:lang="x-default">lsql-csv is a tool for small CSV file data querying from a shell with short queries. It makes it possible to work with small CSV files like with a read-only relational databases. The tool implements a new language LSQL similar to SQL, specifically designed for working with CSV files in a shell. LSQL aims to be a more lapidary language than SQL. Its design purpose is to enable its user to quickly write simple queries directly to the terminal.</rdf:li></rdf:Alt></dc:description>
-   <dc:subject><rdf:Bag><rdf:li>relational database</rdf:li>
-     <rdf:li>CSV</rdf:li>
-     <rdf:li>SQL</rdf:li>
-     <rdf:li>Haskell</rdf:li>
-     <rdf:li>query language</rdf:li>
-     <rdf:li>Unix philosophy</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
   </rdf:Description> 
@@ -83,15 +76,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2024-05-08T17:15:50+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2024-05-08T17:15:50+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2024-05-08T17:15:50+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2024-05-09T00:27:10+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2024-05-09T00:27:10+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2024-05-09T00:27:10+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
-   <xmpMM:DocumentID>uuid:C8CFC28F-88E1-7995-E9AD-F6D12EAD346B</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:2639091E-3ADE-1E78-BDA8-2C36AB8EFB50</xmpMM:InstanceID> 
+   <xmpMM:DocumentID>uuid:4339886F-1637-D7BD-C0DC-0388F78A3EFD</xmpMM:DocumentID> 
+   <xmpMM:InstanceID>uuid:EFB5B3C5-71EF-8F51-1555-C6E22495DBEF</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

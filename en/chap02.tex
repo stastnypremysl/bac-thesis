@@ -54,7 +54,7 @@ The project is split into:
        \icode{src} folder of the project
 
   \item the \icode{main}, which contains one source file
-      with \icode{Main}, which is the entry point for \icode{lsql-csv} binary. 
+      with \icode{Main}, which is the entry point for the \icode{lsql-csv} binary. 
       It parses the arguments, and checks, whether the help optional argument was called and whether no argument at all was given, 
      and either displays the usage message or further call \icode{run} from \icode{Lsql.Csv.Main} in the library---the evaluation entry point.
 \end{enumerate}
@@ -101,7 +101,7 @@ The loaded data are then processed using the evaluator in
 
 
 \section{Unit tests}
-There was created many unit tests for testing the functionality of the \icode{lsql-csv} binary.
+There are many unit tests for testing the functionality of the \icode{lsql-csv} binary.
 
 All unit tests are shell scripts. Each test invokes the \icode{lsql-csv} binary in the \icode{build} project folder
 with predefined input data, predefined optional arguments, and a predefined LSQL command, and compares

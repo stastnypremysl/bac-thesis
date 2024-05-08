@@ -41,7 +41,7 @@ join -t: -14 -23 /tmp/passwd.sort /tmp/group.sort | cut -d: -f2,8
 As demonstrated, the \icode{lsql-csv} variant is 
 more readable and shorter\footnote{It is possible, that it can be written in shorter and more readable form, but probably not more than the \icode{lsql-csv} variant.}.
 
-It should be also noted, that \icode{lsql-csv} join has $\mathcal{O}(nm)$ time complexity, while standard Unix tools have for join written above
+It should be also noted, that an \icode{lsql-csv} join has $\mathcal{O}(nm)$ time complexity, while standard Unix tools have for join written above
 $\mathcal{O}(n\log n + m\log m)$ time complexity, so for larger datasets, it might be more beneficial to use them.
 
 \section{By using SQL implementation for CSV files}

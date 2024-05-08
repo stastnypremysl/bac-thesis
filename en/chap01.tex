@@ -305,7 +305,7 @@ lsql-csv -d: 'p=/etc/passwd g=/etc/group, p.1 g.1, if p.1 in g.4'
 This will print all pairs of users and its group excluding the default group. 
 If you know SQL, you can read it as \icode{SELECT P.1, G.1 FROM /etc/passwd P, /etc/group G WHERE G.4 LIKE '\%' + P.1 + '\%';} with operator \icode{LIKE} case-sensitive and columns named by their column number.
 
-How does \icode{in} work? It's one of the basic string level ``consist''. If A is a substring of B, then \icode{A in B} is \icode{true}. Otherwise, it is \icode{false}.
+How does \icode{in} work? It's one of the basic string level ``consist''. If some string \icode{A} is a substring of \icode{B}, then \icode{A in B} is \icode{true}. Otherwise, it is \icode{false}.
 
 And the output?
 \begin{verbatim}
@@ -375,7 +375,8 @@ Shows a short command line help and exits before doing anything else.
 -n
 --named
 \end{verbatim}
-Enables the first-line naming convention in CSV files---first-line with column names. 
+Enables the first-line naming convention in CSV files. 
+With this option, the first lines of CSV files will be interpreted as a list of column names.
 
 This works only on input files. 
 Output is always without first-line column names.
@@ -684,8 +685,19 @@ Precedence number & Operator\\
 Select expressions are in the grammar description as \icode{SELECT\_EXPR}.
 They are similar to the \icode{bash} expressions \cite{bash-reference-manual}. They are made by atom selector expressions (\icode{ATOM\_SELECTOR}) separated by whitespaces. 
 These expressions are wildcard and brace expanded to atoms (\icode{ATOM}) and are further processed as they were separated by whitespace.
+(In \icode{bash} brace expansion is a mechanism by which arbitrary strings are generated. For example, \icode{a\{b,c,d\}e} is expanded to \icode{abe ace ade}, see \cite{bash-reference-manual} for details.)
 
 Wildcards and brace expansion expressions are only evaluated and expanded in unquoted parts of the atom selector expression, which aren't part of an inner arithmetic expression.
+
+For example, if we have an LSQL command with symbol names \icode{\&1.1} and \icode{\&1.2}, then 
+\begin{itemize}
+    \item the atom selector expression \icode{\&1.\{1,2\}} will be expanded to \icode{\&1.1} and \icode{\&1.2};
+    \item the atom selector expression \icode{\&1.*} will be expanded to \icode{\&1.1} and \icode{\&1.2};
+    \item the atom selector expression \icode{`\&1.*`} will be expanded to \icode{`\&1.*`};
+    \item the atom selector expression \icode{"\&1.*"} will be expanded to \icode{"\&1.*"};
+    \item the atom selector expression \icode{\$(\&?.1)} will be expanded to \icode{\$(\&?.1)};
+    \item the atom selector expression \icode{\&*\$(\&1.1)} will be expanded to \icode{\&1.1\$(\&1.1)} and \icode{\&1.2\$(\&1.1)}.
+\end{itemize}
 
 Every atom selector expression can consist:
 \begin{itemize}
@@ -761,7 +773,9 @@ This will select \icode{/etc/passwd} and set its assign name to \icode{passwd}. 
 -n
 --named
 \end{verbatim}
-Enables the first-line naming convention for an input CSV file---first-line with column names.
+Enables the first-line naming convention for an input CSV file.
+With this option, the first line of a CSV file will be interpreted as a list of column names.
+
 
 \begin{verbatim}
 -N

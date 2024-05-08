@@ -1,7 +1,7 @@
 \chapter{Analysis}
 Why the language have been made the way it is? Why it is so inspired by SQL and is it not just the next implementation of SQL?
 Why it is implemented the way it is?
-A further chapter is about the design decision of the language.
+This chapter is about key decisions we made while designing the language.
 
 
 \section{Why SQL in the first place?}
@@ -49,7 +49,7 @@ Where the $35\%$ difference happened? One of the main reasons is, that we allowe
 This is also possible due to the nature of the CSV file, where columns have their index\footnote{Do not confuse with the SQL database index for performance.}. 
 Normally, in a SQL database, indexes of columns are not considered as something, which should decide about query meaning.
 This is because the SQL database itself may change, and new columns may be added or removed. Just because somebody removed a column, 
-it is not wanted, that developers needed to change some of the queries so they comply with the new database layout.
+it is not desirable to require developers to change some queries so they comply with the new database layout.
 
 On the other hand, CSV files are not usually altered as much as SQL databases are. 
 If a developer (or a user) is not sure about the columns present in a CSV file, it is one of the first signs, that
@@ -104,7 +104,7 @@ The tool is simpler and more easily maintainable with \icode{String} than it wou
 \section{Why joins have $\mathcal{O}(nm)$ complexity?}
 \icode{lsql-csv} is a simple tool for small dataset data querying. As such, it implements only a simple algorithm for joining the tables---cross-join.
 
-For larger dataset joins users are encouraged to use standard SQL databases as the \icode{lsql-csv} is not designed for this use case.
+For larger dataset joins users are encouraged to use standard SQL databases as \icode{lsql-csv} is not designed for this use case.
 
 \section{Why are all operators right-to-left associative?}
 Many modern languages like C++ \cite{cpp-associativity-manual}, Rust \cite{rust-expressions}, and C\# \cite{csharp-expressions} use combined left-to-right and right-to-left associativity for operators.

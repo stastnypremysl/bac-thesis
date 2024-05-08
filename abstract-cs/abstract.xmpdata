@@ -3,7 +3,7 @@
 \Author{Přemysl Šťastný}
 \Title{Nástroj lsql-csv na zpracování CSV souborů z příkazového řádku - abstrakt}
 
-\Keywords{abstrakt\sep relační databáze\sep CSV\sep SQL\sep Haskell\sep dotazovací jazyk\sep unixová filozofie}
+\Keywords{abstrakt\sep relační databáze\sep CSV\sep SQL\sep Haskell\sep dotazovací jazyk\sep unixová filozofie\sep lsql-csv\sep LSQL}
 
 \Subject{lsql-csv je nástroj pro provádění krátkých dotazů nad daty malých CSV souborů z shellu. 
 Díky němu je možné pracovat s malými CSV soubory jako s read-only relační databází.

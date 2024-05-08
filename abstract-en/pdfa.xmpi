@@ -72,7 +72,9 @@
      <rdf:li>SQL</rdf:li>
      <rdf:li>Haskell</rdf:li>
      <rdf:li>query language</rdf:li>
-     <rdf:li>Unix philosophy</rdf:li></rdf:Bag></dc:subject>
+     <rdf:li>Unix philosophy</rdf:li>
+     <rdf:li>lsql-csv</rdf:li>
+     <rdf:li>LSQL</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
   </rdf:Description> 
@@ -84,15 +86,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2024-05-08T17:21:51+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2024-05-08T17:21:51+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2024-05-08T17:21:51+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2024-05-08T22:16:45+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2024-05-08T22:16:45+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2024-05-08T22:16:45+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:4339886F-1637-D7BD-C0DC-0388F78A3EFD</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:8E71DBFB-C2E0-F088-04EC-F53972F64D40</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:C58F3420-6626-95D6-F66D-CD739FC2BDF8</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 
