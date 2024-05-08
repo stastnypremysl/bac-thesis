@@ -38,7 +38,7 @@ make test
 \end{verbatim}
 This will run all tests for you.
 
-\section{lsql-csv---quick introduction}
+\section{\icode{lsql-csv}---quick introduction}
 
 \subsection{Examples}
 One way to learn a new programming language is by understanding concrete examples of its usage. The following examples are written explicitly for the purpose of teaching a reader, how to use the tool \icode{lsql-csv} by showing him many examples of its usage.
@@ -72,7 +72,7 @@ File \icode{/etc/group} has the following columns \cite{group}:
 \begin{verbatim}
 lsql-csv '-, &1.2 &1.1'
 \end{verbatim}
-This will print the second (\icode{\&1.2}) and the first column (\icode{\&1.1}) of a CSV file on the standard input. If you know SQL, you can read it like \icode{select S.second, S.first from stdio S;}.
+This will print the second (\icode{\&1.2}) and the first column (\icode{\&1.1}) of a CSV file on the standard input. If you know SQL, you can read it like \icode{SELECT S.second, S.first FROM stdio S;}.
 
 Commands are split by commas into blocks. The first block is (and always is) the from block. There are file names or \icode{-} (the standard input) separated by whitespaces. The second block in the example is the select block, also separated by whitespaces.
 
@@ -91,7 +91,7 @@ Hello,World
 \subsubsection{Simple filtering}
 
 \begin{verbatim}
-lsql-csv -d: '-, &1.*, if &1.3>=1000' < /etc/passwd
+lsql-csv -d: '-, &1.*, if &1.3 >= 1000' </etc/passwd
 \end{verbatim}
 This will print lines of users whose \icode{UID} $\geq 1000$. It can also be written as:
 \begin{verbatim}
@@ -103,7 +103,7 @@ lsql-csv -d: '/etc/passwd, &1.*, if &1.3 >= 1000'
 \end{verbatim}
 The \icode{-d:} optional argument means the primary delimiter is \icode{:}. In the few examples we used overnaming, which allows us to give a data source file \icode{/etc/passwd} a name \icode{p}.
 
-If you know SQL, you can read it as \icode{select * from /etc/passwd P where P.UID \textgreater= 1000}. As you can see, the LSQL style is more compressed than standard SQL.
+If you know SQL, you can read it as \icode{SELECT * FROM /etc/passwd P WHERE P.UID \textgreater= 1000}. As you can see, the LSQL style is more compressed than standard SQL.
 
 The output might be:
 \begin{verbatim}
@@ -185,8 +185,8 @@ Let's say, I am interested in the default group names of users. We need to join 
 \begin{verbatim}
 lsql-csv -d: '/etc/{passwd,group}, &1.1 &2.1, if &1.4 == &2.3'
 \end{verbatim}
-What does \icode{/etc/\{passwd,group\}} mean? Basically, there are three types of expressions. Select, from, and arithmetic expression. 
-In all select and from expressions, you can use curly expansion and wildcards just like in bash \cite{bash-reference-manual}.
+What does \icode{/etc/\{passwd,group\}} mean? Basically, there are three types of expressions. The select, the from, and the arithmetic expression. 
+In all select and from expressions, you can use the curly expansion and wildcards just like in \icode{bash} \cite{bash-reference-manual}.
 
 Finally, the output can be something like this:
 \begin{verbatim}
@@ -302,9 +302,10 @@ Let's see more complicated examples.
 \begin{verbatim}
 lsql-csv -d: 'p=/etc/passwd g=/etc/group, p.1 g.1, if p.1 in g.4'
 \end{verbatim}
-This will print all pairs of users and its group excluding the default group. If you know SQL, you can read it as \icode{select P.1, G.1 from /etc/passwd P, /etc/group G where P.1 like '\%' + G.4 + '\%'}.
+This will print all pairs of users and its group excluding the default group. 
+If you know SQL, you can read it as \icode{SELECT P.1, G.1 FROM /etc/passwd P, /etc/group G WHERE G.4 LIKE '\%' + P.1 + '\%' } with operator \icode{LIKE} case-sensitive and columns named by their column number.
 
-How does \icode{in} work? It's one of the basic string level ``consist''. If A is a substring of B, then \icode{A in B} is true. Otherwise, it is false.
+How does \icode{in} work? It's one of the basic string level ``consist''. If A is a substring of B, then \icode{A in B} is \icode{true}. Otherwise, it is \icode{false}.
 
 And the output?
 \begin{verbatim}
@@ -316,6 +317,8 @@ lp:lp
 halt:root                                                                                                                                                                                                                                                                 
 halt:wheel 
 \end{verbatim}
+
+The example will work under the condition, that there isn't any username, which is an infix of any other username.
 
 \subsubsection{More complicated\ldots{}}
 The previous example doesn't give a very readable output. We can use \icode{group by} to improve it (shortened as \icode{by}).
@@ -332,7 +335,7 @@ lp:lp,
 mythtv:audio,cdrom,tty,video,
 news:news,
 \end{verbatim}
-It groups all non-default groups of a user to one line and concatenates it delimited by ``,''.
+It groups all non-default groups of a user to a one line and concatenates it delimited by \icode{,}.
 
 How can we add default groups too?
 \begin{verbatim}
@@ -355,7 +358,8 @@ The first part of the command is the same as in the previous example. The second
 of the first part with \icode{/etc/passwd} on the username and \icode{/etc/group} on the default GID number and prints
 the output of the first part with an added default group name.
 
-
+The examples will also work under the condition, that there isn’t any username,
+which is an infix of any other username.
 
 \section{Usage}
 Now, if you understand the examples, it is time to move forward to a more abstract description of the language and tool usage.
@@ -365,43 +369,46 @@ Now, if you understand the examples, it is time to move forward to a more abstra
 -h
 --help
 \end{verbatim}
-Shows short command line help and exits before doing anything else.
+Shows a short command line help and exits before doing anything else.
 
 \begin{verbatim}
 -n
 --named
 \end{verbatim}
-Enables first-line naming convention in CSV files. This works only on input files. 
+Enables the first-line naming convention in CSV files---first-line with column names. 
+
+This works only on input files. 
 Output is always without first-line column names.
 
 \begin{verbatim}
 -dCHAR
 --delimiter=CHAR
 \end{verbatim}
-Changes default primary delimiter. The default value is \icode{,}.
+Changes the default primary delimiter. The default value is \icode{,}.
 
 \begin{verbatim}
 -sCHAR
 --secondary-delimiter=CHAR
 \end{verbatim}
-Changes default quote char (secondary delimiter). The default value is \icode{"}.
+Changes the default quote char (secondary delimiter). The default value is \icode{"}.
 
 \subsection{Datatypes}
-There are 4 datatypes considered: \icode{Bool}, \icode{Int}, \icode{Double} and \icode{String}. 
-\icode{Bool} is either true/false, \icode{Int} is at least a 30-bit integer, \icode{Double} double-precision floating point number, and \icode{String} is an ordinary char string.
+There are 4 datatypes considered: \icode{Bool}, \icode{Int}, \icode{Double}, and \icode{String}. 
+\icode{Bool} is either \icode{true}/\icode{false}, \icode{Int} is at least a 30-bit integer, \icode{Double} is a double-precision floating point number, and \icode{String} is an ordinary char string.
 
 During CSV data parsing, the following logic of datatype selection is used:
 \begin{itemize}
     \item \icode{Bool}, if \icode{true} or \icode{false};
-    \item \icode{Int}, if \icode{[0-9]+} matches;
-    \item \icode{Double}, if \icode{[0-9]+.[0-9]+(e[0-9]+)?} matches;
+    \item \icode{Int}, if the POSIX ERE \icode{[0-9]+} fully matches;
+    \item \icode{Double}, if the POSIX ERE \icode{[0-9]+\textbackslash{}.[0-9]+(e[0-9]+)?} fully matches;
     \item \icode{String}, if none of the above matches.
 \end{itemize}
 
 \subsection{Joins}
-Join means, that you put multiple input files into from block.
+Join means, that you put multiple input files into the from block.
 
-Joins always have the time complexity $\mathcal{O}(nm)$. There is no optimization made based on if conditions when you put multiple files into from block.
+Joins always have the time complexity $\mathcal{O}(nm)$. 
+There is no optimization made based on if conditions when you put multiple files into the from block.
 
 \subsection{Documentation of language}
 \begin{verbatim}
@@ -410,28 +417,49 @@ lsql-csv [OPTIONS] COMMAND
 Description of the grammar:
   
   COMMAND -> FROM_BLOCK, REST
+
                             
   REST -> SELECT_BLOCK, REST 
   REST -> BY_BLOCK, REST   
   REST -> SORT_BLOCK, REST 
   REST -> IF_BLOCK, REST   
-  REST ->
+  REST -> LAST_BLOCK
+
+  LAST_BLOCK -> SELECT_BLOCK
+  LAST_BLOCK -> BY_BLOCK
+  LAST_BLOCK -> SORT_BLOCK
+  LAST_BLOCK -> IF_BLOCK
+
   
   FROM_BLOCK -> FROM_EXPR
+
   FROM_EXPR -> FROM_SELECTOR FROM_EXPR
-  FROM_SELECTOR ~~> FROM ... FROM //Wildcard and brace expansion
-  
-  FROM -> FROM_NAME=FROM_FILE OPTIONS
-  FROM -> FROM_FILE OPTIONS
+  FROM_EXPR -> FROM_SELECTOR
+
+  // Wildcard and brace expansion
+  FROM_SELECTOR ~~> FROM ... FROM   
+
+
+  // Standard input
+  FROM -> ASSIGN_NAME=- OPTIONS
+  FROM -> - OPTIONS
+
+  FROM -> ASSIGN_NAME=FILE_PATH OPTIONS
+  FROM -> FILE_PATH OPTIONS
+
   
   OPTIONS -> -dCHAR OPTIONS
   OPTIONS -> --delimiter=CHAR OPTIONS
+
   OPTIONS -> -sCHAR OPTIONS
   OPTIONS -> --secondary-delimiter=CHAR OPTIONS
+
   OPTIONS -> -n OPTIONS  
   OPTIONS -> --named OPTIONS
+
   OPTIONS -> -N OPTIONS   
   OPTIONS -> --not-named OPTIONS
+
   OPTIONS ->
   
   
@@ -442,47 +470,67 @@ Description of the grammar:
   
                                                                                                                  
   ARITHMETIC_EXPR -> ATOM  
-  ARITHMETIC_EXPR -> ONEARG_FUNCTION(ARITHMETIC_EXPR)                                                                                                                                            
+
   ARITHMETIC_EXPR -> ARITHMETIC_EXPR OPERATOR ARITHMETIC_EXPR
   ARITHMETIC_EXPR -> (ARITHMETIC_EXPR)
+
   // Logical negation
   ARITHMETIC_EXPR -> ! ARITHMETIC_EXPR
+  // Number negation
   ARITHMETIC_EXPR -> - ARITHMETIC_EXPR
   
+
   SELECT_EXPR -> ATOM_SELECTOR SELECT_EXPR                                                                                                                                     
-  SELECT_EXPR ->
+  SELECT_EXPR -> ATOM_SELECTOR
   
-  ATOM_SELECTOR ~~> ATOM ... ATOM //Wildcard and brace expansion
+  // Wildcard and brace expansion
+  ATOM_SELECTOR ~~> ATOM ... ATOM 
+
   
-  // e.g. 1.0, "text", 'text', 1
-  ATOM -> CONSTANT
-  // e.g. &1.1
-  ATOM -> COLUMN_NAME
   ATOM -> pi   
   ATOM -> e
   ATOM -> true
   ATOM -> false
+
+  // e.g. 1.0, "text", 'text', 1
+  ATOM -> CONSTANT
+  // e.g. &1.1
+  ATOM -> SYMBOL_NAME
+
   ATOM -> $(ARITHMETIC_EXPR)
   ATOM -> AGGREGATE_FUNCTION(SELECT_EXPR)
   ATOM -> ONEARG_FUNCTION(ARITHMETIC_EXPR)
 
-  // # is not really char:
-  // two atoms can be written without space 
-  // and will be (string) appended, 
-  // if they are separated using quote chars:
-  //   left atom must end or right atom must begin with quote char
+
+  // # is not a char:
+  // Two atoms can be written without whitespace
+  // and their values will be String appended 
+  // if the right atom begins with a char, 
+  // which can't be a part of the left atom.
+  //
+  // E.g. if the left atom is a number constant, 
+  // and the right atom is a String constant 
+  // beginning with a quote char,
+  // the left atom value will be converted to the String
+  // and prepended to the right atom value.
+  //
   // This rule doesn't apply inside ARITHMETIC_EXPR
   ATOM ~~> ATOM#ATOM     
 
   
+  // Converts all values to the String type and appends them.
   AGGREGATE_FUNCTION -> cat
-  AGGREGATE_FUNCTION -> sum
+
+  // Returns the number of values.
   AGGREGATE_FUNCTION -> count
-  AGGREGATE_FUNCTION -> max
+
   AGGREGATE_FUNCTION -> min
+  AGGREGATE_FUNCTION -> max
+  AGGREGATE_FUNCTION -> sum
   AGGREGATE_FUNCTION -> avg
+
   
-  //All trigonometric functions in radian
+  // All trigonometric functions are in radians.
   ONEARG_FUNCTION -> sin
   ONEARG_FUNCTION -> cos
   ONEARG_FUNCTION -> tan
@@ -502,8 +550,9 @@ Description of the grammar:
   ONEARG_FUNCTION -> exp
   ONEARG_FUNCTION -> sqrt
   
-  //The length of the string
+  // Converts a value to the String type and returns its length.
   ONEARG_FUNCTION -> size
+
   ONEARG_FUNCTION -> to_string
   
   ONEARG_FUNCTION -> negate
@@ -516,31 +565,36 @@ Description of the grammar:
   
   ONEARG_FUNCTION -> even
   ONEARG_FUNCTION -> odd
+
   
-  // A in B means A is a substring of B
+  // A in B means A is a substring of B.
   OPERATOR -> in
   
   OPERATOR -> *
-  OPERATOR -> **    //general power
-  OPERATOR -> ^     //natural power
   OPERATOR -> /
+
+  // General power
+  OPERATOR -> **    
+  // Natural power
+  OPERATOR -> ^     
   
   // Integer division truncated towards minus infinity
   // (x div y)*y + (x mod y) == x
   OPERATOR -> div
   OPERATOR -> mod
   
-  //Integer division truncated towards 0
+  // Integer division truncated towards 0
   // (x quot y)*y + (x rem y) == x  
   OPERATOR -> quot
   OPERATOR -> rem
 
-  // greatest common divisor
+  // Greatest common divisor
   OPERATOR -> gcd
-  // least common multiple
+  // Least common multiple
   OPERATOR -> lcm
   
-  OPERATOR -> ++    //append
+  // String append
+  OPERATOR -> ++    
   
   OPERATOR -> +
   OPERATOR -> -
@@ -565,37 +619,48 @@ Each command is made from blocks separated by a comma. There are these types of 
     \item Sort block
 \end{itemize}
 
-The first block is always from block. If the block after the first block is without a specifier (\icode{if}, \icode{by}, or \icode{sort}), then it is a select block. Otherwise, it is a block specified by the specifier.
+The first block is always the from block. If the block after the first block is without a specifier (\icode{if}, \icode{by}, or \icode{sort}), then it is the select block. Otherwise, it is a block specified by the specifier.
 
-From block accept specific grammar (as specified in the grammar description), select, by, and sort block select expression (\icode{SELECT\_EXPR} in the grammar), and if block arithmetic expression (\icode{ARITHMETIC\_EXPR} in the grammar).
+The from block accepts a specific grammar (as specified in the grammar description), the select, the by, and the sort block accept the select expression (\icode{SELECT\_EXPR} in the grammar), 
+and the if block accepts the arithmetic expression (\icode{ARITHMETIC\_\allowbreak EXPR} in the grammar).
 
-Every source file has a number and may have multiple names---assign name, the name given to the source file by \icode{ASSIGN\_NAME=FILE\_PATH} syntax in from block, and  
-default name, which is given the path to the file or \icode{-} in case of stdin in from block.
+Every source data file has a reference number based on its position in the from block and may have multiple names---the assign name, the name given to the source data file by \icode{ASSIGN\_NAME=FILE\_PATH} syntax in the from block, and  
+the default name, which is given by the path to the file or \icode{-} in the case of the standard input in the from block.
 
-Each column of a source file has a number and may have a name (if the named option is enabled for the given source file).
+Each column of a source data file has a reference number based on its position in it and may have a name (if the named option is enabled for the given source file).
 
-If the source file with index M (numbering input files from 1) has been given a name \icode{XXX}, its columns can be addressed by \icode{\&M.N} or \icode{XXX.N}, where \icode{N} is the index of column (numbering columns from 1).  
-If the named option is enabled and a column has the name \icode{NAME}, it can also be addressed by \icode{\&M.NAME} or \icode{XXX.NAME}.
+If a source data file with the reference number \icode{M} (numbering input files from 1) has a name \icode{XXX}, 
+its columns can be addressed by \icode{\&M.N} or \icode{XXX.N}, where \icode{N} is the reference number of a column (numbering columns from 1).  
+If the named option is enabled for the input file and a column has the name \icode{NAME}, it can also be addressed by \icode{\&M.NAME} or \icode{XXX.NAME}.
 
-If there is a collision in naming (two source files have the same name or two columns under the same source file have the same name), then the behavior is undefined.
+We call the address a symbol name---\icode{SYMBOL\_NAME} in the grammar description.
+
+If there is a collision in naming (some symbol name addresses more than one column), then the behavior is undefined.
 
 \subsubsection{Exotic chars}
-Some chars cannot be in unquoted symbol names (column names) references---exotic chars. For simplicity, we can suppose, they are all non-alphanumerical chars excluding \icode{-}, \icode{.}, \icode{\&}, and \icode{\_}.  
-Also first char of a symbol name must be non-numerical to not be considered as an exotic char.
+Some chars cannot be in unquoted symbol names---exotic chars. For simplicity, we can suppose, they are all non-alphanumerical chars excluding \icode{-}, \icode{.}, \icode{\&}, and \icode{\_}.  
+Also the first char of a symbol name must be non-numerical and must not be \icode{-} or \icode{.}  to not be considered as an exotic char.
 
-It is possible to reference columns with names with exotic chars using \icode{`} quote---like \icode{`EXOTIC NAME`}. The source file name is always part of the column name from the syntax perspective of language---it must be inside the quotes.
+It is possible to use a symbol name with exotic chars using \icode{`} quote---like \icode{`EXOTIC SYMBOL NAME`}. 
 
 \subsubsection{Quote chars}
-There are 3 quotes (\icode{`}, \icode{"} and \icode{'}) used in Lsql. \icode{"} and \icode{'} are always quoting a string. The \icode{`} quote is used for quoting symbol names.
+There are 3 quote chars (\icode{`}, \icode{"} and \icode{'}) used in LSQL. \icode{"} and \icode{'} are always quoting a \icode{String}. The \icode{`} quote char is used for quoting symbol names.
 
-These chars can be used for fast appending. If two atoms inside \icode{SELECT\_\-EXPR} are written without space and are separated using the quotes, they will be appended. For example, \icode{abc"abc"} means: append column abc to the string abc.
+These chars can be used for \icode{String} appending. If two atoms inside \icode{SELECT\_\-EXPR} are written consecutively without whitespace and the left atom ends by a quote char or the right begins by a quote char, 
+they will be converted to the \icode{String} and will be \icode{String} appended. 
+For example, \icode{\&1.1"abc"} means: convert the value of \icode{\&1.1} to the \icode{String} and append it to the \icode{String} constant \icode{abc}.
 
 \subsubsection{Constants}
-There are 3 types of constants. String, Double, and Int. Everything quoted in \icode{"} or \icode{'} is always String constant. Numbers without \icode{[0-9]+} are considered Int constant and numbers \icode{[0-9]+.[0-9]+} Double constant.
+Constants are in the grammar description as \icode{CONSTANT}. In the following section, we speak only about these constants and not about built-in constant values like \icode{pi} or \icode{true}.
 
-\subsubsection{Operator precedence and associativity}
-The following list outlines the precedence and associativity of lsql-csv infix operators. The lower the precedence number, the higher the priority.
+There are 3 datatypes of constants. \icode{String}, \icode{Double}, and \icode{Int}. 
+Every string quoted in \icode{"} chars or \icode{'} chars in an LSQL command is always tokenized as a \icode{String} constant. 
+Numbers fully matching the POSIX ERE \icode{[0-9]+} are considered \icode{Int} constants and numbers fully matching the POSIX ERE \icode{[0-9]+\textbackslash{}.[0-9]+} \icode{Double} constants.
 
+\subsubsection{Operator associativity and precedence}
+All operators are right-to-left associative.
+
+The following list outlines the precedence of the \icode{lsql-csv} infix operators. The lower the precedence number, the higher the priority.
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
@@ -614,124 +679,149 @@ Precedence number & Operator\\
 \end{tabular}
 \end{center}
 
-All operators are right-to-left associative.
 
 \subsubsection{Select expression}
-They are similar to bash expressions \cite{bash-reference-manual}. They are made by atom selector expressions separated by whitespaces. These expressions are expanded, evaluated, and matched to column names, constants, aggregate functions, or arithmetic expressions.
+Select expressions are in the grammar description as \icode{SELECT\_EXPR}.
+They are similar to the \icode{bash} expressions \cite{bash-reference-manual}. They are made by atom selector expressions (\icode{ATOM\_SELECTOR}) separated by whitespaces. 
+These expressions are wildcard and brace expanded to atoms (\icode{ATOM}) and are further processed as they were separated by whitespace.
+
+Wildcards and brace expansion expressions are only evaluated and expanded in unquoted parts of the atom selector expression, which aren't part of an inner arithmetic expression.
 
 Every atom selector expression can consist:
 \begin{itemize}
-    \item A wildcard (Each wildcard will be expanded to multiple statements during processing)
-    \item A Bash brace expansion (e.g. \icode{{22..25} $\rightarrow$ 22 23 24 25)} \cite{bash-reference-manual}
-    \item An arithmetic expression in \icode{\$(expr)} format
-    \item Quotes \icode{`anything`} to prevent wildcards and expansions
-    \item Quotes \icode{"} or \icode{'} to insert string
-    \item A call of an aggregate function \icode{AGGREGATE\_FUNCTION(next select blo\-ck)}---there cannot be any space after FUNCTION
-    \item A call of a one-argument function \icode{ONEARG\_FUNCTION(arithmetic expr\-ession)}---there cannot be any space after FUNCTION
-    \item Constants
-    \item A reference to a column name
+    \item A wildcard (Each wildcard is expanded against the symbol name list.
+	    If no symbol name matching the wildcard is found, the wildcard is expanded to itself.);
+    \item A \icode{bash} brace expansion expression (e.g. \icode{\{22..25\}} $\rightarrow$ \icode{22 23 24 25}) \cite{bash-reference-manual};
+    \item An arithmetic expression in \icode{\$(expr)} format;
+    \item A call of an aggregate function \icode{AGGREGATE\_FUNCTION(SELECT\_EXPR)}---\allowbreak{}the\-re cannot be any space after \icode{FUNCTION};
+    \item A call of a one-argument function \icode{ONEARG\_FUNCTION(ARITHMETIC\_EXPR)}---there cannot be any space after \icode{FUNCTION};
+    \item A constant;
+    \item A built-in constant value;
+    \item A symbol name.
 \end{itemize}
 
-If you want to concatenate strings without \icode{++} operator, you can write: \break\icode{a.1","a.2}.
-
-Please, keep in mind, that operators must be put inside arithmetic expressions, or they will be matched to a column name or aggregate function.
+Please, keep in mind, that operators (\icode{OPERATOR}) must be put inside arithmetic expressions.
 
 \subsubsection{Arithmetic expression}
-The statement uses mainly classical awk logic \cite{awk-reference-manual}.  
-You can use keywords \icode{\textgreater}, \icode{\textless}, \icode{\textless=}, \icode{\textgreater=}, \icode{==}, \icode{$\vert\vert$}, \icode{\&\&}, \icode{+}, \icode{-}, \icode{*}, \icode{/}\ldots{}
+Arithmetic expressions are in the grammar description as \icode{ARITHMETIC\_EXPR}.
+
+The expressions use mainly the classical \icode{awk} style of expressions \cite{awk-reference-manual}.  
+You can use here operators (\icode{OPERATOR}) keywords \icode{\textgreater}, \icode{\textless}, \icode{\textless=}, \icode{\textgreater=}, \icode{==}, \icode{$\vert\vert$}, \icode{\&\&}, \icode{+}, \icode{-}, \icode{*}, \icode{/}\ldots{}
 
 \subsubsection{Select blocks}
-These blocks determine output. They accept select expressions delimited by whitespaces.
+Select blocks are referred in the grammar description as \icode{SELECT\_BLOCK}.
+These blocks determine the output. They accept the select expression.
 
-Every select block must contain at least one reference to the column name, or the behavior is undefined.
+There must be at least one select block in an LSQL command, which refers to at least one symbol name, or the behavior is undefined.
 
 Examples of select blocks:
 \begin{verbatim}
 &1.[3-6]
 \end{verbatim}
-This will print columns 3, 4, 5, and 6 from the first file.
+This will print the 3rd, 4th, 5th, and 6th columns from the first file if the first file has at least 6 columns.
 
 \begin{verbatim}
 ax*.{6..4}
 \end{verbatim}
-This will print the 6th, 5th, and 4th of all files whose name begins with ax.
+This will print the 6th, the 5th, and the 4th columns from all files whose name begins with ax if the files have at least 6 columns.
 
 \subsubsection{From blocks}
-There must be exactly one from block at the beginning of the command. 
-The block can contain any files (and \icode{-} specifies standard input). 
-You can use any syntax you would otherwise use in bash to select these files (wildcards, expansion\ldots{})\break \cite{bash-reference-manual}. 
-You can also overname the file using \icode{NAME=stmt}. If there is more than 1 matching of stmt, the files will be named \icode{(NAME, NAME1, NAME2\ldots{})}.
+These blocks are in the grammar description as \icode{FROM\_BLOCK}.
+There must be exactly one from block at the beginning of an LSQL command. 
 
-Example:
+The from block contains input file paths (or \icode{-} in the case of the standard input), and optionally their assign name \icode{ASSIGN\_NAME}. 
+
+You can use the wildcards and the curly bracket expansion as you were in the \icode{bash} to refer input files \cite{bash-reference-manual}. 
+If there is a wildcard with an assign name \icode{NAME} matching more than one input file, the input files will be given assign names \icode{NAME}, \icode{NAME1}, \icode{NAME2}\ldots{}
+If there is a wildcard, that matches to no file, it is expanded to itself.
+
+If \icode{FILE\_PATH} is put inside \icode{`} quotes, no wildcard or expansion logic applies to it.
+
+You can also add custom attributes to input files in the format \icode{FILE\_PATH -aX --attribute=X -b}. The attributes will be applied to all files which will be matched against \icode{FILE\_PATH}.
+The custom attributes are referred to as \icode{OPTIONS} in the grammar description.
+
+Examples:
 \begin{verbatim}
 /etc/{passwd,group}
 \end{verbatim}
 
 This will select \icode{/etc/passwd} and \icode{/etc/group} files. They can be addressed either as \icode{\&1} or \icode{/etc/passwd}, and \icode{\&2} or \icode{/etc/group}.
 
-If \icode{filename} is put inside \icode{`} quotes, no wildcard or expansion logic will apply to it.
+\begin{verbatim}
+passwd=/etc/passwd
+\end{verbatim}
+This will select \icode{/etc/passwd} and set its assign name to \icode{passwd}. It can be addressed as \icode{\&1}, \icode{passwd}, or \icode{/etc/passwd}.
 
-You can also add custom attributes to files in the format \break \icode{FILE -aX --attribute=X -b}. The attributes will be applied to all files which will be matched using \icode{FILE} bash expression.
-They are referred to as \icode{OPTIONS} in the formal grammar.
 
-\paragraph{Possible attributes}
+\paragraph{Possible custom attributes}
 
 \begin{verbatim}
 -n
 --named
 \end{verbatim}
-It means that the CSV file has the first line with the names of the columns.
+Enables the first-line naming convention for an input CSV file---first-line with column names.
 
 \begin{verbatim}
 -N
 --not-named
 \end{verbatim}
-You can also set the exact opposite. This can be useful if you change the default behavior.
+You can also set the exact opposite to an input file. This can be useful if you change the default behavior.
 
 \begin{verbatim}
 -dCHAR
 --delimiter=CHAR
 \end{verbatim}
-This changes the primary delimiter.
+This changes the primary delimiter of an input file.
 
 \begin{verbatim}
 -sCHAR
 --secondary-delimiter=CHAR
 \end{verbatim}
-This changes the secondary delimiter char.
+This changes the secondary delimiter of an input file.
 
 Example:
 \begin{verbatim}
 /etc/passwd -d:
 \end{verbatim}
+This will select \icode{/etc/passwd} and set its delimiter to \icode{:}.
 
-Currently, commas and CHARs, which are also quotes in LSQL, are not supported as delimiters.
+Currently, commas and \icode{CHAR}s, which are also quotes in LSQL, are not supported as a delimiter or a secondary delimiter in \icode{FILE\_PATH} custom attributes.
 
-\subsubsection{If block}
-This block always begins with \icode{if}. They accept arithmetic expressions, which should be convertible to Bool: either String \icode{false}/\icode{true}, Int (\icode{0} \icode{false}, anything else \icode{true}), or Bool. 
-Rows with true are printed or aggregated, and rows with false are skipped.
+\subsubsection{If blocks}
+These blocks are in the grammar description as \icode{IF\_BLOCK}.
+They always begin with the \icode{if} keyword. 
+They accept arithmetic expressions, which should be convertible to \icode{Bool}: 
+either \icode{String} \icode{false}/\icode{true}, \icode{Int} (\icode{0} \icode{false}, anything else \icode{true}), or \icode{Bool}. 
+
+Rows with the arithmetic expression converted to \icode{Bool} \icode{true} are printed or aggregated, and 
+rows with the arithmetic expression converted to \icode{Bool} \icode{false} are skipped.
 
 Filtering is done before the aggregation.
 
-You can imagine if block as where clause in SQL.
+You can imagine the if block as the \icode{WHERE} clause in SQL.
 
-\subsubsection{By block}
-This statement always begins with \icode{by} and the rest of the block is a select expression. There can be only one By block in the whole command.
+\subsubsection{By blocks}
+By blocks are referred in the grammar description as \icode{BY\_BLOCK}.
+These blocks always begin with the \icode{by} keyword. They accept the select expression. 
 
-The by block is used to group the resulting set by the given atoms.
+There can be only one by block in a whole LSQL command.
 
-You can imagine by block as the group by clause in SQL. 
+The by block is used to group the resulting set by the given atoms for the evaluation by an aggregate function.
+The by block is similar to the \icode{GROUP BY} clause in SQL. 
 
-There must be at least one aggregate function in the select block if by block is present. Otherwise, behavior is undefined.
+There must be at least one aggregate function in the select block if the by block is present. Otherwise, the behavior is undefined.
 
-If there is an aggregate function present without by block present, aggregation runs over all rows at once.
+If there is an aggregate function present without the by block present in an LSQL command, the aggregate function runs over all rows at once.
 
-\subsubsection{Sort block}
-This block can be at the end of the command. It begins with the \icode{sort} keyword and the rest is a select expression.
+\subsubsection{Sort blocks}
+These blocks are in the grammar description as \icode{SORT\_BLOCK}.
+It begins with the \icode{sort} keyword. They accept the select expression.
 
 The sort block determines the order of the final output---given atoms are sorted in ascending order.
+If there is more than one atom in the sort block (\icode{A}, \icode{B}, \icode{C}\ldots), the data is first sorted by \icode{A} 
+and in the case of ties, the atoms (\icode{B}, \icode{C}\ldots) are used to further refine the order of the final output.
 
-You can imagine a sort block as the order by clause in SQL.
+You can imagine the sort block as the \icode{ORDER BY} clause in SQL.
 
-There can be only one Sort block in the whole command.
+There can be only one sort block in the whole command.
 
