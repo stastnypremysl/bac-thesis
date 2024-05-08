@@ -708,6 +708,8 @@ Arithmetic expressions are in the grammar description as \icode{ARITHMETIC\_EXPR
 The expressions use mainly the classical \icode{awk} style of expressions \cite{awk-reference-manual}.  
 You can use here operators (\icode{OPERATOR}) keywords \icode{\textgreater}, \icode{\textless}, \icode{\textless=}, \icode{\textgreater=}, \icode{==}, \icode{$\vert\vert$}, \icode{\&\&}, \icode{+}, \icode{-}, \icode{*}, \icode{/}\ldots{}
 
+Wildcards and brace expansion expressions are not evaluated inside the arithmetic expression.
+
 \subsubsection{Select blocks}
 Select blocks are referred in the grammar description as \icode{SELECT\_BLOCK}.
 These blocks determine the output. They accept the select expression.

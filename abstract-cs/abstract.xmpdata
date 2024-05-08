@@ -1,0 +1,14 @@
+% Metadata to be stored in PDF, see documentation of the pdfx package for more details.
+
+\Author{Přemysl Šťastný}
+\Title{Nástroj lsql-csv na zpracování CSV souborů z příkazového řádku - abstrakt}
+
+\Keywords{abstrakt\sep relační databáze\sep CSV\sep SQL\sep Haskell\sep dotazovací jazyk\sep unixová filozofie}
+
+\Subject{lsql-csv je nástroj pro provádění krátkých dotazů nad daty malých CSV souborů z shellu. 
+Díky němu je možné pracovat s malými CSV soubory jako s read-only relační databází.
+Nástroj implementuje nový jazyk LSQL podobný SQL, speciálně navržený pro práci se CSV soubory v shellu.
+Designovým cílem LSQL je být lapidárnějším jazykem než SQL.
+Účelem jeho návrhu je umožnit uživateli rychle psát jednoduché dotazy přímo do terminálu.}
+
+\Publisher{Charles University}

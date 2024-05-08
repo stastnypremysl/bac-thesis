@@ -1,23 +1,21 @@
 \documentclass[a4paper]{article}
 
 \let\pdfcreationdate=\creationdate
+
+
 \usepackage[a-2u]{pdfx}
+
 
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 
-\hypersetup{
-	unicode,
-	pdfauthor={Přemysl Šťastný},
-	pdftitle={Nástroj lsql-csv na zpracování CSV souborů z příkazového řádku - abstrakt},
-	pdfsubject={Nástroj lsql-csv na zpracování CSV souborů z příkazového řádku - abstrakt},
-	pdfkeywords={abstract, relační databáze, CSV, SQL, Haskell, dotazovací jazyk, unixová filozofie},
-	pdfproducer={LaTeX},
-	pdfcreator={xelatex}
-}
+
+%%% Various code formatting goodies
+\def\icode#1{\texttt{#1}}
+
 
 \begin{document}
-lsql-csv je nástroj pro provádění krátkých dotazů nad daty malých CSV souborů z shellu. 
+\icode{lsql-csv} je nástroj pro provádění krátkých dotazů nad daty malých CSV souborů z shellu. 
 Díky němu je možné pracovat s malými CSV soubory jako s read-only relační databází.
 Nástroj implementuje nový jazyk LSQL podobný SQL, speciálně navržený pro práci se CSV soubory v shellu.
 Designovým cílem LSQL je být lapidárnějším jazykem než SQL.

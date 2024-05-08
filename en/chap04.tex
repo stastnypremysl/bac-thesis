@@ -4,13 +4,14 @@ What other solutions are there for the given problem? What other approaches can 
 The following chapter is about alternative approaches to the problem.
 
 \section{Using SQL database}
-The first obvious solution is importing the dataset to some of the standard SQL database and doing the queries over it. 
+The first obvious solution is importing the dataset to some standard SQL database and doing the queries over it. 
 This approach requires the definition of the schema into which the data will be imported. This is an overhead, which isn't
 always advantageous to pay as we might need only a simple query to be run over it.
+The data import might take also a much longer time than a simple \icode{lsql-csv} invocation.
 
-But it might be a very favorable solution, if we have a large dataset, need complex query or a large amount of simple queries run over it.
+But it might be a very favorable solution, if we need large dataset joins, need a complex query execution or a large amount of simple queries run over it.
 
-By using a standard SQL database you gain the advantage of better performance, typed dataset, indexes, and a large number of built-in functions
+By using a standard SQL database you gain the advantage of better performance, typed datasets, indexes, and a larger number of built-in functions.
 
 \section{Using standard Unix tools}
 It is possible to do a large amount of work just by using \icode{awk}, \icode{join}, \icode{sort}\ldots{}
@@ -20,7 +21,7 @@ For example:
 lsql-csv -d: '-, &1.*, if &1.3 >= 1000' </etc/passwd
 \end{verbatim}
 
-This query might be rewritten using \icode{awk} to
+This query might be rewritten to \icode{awk}:
 \begin{verbatim}
 awk -F: '{ if($3 >= 1000){ print $0 }}' </etc/passwd
 \end{verbatim}
@@ -30,7 +31,7 @@ The main advantage of \icode{lsql-csv} is that it handles some more complex quer
 lsql-csv -d: '/etc/{passwd,group}, &1.1 &2.1, if &1.4 == &2.3'
 \end{verbatim}
 
-This is the simple join query. When written using standard Unix tools, it is:
+This is a simple join query. When written using standard Unix tools, it is:
 \begin{verbatim}
 sort -t: -k3,3 /etc/group >/tmp/group.sort
 sort -t: -k4,4 /etc/passwd >/tmp/passwd.sort
@@ -38,10 +39,10 @@ join -t: -14 -23 /tmp/passwd.sort /tmp/group.sort | cut -d: -f2,8
 \end{verbatim}
 
 As demonstrated, the \icode{lsql-csv} variant is 
-more readable and shorter\footnote{It is possible, it can be written in shorter and more readable form, but not more than the \icode{lsql-csv} variant.}.
+more readable and shorter\footnote{It is possible, that it can be written in shorter and more readable form, but probably not more than the \icode{lsql-csv} variant.}.
 
 It should be also noted, that \icode{lsql-csv} join has $\mathcal{O}(nm)$ time complexity, while standard Unix tools have for join written above
-$\mathcal{O}(n\log n + m\log m)$ time complexity, so for a larger dataset, it might be more beneficial to use them.
+$\mathcal{O}(n\log n + m\log m)$ time complexity, so for larger datasets, it might be more beneficial to use them.
 
 \section{By using SQL implementation for CSV files}
 There are many projects implementing SQL on CSV files. For example:
@@ -58,7 +59,7 @@ The advantage of it is you do not have to learn a new language if you already kn
 The disadvantage is that the queries will be probably longer than would be with \icode{lsql-csv}.
 
 \section{By using general-purpose programming language}
-It is not hard to parse and process CSV files by general-purpose programming language (for example Python).
+It is not hard to parse and process CSV files with a general-purpose programming language (for example Python).
 
 The advantage of this solution is a much greater flexibility of what you can do with the CSV files.
 The large disadvantage is, that it will take too much code to be written for any query.

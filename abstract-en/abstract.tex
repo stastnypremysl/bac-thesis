@@ -6,18 +6,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 
-\hypersetup{
-	unicode,
-	pdfauthor={Přemysl Šťastný},
-	pdftitle={Command-line tool lsql-csv for CSV files processing - abstract},
-	pdfsubject={Command-line tool lsql-csv for CSV files processing - abstract},
-	pdfkeywords={abstract, relational database, CSV, SQL, Haskell, query language, Unix philosophy},
-	pdfproducer={LaTeX},
-	pdfcreator={xelatex}
-}
+
+%%% Various code formatting goodies
+\def\icode#1{\texttt{#1}}
 
 \begin{document}
-lsql-csv is a tool for small CSV file data querying from a shell with short
+\icode{lsql-csv} is a tool for small CSV file data querying from a shell with short
   queries. It makes it possible to work with small CSV files like with a read-only
   relational databases. The tool implements a new language LSQL similar to SQL,
   specifically designed for working with CSV files in a shell. 
