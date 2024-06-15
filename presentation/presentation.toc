@@ -2,3 +2,14 @@
 \beamer@sectionintoc {1}{Úvod}{2}{0}{1}
 \beamer@sectionintoc {2}{Příklad: Hello World}{3}{0}{2}
 \beamer@sectionintoc {3}{Příklad: Jednoduché filtrování}{4}{0}{3}
+\beamer@sectionintoc {4}{Příklad: Jednoduchý join}{5}{0}{4}
+\beamer@sectionintoc {5}{Příklad: Jednoduché seskupení}{6}{0}{5}
+\beamer@sectionintoc {6}{Příklad: Jednoduché třídění}{7}{0}{6}
+\beamer@sectionintoc {7}{Příklad: Komplikovanější join}{8}{0}{7}
+\beamer@sectionintoc {8}{Alternativní řešení}{9}{0}{8}
+\beamer@sectionintoc {9}{Jak se \texttt {lsql-csv} liší od SQL?}{10}{0}{9}
+\beamer@sectionintoc {10}{Jak se \texttt {lsql-csv} liší od SQL?}{11}{0}{10}
+\beamer@sectionintoc {11}{Rozdíly v použití \texttt {lsql-csv} od standardních linuxových nástrojů při parsování CSV}{12}{0}{11}
+\beamer@sectionintoc {12}{Rozdíly v použití \texttt {lsql-csv} od standardních linuxových nástrojů při parsování CSV}{13}{0}{12}
+\beamer@sectionintoc {13}{Rozdíly v použití \texttt {lsql-csv} od standardních linuxových nástrojů při parsování CSV}{14}{0}{13}
+\beamer@sectionintoc {14}{Kde je balíček nahraný?}{15}{0}{14}
