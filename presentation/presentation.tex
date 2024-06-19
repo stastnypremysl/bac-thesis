@@ -171,7 +171,7 @@ Pozn.: 1. sloupec \icode{/etc/passwd} je název uživatele, 1. sloupec \icode{/e
 \begin{itemize}
 \item SQL
 \item Standardní linuxové nástroje
-\item Other SQL on CSV implementations (\icode{q}, \icode{CSV SQL},\ldots)
+\item Jiné SQL implementace pro CSV (\icode{q}, \icode{CSV SQL},\ldots)
 \item General purpose language
 \end{itemize}
 \end{frame}
@@ -180,8 +180,8 @@ Pozn.: 1. sloupec \icode{/etc/passwd} je název uživatele, 1. sloupec \icode{/e
 \section{Jak se \icode{lsql-csv} liší od SQL?}
 \begin{frame}[fragile]{Jak se \icode{lsql-csv} liší od SQL?}
 \begin{itemize}
-\item lsql-csv dotazy jsou v mnoha usecasech lapidárnější než SQL dotazy
-\item Data a jazyk SQL jsou typed. lsql-csv a CSV soubory jsou typeless.
+\item \icode{lsql-csv} dotazy jsou v mnoha usecasech lapidárnější než SQL dotazy
+\item Data a jazyk SQL jsou typed. \icode{lsql-csv} a CSV soubory jsou typeless.
 \item Import CSV souboru do SQL databáze může být vhodnější řešení, 
   pokud jsou zapotřebí komplexnější queries, jsou zapotřebí joiny většího množství tables, 
   nebo je zapotřebí provést velké množství queries.
@@ -207,7 +207,7 @@ data.txt, &1.2, if &1.2 > 1000
 \section{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při parsování CSV}
 \begin{frame}[fragile]{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při parsování CSV}
 \begin{itemize}
-\item V některých případech dokáže být čitelnější a kratší
+\item V některých případech dokáže být \icode{lsql-csv} čitelnější a kratší
 \end{itemize}
 \end{frame}
 

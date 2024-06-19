@@ -1,0 +1,92 @@
+1) Motivace: 
+  - Současné nástroje pro parsování CSV z shellu mají zbyteně
+    dlouhé, komplikované nebo nečitelné dotazy.
+
+  - Cílem tohoto projektu je usnadnit uživateli Unix-like systému
+    dotazování nad CSV soubory.
+
+
+2) Příklad: Hello World
+  - Zde je příklad, kdy lsql-csv načte ze standardního vstupu ...
+  - Příkaz se dělí na bloky separované čárkou,
+    první blok je vždy from block určující vstupní soubory pro data.
+    Druhý blok je v tomto případě select block.
+  - &1.2, &1.1 referencují jednotlivé sloupce v rámci dotazu
+    select bloku
+
+3) Příklad: Jednoduché filtrování
+  - Nyní pár praktických ukázek, k čemu může být tool dobrý.
+    Řekněme, že chceme získat všechny uživatele s UID >= 1000.
+  - Přepínač "-d:" nastavuje delimiter.
+  - Nově zde vidíme if blok, kkterým se nastavuje filtrace.
+    Gramatika if bloku přijímá tzn. arithmetic expression
+    na rozdíl od select blocku, co přijímá select expression.
+  - Při výběru sloupců lze použít wildcardy a Bash curly
+    expansion.
+
+4) Příklad: Jednoduchý join
+  - V daném příkladu vidíme dotaz, který nám vypíše uživatele
+    a název jeho defaultní skupiny.
+  - Ve from bloku lze referovat více  vstupních souborů zároveň.
+    Tím dojde ke "cross joinu" (kartézký součin).
+  - Inner  joinu lze dosáhnout zapomocí if bloku.
+
+5) Příklad: Jednoduché seskupení
+  - Zde vidíme příklad použití aggregační funkce.
+  - Uvedený příklad zobrazuje počet užvatelů používající daný shell.
+
+6) Příklad: Jednoduché třídění
+  - V tomto příkladu vidíme ukázku jednoduchého sortu.
+  - Soubor /etc/passwd třídíme podle třetího sloupce.
+  - Je možné přidat i další sloupce, jsou použžity ke zpřesnění
+    pořadí konečného výstupu.
+
+7) Příklad: Komplikovaněější join
+   - Zde je dotaz, který vypíše všechny skupiny a uživatele, co do ní
+     náleží. (S vyjimkou uživatel, co do skupiny náleží skrze nastavení
+     defaultní skupiny)
+
+8) Alternativní řešení (pro dotazování nad CSV soubory)
+  - SQL - import CSV do standardní SQL databáze a provádění dotazů
+    nad ní
+  - Standardní linuxové nástroje - awk, join, sort,...
+  - Jiné SQL implementace pro CSV (q, CSV SQL, trdsql, csvq)
+  - General purpose language
+
+9) Jak se lsql-csv liší od SQL? (1/2)
+  [přečíst slide]
+
+10) Jak se lsql-csv liší od SQL? (2/2)
+  - Zde vidíme porovnání LSQL a SQL.
+  - Pro účely porovnání jsem zvolil jednoduchý dotaz, kde zobrazujeme druhý
+    sloupec tabulky, pokud je jeho hodnota větší než 1000
+  - V této domenostrované variantě je délka LSQL dotazu o 35% kratší než
+    SQL dotaz
+     
+11) Rozdíly v použití lsql-csv od standardních linuxových nástrojů
+  při parsování CSV (1/3)
+  - V mnoha případech je zapotřebí použití několika nástrojů zároveň
+    nebo komplikovanějšího příkazu než jinak v případě lsql-csv je.
+
+12) Rozdíly v použití lsql-csv od standardních linuxových nástrojů
+  při parsování CSV (2/3)
+  - Na uvedeném příkladu vidíme porovnání jednoduchého dotazu 
+    filtrující řádky s UID >= 1000 v awk a lsql-csv.
+
+13) Rozdíly v použití lsql-csv od standardních linuxových nástrojů
+  při parsování CSV (3/3)
+  - Zde vidíme použití joinu pro propojení dvou tabulek
+    /etc/passwd a /etc/group.
+  - Varianta s lsql-csv vyžaduje zavolání pouze jednoho příkazu a
+    nevyžaduje pomocných souborů.
+
+14) Kde je balíček nahraný?
+  - Zdrojové kódy jsou na GitHubu.
+  - Balíček je primárně distribuován skrze Hackage.
+  - Balíček je taktéž součástí Stackage a NixOS distribuce.
+  - Byl taktéžž vytvořen request na zařazení balíčků do Gentoo skrze
+    gentoo-overlay repozitář
+
+
+
+
