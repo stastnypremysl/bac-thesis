@@ -1,6 +1,19 @@
 \frametitle{Kde je balíček nahraný?}
+
 \begin{itemize}
-    \item Hackage
-    \item Stackage
-    \item NixOS
+  \item GitHub - zdrojové kódy
 \end{itemize}
+
+\vskip 0.5cm
+
+\begin{itemize}
+  \item Hackage - hlavní zdroj pro distribuci balíčku
+  \item Stackage
+  \item NixOS
+\end{itemize}
+
+\vskip 1cm
+
+\begin{verbatim}
+cabal install lsql-csv
+\end{verbatim}

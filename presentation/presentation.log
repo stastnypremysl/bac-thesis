@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  16 JUN 2024 21:09
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021 Gentoo Linux) (preloaded format=xelatex 2024.2.13)  22 JUN 2024 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1155,15 +1155,15 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
  (./presentation.aux)
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 0FDE2BC7FB4F5F2E689EBB56B92F6ED5;3489.
+(rerunfilecheck)             Checksum: 5E99736684A3574804E631920AB5B726;3151.
  ) 
 Here is how much of TeX's memory you used:
  23528 strings out of 478918
  471092 string characters out of 5867538
- 836256 words of memory out of 5000000
+ 835918 words of memory out of 5000000
  42857 multiletter control sequences out of 15000+600000
  411320 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 131i,11n,132p,543b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,11n,132p,548b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on presentation.pdf (15 pages).

@@ -45,10 +45,28 @@
 \begin{itemize}
   \item \icode{lsql-csv} je nástroj pro provádění krátkých dotazů nad daty malých CSV souborů z shellu
   \item Implementuje nový jazyk LSQL podobný SQL, speciálně navržený pro práci se CSV soubory v shellu
-  \item Designovým cílem LSQL je být lapidárnějším jazykem než SQL. 
-  \item Účelem jeho návrhu je umožnit uživateli rychle psát jednoduché dotazy přímo do terminálu.
+  \item Designovým cílem LSQL je být lapidárnějším jazykem než SQL
+  \item Účelem jeho návrhu je umožnit uživateli rychle psát jednoduché dotazy přímo do terminálu
 \end{itemize}
 
+
+\end{frame}
+
+
+\section{Co je to CSV soubor?}
+
+\begin{frame}[fragile]{Co je to CSV soubor?}
+\begin{itemize}
+  \item CSV je jednoduchý souborový formát určený pro výměnu tabulkových dat
+\end{itemize}
+
+\vskip 0.5cm
+
+\begin{verbatim}
+Adam,21
+"Petra",23
+Karel,25
+\end{verbatim}
 
 \end{frame}
 
@@ -58,11 +76,16 @@
 \begin{frame}[fragile]{Příklad: Hello World}
 
 \begin{verbatim}
-lsql-csv '-, &1.2 &1.1' <<- EOF
+hello-world.txt:
 World,Hello
-EOF
 \end{verbatim}
 
+\vskip 0.5cm
+
+\begin{verbatim}
+lsql-csv 'hello-world.txt, &1.2 &1.1'
+\end{verbatim}
+	
 \begin{verbatim}
 Hello,World
 \end{verbatim}
@@ -73,7 +96,7 @@ Hello,World
 \begin{frame}[fragile]{Příklad: Jednoduché filtrování}
 
 \begin{verbatim}
-lsql-csv -d: '-, &1.*, if &1.3 >= 1000' </etc/passwd
+lsql-csv -d: '/etc/passwd, &1.*, if &1.3 >= 1000'
 \end{verbatim}
 
 \begin{verbatim}
@@ -172,7 +195,7 @@ Pozn.: 1. sloupec \icode{/etc/passwd} je název uživatele, 1. sloupec \icode{/e
 \item SQL
 \item Standardní linuxové nástroje
 \item Jiné SQL implementace pro CSV (\icode{q}, \icode{CSV SQL},\ldots)
-\item General purpose language
+\item Obecné programovací jazyky
 \end{itemize}
 \end{frame}
 		
@@ -204,31 +227,16 @@ data.txt, &1.2, if &1.2 > 1000
 \end{frame}
 
 
-\section{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při parsování CSV}
-\begin{frame}[fragile]{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při parsování CSV}
+\section{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při zpracování CSV}
+\begin{frame}[fragile]{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při zpracování CSV}
 \begin{itemize}
 \item V některých případech dokáže být \icode{lsql-csv} čitelnější a kratší
 \end{itemize}
 \end{frame}
 
 
-\section{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při parsování CSV}
-\begin{frame}[fragile]{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při parsování CSV}
-
-\begin{verbatim}
-lsql-csv -d: '-, &1.*, if &1.3 >= 1000' </etc/passwd
-\end{verbatim}
-
-\vskip 1cm
-
-\begin{verbatim}
-awk -F: '{ if($3 >= 1000){ print $0 }}' </etc/passwd
-\end{verbatim}
-\end{frame}
-
-
-\section{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při parsování CSV}
-\begin{frame}[fragile]{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při parsování CSV}
+\section{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při zpracování CSV}
+\begin{frame}[fragile]{Rozdíly v použití \icode{lsql-csv} od standardních linuxových nástrojů při zpracování CSV}
 \begin{verbatim}
 lsql-csv -d: '/etc/{passwd,group}, &1.1 &2.1, 
   if &1.4 == &2.3'
@@ -249,11 +257,24 @@ join -t: -14 -23 /tmp/passwd.sort /tmp/group.sort |
 
 \section{Kde je balíček nahraný?}
 \begin{frame}[fragile]{Kde je balíček nahraný?}
+
 \begin{itemize}
-    \item Hackage
-    \item Stackage
-    \item NixOS
+  \item GitHub - zdrojové kódy
 \end{itemize}
+
+\vskip 0.5cm
+
+\begin{itemize}
+  \item Hackage - hlavní zdroj pro distribuci balíčku
+  \item Stackage
+  \item NixOS
+\end{itemize}
+
+\vskip 1cm
+
+\begin{verbatim}
+cabal install lsql-csv
+\end{verbatim}
 \end{frame}
 
 \end{document}

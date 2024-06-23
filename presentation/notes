@@ -10,3 +10,16 @@ Malo SQL - nemusi vedet, co je to SQL.
 6. ?(proc je to implementovane, jak je to implementovane)?
 
 Slidy v češtině
+
+
+----
+
+1. Na úvod říct, co mám v záměru - úvod, příklady - OK
+2. U příkladu zdůraznit, že první odstavec je input a druhý output - OK
+2. Slide 3 - přesunout input z stdin do separovaného souboru - OK
+3. Slide 4 - stejně jako slide 3 - OK
+4. Slide 5 - Říct nejprve kartezký součin před inner joinem - OK
+5. Slide 9 - General purpose languages -> Obecné programovací jazyky - OK
+6. Slide 13 - Vyhodit - OK
+7. Slide 15  - Rozepsat jednotlivé body, example jak nainstalovat
+8. Vysvětlit, co je CSV a namísto parsování slovo zpracování - OK
