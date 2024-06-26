@@ -23,7 +23,7 @@
     jak ho nainstalovat.
 
 
-2) Co je to CSV soubor?
+2) (Nejprve) Co je to CSV soubor?
   Slide:  
   - CSV je jednoduchý souborový formát určený pro výměnu
     tabulkových dat
@@ -31,6 +31,7 @@
   Detail:
   - Soubor ve formátu CSV obsahuje řádky, ve kterých jsou jednotlivé položky odděleny znakem čárka (,). 
   - Hodnoty položek mohou být uzavřeny do uvozovek ("), což umožňuje, aby text položky obsahoval čárku.
+  - Na slide vidíme příklad takového souboru.
 
 
 3) Příklad: Hello World
@@ -38,7 +39,7 @@
   - V prvním bloku je vstupní soubor hello-world.txt,
     v druhém bloku je lsql-csv příkaz a ve třetím bloku je 
     jeho výstup.
-  - Příkaz se dělí na bloky separované čárkou,
+  - Jak můžeme vidět, příkaz se dělí na bloky separované čárkou,
     první blok je vždy from block určující vstupní soubory pro data.
     Druhý blok je v tomto případě select block.
   - &1.2, &1.1 referencují jednotlivé sloupce v rámci dotazu
@@ -46,16 +47,18 @@
 
 
 4) Příklad: Jednoduché filtrování
-  - V prvním bloku je lsql-csv příkaz a ve druhém bloku jeho
-    výstup.
   - Nyní pár praktických ukázek, k čemu může být tool dobrý.
     Řekněme, že chceme získat všechny uživatele s UID >= 1000.
-  - Přepínač "-d:" nastavuje delimiter.
+    Zde je ukázka toho, jak lze toho dosáhnout za pomoci lsql-csv.
+  - V prvním bloku je lsql-csv příkaz a ve druhém bloku jeho
+    výstup.
+  - Přepínač "-d:" v příkazu nastavuje delimiter.
   - Nově zde vidíme if blok, kterým se nastavuje filtrace.
-    Gramatika if bloku přijímá tzn. arithmetic expression
+    Gramatika if bloku přijímá takzvané arithmetic expression
     na rozdíl od select blocku, co přijímá select expression.
+    Jedná se o ekvivalent WHERE bloku SQL.
   - Při výběru sloupců lze použít wildcardy a Bash curly
-    expansion.
+    expansion, což může být výhodné pro rychlý zápis dotazů.
 
 
 5) Příklad: Jednoduchý join
@@ -73,18 +76,23 @@
 
 7) Příklad: Jednoduché třídění
   - V tomto příkladu vidíme ukázku jednoduchého sortu.
-  - Soubor /etc/passwd třídíme podle třetího sloupce.
-  - Je možné přidat i další sloupce, jsou použžity ke zpřesnění
+  - Příklad zobrazuje uživatele s UID >= 1000 seřazené podle UID ve 
+    třetím sloupci.
+  - Je možné přidat do sort bloku i další sloupce, jsou použity ke zpřesnění
     pořadí konečného výstupu.
 
 
-8) Příklad: Komplikovaněější join
-   - Zde je dotaz, který vypíše všechny skupiny a uživatele, co do ní
-     náleží. (S vyjimkou uživatel, co do skupiny náleží skrze nastavení
-     defaultní skupiny)
+8) Příklad: Komplikovanější join
+  - Zde je dotaz, který vypíše všechny skupiny a uživatele, co do ní
+    náleží. (S vyjimkou uživatel, co do skupiny náleží skrze nastavení
+    defaultní skupiny)
+  - Agregační funkce cat pospojuje jednotlivé názvy uživetel oddělených
+    čárkou.
 
 
 9) Alternativní řešení (pro dotazování nad CSV soubory)
+  - Nyní projdeme jednotlivá alternativní řešení pro dotazování
+    nad CSV soubory
   - SQL - import CSV do standardní SQL databáze a provádění dotazů
     nad ní
   - Standardní linuxové nástroje - awk, join, sort,...
@@ -139,6 +147,35 @@
   - Pro instalaci za pomoci Cabalu můžete použít níže uvedený příkaz,
     který nainstaluje nejnovější verzi package z Hackage.
 
+15) Děkuji za pozornost.
 
+
+----
+Vyjádření k posudku oponenta:
+
+1) Volbě jazyka je věnována jedna věta na konci Introduction, téma by si zasloužilo o trochu
+delší rozvedení.
+  - Volba jazyka jakožto "implementační detail" nebyla příliš rozvedena jako
+    irelevantní k práci samotné.
+  - Jazyk byl každopádně zvolen z důvodu výhodných vlastností parsovacích
+    frameworků Haskellu (velmi snadný nativní monadický zápis parsovací logiky pro
+    gramatiky typu LL(n)) a vlastností Haskellu (jako kupříkladu type safetiness a 
+    lapidárnost logiky zápisu programu samotného).
+
+2) Proč je syntaxe dotazů tak odlišná od SQL? Toto je zmíněno jen velmi krátce v Sekci 3.4
+  - Tato otázka je taktéž rozvedena v sekci Introduction, úvodu sekce 1 a
+    sekcích 3.2, 3.3 a 3.6
+  - Stručně řečeno jde o to, že SQL byl navržen pro jiné účely než LSQL - 
+    CSV soubory jsou typeless, dotazy jsou spíše určené pro snadné psaní
+    dotazů než pro jejich zpětenou interpretaci a protože můj osobní názor je,
+    že některé z aspektů jazyka SQL mohli být navrženy lépe (jako například
+    zbytečně dlouhé názvy keywords a optická separace jednotlivých částí
+    dotazu, pokud programátor nepoužívá pro mne osobně těžkopádnou konvenci s
+    upper casem pro buď keyword nebo "symboly")
+
+3) Na několika místech je zmíněna složitost operace join jako O(nm), aniž by bylo uvedeno,
+co m,n označuje a bylo jakkoli rozvedeno (např. Sekce 3.11)
+  - Ano, tento přístup byl zvolen protože mi to z kontextu připadalo evidentní
+    a tedy zbytečné dále rozepisovat.
 
 
