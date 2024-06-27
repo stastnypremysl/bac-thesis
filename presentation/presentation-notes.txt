@@ -166,7 +166,8 @@ delší rozvedení.
   - Tato otázka je taktéž rozvedena v sekci Introduction, úvodu sekce 1 a
     sekcích 3.2, 3.3 a 3.6
   - Stručně řečeno jde o to, že SQL byl navržen pro jiné účely než LSQL - 
-    CSV soubory jsou typeless, dotazy jsou spíše určené pro snadné psaní
+    CSV soubory jsou typeless a pořadí jejich sloupců je dané a moc často se
+    nemění, dotazy jsou spíše určené pro snadné psaní
     dotazů než pro jejich zpětenou interpretaci a protože můj osobní názor je,
     že některé z aspektů jazyka SQL mohli být navrženy lépe (jako například
     zbytečně dlouhé názvy keywords a optická separace jednotlivých částí
